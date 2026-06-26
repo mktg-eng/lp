@@ -20,7 +20,7 @@ const steps = [
   {
     icon: Send,
     title: 'フォーム営業で検証・実行',
-    label: 'Sygnal',
+    label: 'フォーム営業',
     description:
       '問い合わせフォーム経由でターゲット企業へアプローチし、どの型が反応するかを実データで検証します。',
   },

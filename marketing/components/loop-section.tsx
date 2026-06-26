@@ -25,7 +25,7 @@ const steps = [
   {
     icon: Send,
     title: 'フォーム営業配信',
-    description: 'Sygnalでフォーム経由のアプローチを実行・配信する。',
+    description: '問い合わせフォーム経由でターゲットにアプローチを実行・配信する。',
   },
   {
     icon: BarChart3,

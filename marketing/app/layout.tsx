@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'コピーできる集客｜AI×フォーム営業でBtoBリード獲得 | 株式会社CDC AI',
   description:
-    'AIでLP・オファーを高速量産し、フォーム営業で検証、当たった型を横展開。低コストで新規リードを回す「コピーできる集客」を、株式会社CDC AIが代行・仕組み提供します。配信基盤はSygnal。',
+    'AIでLP・オファーを高速量産し、フォーム営業で検証、当たった型を横展開。低コストで新規リードを回す「コピーできる集客」を、株式会社CDC AIが代行・仕組み提供します。',
   generator: 'v0.app',
   icons: {
     icon: [

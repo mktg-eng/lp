@@ -23,7 +23,7 @@ export function SiteFooter() {
           </div>
           <p className="text-sm leading-relaxed text-muted-foreground">
             「コピーできる集客」— AIでLPを量産し、フォーム営業で検証・横展開。
-            低コストで新規リードを回す仕組みを提供します。配信基盤：Sygnal。
+            低コストで新規リードを回す仕組みを提供します。
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export function SiteFooter() {
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} 株式会社CDC AI. All rights reserved.</p>
-          <p className="font-mono">コピーできる集客 ／ Powered by Sygnal</p>
+          <p className="font-mono">コピーできる集客</p>
         </div>
       </div>
     </footer>

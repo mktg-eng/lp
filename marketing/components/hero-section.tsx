@@ -50,7 +50,7 @@ export function HeroSection() {
           </div>
 
           <p className="mt-4 font-mono text-xs text-muted-foreground">
-            提供：株式会社CDC AI ／ 配信基盤：Sygnal
+            提供：株式会社CDC AI
           </p>
         </div>
 
@@ -78,7 +78,7 @@ function GrowthPreview() {
           <span className="size-2.5 rounded-full bg-primary/70" aria-hidden />
           <span className="size-2.5 rounded-full bg-accent/60" aria-hidden />
           <span className="ml-2 font-mono text-xs text-muted-foreground">
-            sygnal · campaign dashboard
+            campaign dashboard
           </span>
         </div>
         <span className="inline-flex items-center gap-1 font-mono text-xs text-accent">

@@ -3,6 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 
+import { COMPANY, SERVICE_NAME } from '@/lib/site'
+
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
@@ -10,9 +12,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'コピーできる集客｜AI×フォーム営業でBtoBリード獲得 | 株式会社CDC AI',
-  description:
-    'AIでLP・オファーを高速量産し、フォーム営業で検証、当たった型を横展開。低コストで新規リードを回す「コピーできる集客」を、株式会社CDC AIが代行・仕組み提供します。',
+  title: `${SERVICE_NAME}｜AI×フォーム営業でBtoBリード獲得 | ${COMPANY}`,
+  description: `AIでLP・オファーを高速量産し、フォーム営業で検証、当たった型を横展開。低コストで新規リードを回す「${SERVICE_NAME}」を、${COMPANY}が代行・仕組み提供します。`,
   generator: 'v0.app',
   icons: {
     icon: [
@@ -34,11 +35,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  colorScheme: 'light',
+  themeColor: '#ffffff',
 }
 
 export default function RootLayout({

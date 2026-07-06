@@ -1,6 +1,7 @@
 import { Lightbulb, LayoutTemplate, Send, Layers } from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
+import { SERVICE_NAME } from '@/lib/site'
 
 const steps = [
   {
@@ -35,10 +36,10 @@ const steps = [
 
 export function BenefitsSection() {
   return (
-    <section id="solution" className="relative border-y border-border bg-card/30">
+    <section id="solution" className="relative border-y border-border bg-muted/60">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
-          eyebrow="解決＝コピーできる集客"
+          eyebrow={`解決＝${SERVICE_NAME}`}
           title="“当たり”を、型にして量産する"
           description="一度きりの当たりで終わらせず、再現できる仕組みに変える。4つのステップで新規リードを回します。"
         />
@@ -47,7 +48,7 @@ export function BenefitsSection() {
           {steps.map((item, index) => (
             <div
               key={item.title}
-              className="flex gap-5 rounded-xl border border-border bg-background/60 p-6 sm:p-7"
+              className="flex gap-5 rounded-xl border border-border bg-background p-6 sm:p-7"
             >
               <div className="flex shrink-0 flex-col items-center gap-2">
                 <span className="flex size-12 items-center justify-center rounded-lg bg-primary/15 text-primary">
@@ -60,7 +61,7 @@ export function BenefitsSection() {
               <div className="flex flex-col gap-2">
                 <div className="flex flex-wrap items-center gap-2">
                   <h3 className="text-lg font-semibold">{item.title}</h3>
-                  <span className="rounded-full border border-border bg-card/60 px-2.5 py-0.5 font-mono text-[11px] text-accent">
+                  <span className="rounded-full border border-border bg-card px-2.5 py-0.5 font-mono text-[11px] text-accent">
                     {item.label}
                   </span>
                 </div>

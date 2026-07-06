@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { CopyPlus } from 'lucide-react'
 
+import { COMPANY, SERVICE_NAME, SERVICE_TAGLINE } from '@/lib/site'
+
 const footerLinks = [
   { label: '課題', href: '#problems' },
   { label: '解決', href: '#solution' },
@@ -12,18 +14,17 @@ const footerLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-card/30">
+    <footer className="border-t border-border bg-muted/60">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex max-w-sm flex-col gap-3">
           <div className="flex items-center gap-2.5">
             <span className="flex size-8 items-center justify-center rounded-lg bg-brand-gradient text-primary-foreground">
               <CopyPlus className="size-4" aria-hidden />
             </span>
-            <span className="text-sm font-semibold">株式会社CDC AI</span>
+            <span className="text-sm font-semibold">{COMPANY}</span>
           </div>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            「コピーできる集客」— AIでLPを量産し、フォーム営業で検証・横展開。
-            低コストで新規リードを回す仕組みを提供します。
+            「{SERVICE_NAME}」— {SERVICE_TAGLINE}
           </p>
         </div>
 
@@ -43,8 +44,8 @@ export function SiteFooter() {
 
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} 株式会社CDC AI. All rights reserved.</p>
-          <p className="font-mono">コピーできる集客</p>
+          <p>© {new Date().getFullYear()} {COMPANY}. All rights reserved.</p>
+          <p className="font-mono">{SERVICE_NAME}</p>
         </div>
       </div>
     </footer>

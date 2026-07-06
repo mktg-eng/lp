@@ -7,12 +7,11 @@ export function HeroSection() {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_top,black,transparent_72%)]" aria-hidden />
-      <div className="absolute -top-32 left-1/2 -z-0 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-primary/20 blur-3xl" aria-hidden />
       <div className="absolute -top-20 right-1/4 -z-0 h-56 w-[28rem] rounded-full bg-accent/10 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16 sm:pt-28 sm:pb-24">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3.5 py-1.5 font-mono text-xs text-accent">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 font-mono text-xs text-accent">
             <TrendingDown className="size-3.5" aria-hidden />
             成果報酬型 MVP相見積もりサービス
           </span>
@@ -67,10 +66,10 @@ export function HeroSection() {
 
 function ArbitragePreview() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-border bg-card/80 shadow-2xl shadow-primary/5">
+    <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-lg shadow-black/5">
       <div className="flex items-center justify-between border-b border-border px-5 py-3.5">
         <span className="font-mono text-xs text-muted-foreground">
-          本開発費の見積もり（計算例・目安）
+          本開発費の見積もり（計算例・M規模想定の目安）
         </span>
         <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/15 px-2.5 py-1 font-mono text-[11px] text-accent">
           <TrendingDown className="size-3" aria-hidden />
@@ -80,34 +79,34 @@ function ArbitragePreview() {
 
       <div className="grid gap-4 p-5 sm:p-6">
         <div className="grid gap-3 sm:grid-cols-2">
-          <div className="rounded-xl border border-border bg-background/50 p-4">
+          <div className="rounded-xl border border-border bg-background p-4">
             <p className="text-xs text-muted-foreground">いきなり発注</p>
             <p className="mt-1 font-mono text-2xl font-semibold tracking-tight text-muted-foreground line-through decoration-destructive/50 decoration-2">
-              ¥2,000,000
+              ¥4,000,000
             </p>
-            <p className="mt-1 text-[11px] text-muted-foreground/70">当初見積もり（目安）</p>
+            <p className="mt-1 text-[11px] text-muted-foreground/70">本開発予定額（目安）</p>
           </div>
           <div className="rounded-xl border border-accent/40 bg-accent/5 p-4">
             <p className="text-xs text-accent">相見積もり後</p>
             <p className="mt-1 font-mono text-2xl font-semibold tracking-tight text-foreground">
-              ¥1,500,000
+              ¥2,000,000
             </p>
             <p className="mt-1 inline-flex items-center gap-1 text-[11px] text-accent">
               <ArrowDown className="size-3" aria-hidden />
-              ¥500,000 ダウン（目安）
+              ¥2,000,000 ダウン（目安）
             </p>
           </div>
         </div>
 
-        <div className="flex flex-col items-stretch gap-3 rounded-xl border border-border bg-secondary/40 p-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col items-stretch gap-3 rounded-xl border border-border bg-secondary p-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-baseline gap-2">
             <span className="text-xs text-muted-foreground">成果報酬</span>
-            <span className="font-mono text-lg font-semibold text-foreground">¥150,000</span>
+            <span className="font-mono text-lg font-semibold text-foreground">¥600,000</span>
             <span className="text-[11px] text-muted-foreground/70">（差額の30%）</span>
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-xs text-muted-foreground">実質お得</span>
-            <span className="font-mono text-lg font-semibold text-accent">¥350,000</span>
+            <span className="font-mono text-lg font-semibold text-accent">¥1,400,000</span>
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ const navItems = [
   { label: '流れ', href: '#flow' },
   { label: '料金', href: '#pricing' },
   { label: '実績', href: '#results' },
+  { label: 'オプション', href: '#options' },
   { label: 'FAQ', href: '#faq' },
 ]
 

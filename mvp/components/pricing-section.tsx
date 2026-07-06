@@ -1,8 +1,18 @@
-import { Check, CircleDollarSign, AlertTriangle } from 'lucide-react'
+import Link from 'next/link'
+import { Check, CircleDollarSign, AlertTriangle, ArrowRight } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 
-const patterns = [
+const patterns: {
+  icon: typeof CircleDollarSign
+  badge: string
+  title: string
+  price: string
+  featured: boolean
+  tone: 'accent' | 'primary' | 'muted'
+  description: string
+  link?: { href: string; label: string }
+}[] = [
   {
     icon: CircleDollarSign,
     badge: 'CASE 01',
@@ -27,17 +37,18 @@ const patterns = [
     icon: AlertTriangle,
     badge: 'CASE 03',
     title: '提携網を経由せず本開発／中止',
-    price: 'MVP実費 100,000円',
+    price: '規模に応じた実費',
     featured: false,
     tone: 'muted' as const,
     description:
-      '提携システム会社を経由せずに本開発する、または中止する場合のみ、MVP開発の実費として10万円を頂戴します。',
+      '提携システム会社を経由せずに本開発する、または途中で中止する場合は、MVPの規模（S/M/L）と時点に応じた実費のみを頂戴します。',
+    link: { href: '#cancellation', label: '実費の一覧表を見る' },
   },
 ]
 
 export function PricingSection() {
   return (
-    <section className="relative border-b border-border bg-card/30">
+    <section className="relative border-b border-border bg-muted/60">
       <div className="mx-auto max-w-6xl px-5 pb-20 sm:pb-24">
         <div className="grid gap-6 lg:grid-cols-3">
           {patterns.map((p) => (
@@ -46,8 +57,8 @@ export function PricingSection() {
               className={cn(
                 'relative flex flex-col gap-5 rounded-2xl border p-7 sm:p-8',
                 p.featured
-                  ? 'border-accent/60 bg-background shadow-xl shadow-primary/10'
-                  : 'border-border bg-background/50',
+                  ? 'border-accent/60 bg-background shadow-lg shadow-black/5'
+                  : 'border-border bg-background',
               )}
             >
               <div className="flex items-center justify-between">
@@ -56,7 +67,7 @@ export function PricingSection() {
                     'flex size-11 items-center justify-center rounded-xl',
                     p.tone === 'accent' && 'bg-accent/15 text-accent',
                     p.tone === 'primary' && 'bg-primary/15 text-primary',
-                    p.tone === 'muted' && 'border border-border bg-secondary/60 text-muted-foreground',
+                    p.tone === 'muted' && 'border border-border bg-secondary text-muted-foreground',
                   )}
                 >
                   <p.icon className="size-5" aria-hidden />
@@ -81,6 +92,16 @@ export function PricingSection() {
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {p.description}
               </p>
+
+              {p.link ? (
+                <Link
+                  href={p.link.href}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-foreground"
+                >
+                  {p.link.label}
+                  <ArrowRight className="size-3.5" aria-hidden />
+                </Link>
+              ) : null}
             </div>
           ))}
         </div>

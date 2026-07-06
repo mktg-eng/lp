@@ -43,7 +43,7 @@ const pillars = [
 
 export function ServicesSection() {
   return (
-    <section id="value" className="relative border-y border-border bg-card/30">
+    <section id="value" className="relative border-y border-border bg-muted/60">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
           eyebrow="提供価値"
@@ -55,7 +55,7 @@ export function ServicesSection() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="flex flex-col gap-6 rounded-2xl border border-border bg-background/60 p-7 sm:p-8"
+              className="flex flex-col gap-6 rounded-2xl border border-border bg-background p-7 sm:p-8"
             >
               <div className="flex items-center gap-4">
                 <span className="flex size-12 items-center justify-center rounded-xl bg-primary text-base font-semibold text-primary-foreground">

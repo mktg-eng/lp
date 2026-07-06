@@ -5,7 +5,7 @@ import { SectionHeading } from '@/components/section-heading'
 const reasons = [
   {
     icon: Zap,
-    title: 'AIでMVPを激安生成',
+    title: 'AIでMVPを無料生成',
     description:
       '本来は100〜200万円相当（一般的な目安）になりがちなPOC（試作）を、AI活用で無料のMVPとしてご用意します。',
   },
@@ -36,7 +36,7 @@ export function ReasonsSection() {
         {reasons.map((item, index) => (
           <div
             key={item.title}
-            className="flex flex-col gap-5 rounded-xl border border-border bg-card/60 p-7"
+            className="flex flex-col gap-5 rounded-xl border border-border bg-card p-7"
           >
             <div className="flex items-center justify-between">
               <span className="flex size-12 items-center justify-center rounded-xl bg-primary/15 text-primary">

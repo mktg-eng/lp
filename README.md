@@ -13,6 +13,7 @@ Vercelでは「Root Directory」を各サブフォルダに指定して、**1リ
 | `design/` | ④ 定額制デザインサービス | 月額定額でデザイン依頼し放題（サービス名は仮） |
 | `articles/` | ⑤ SEO・AIO記事作成代行 | AI×人のハイブリッドで記事量産（サービス名は仮） |
 | `pystep/` | PyStep（別案件） | 中高生向け無料の競技プログラミング学習アプリのLP。CDC AIの5事業とは別（岸田さん開発・富田さん経由の依頼）だが、同じデザイン・実装パターンで作成 |
+| `programming-school/` | 競技プログラミング教室（別案件・PyStepと対） | PyStepと対になる、情報オリンピック本戦出場を目指す有料・レッスン制の本科カリキュラムLP。CTAはフォーム→Slack Webhook通知（`SLACK_WEBHOOK_URL`要設定）。PyStepとは相互リンクなしの独立サイト |
 
 各アプリは Next.js (App Router) + TypeScript + Tailwind v4 + shadcn/ui。
 

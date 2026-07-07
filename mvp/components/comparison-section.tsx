@@ -67,7 +67,7 @@ const cellIconClass = {
 export function ComparisonSection() {
   return (
     <section className="mx-auto max-w-6xl px-5 pb-20 sm:pb-24">
-      <div className="overflow-x-auto rounded-2xl border border-border bg-card/40">
+      <div className="overflow-x-auto rounded-2xl border border-border bg-card">
         <table className="w-full min-w-[680px] border-collapse text-left">
           <thead>
             <tr className="border-b border-border">

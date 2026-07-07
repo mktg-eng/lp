@@ -46,7 +46,7 @@ export function LoopSection() {
       <div className="mt-14 flex flex-col items-stretch gap-3 lg:flex-row lg:items-stretch">
         {steps.map((step, index) => (
           <Fragment key={step.title}>
-            <div className="group relative flex flex-1 flex-col gap-4 rounded-2xl border border-border bg-card/60 p-6 transition-colors hover:border-primary/40">
+            <div className="group relative flex flex-1 flex-col gap-4 rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/40">
               <div className="flex items-center justify-between">
                 <span className="flex size-12 items-center justify-center rounded-xl bg-brand-soft text-primary">
                   <step.icon className="size-5.5" aria-hidden />

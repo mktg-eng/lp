@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { CopyPlus } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
+import { SERVICE_NAME } from '@/lib/site'
 
 const navItems = [
   { label: '課題', href: '#problems' },
@@ -23,7 +24,7 @@ export function SiteHeader() {
           <span className="text-sm font-semibold tracking-tight">
             CDC&nbsp;AI
             <span className="ml-1.5 hidden text-muted-foreground sm:inline">
-              コピーできる集客
+              {SERVICE_NAME}
             </span>
           </span>
         </Link>

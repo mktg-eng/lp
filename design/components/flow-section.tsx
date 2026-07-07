@@ -1,32 +1,32 @@
-import { MessagesSquare, Search, MonitorSmartphone, GraduationCap, LifeBuoy } from 'lucide-react'
+import { FileSignature, Handshake, MessageSquareText, Palette, PackageCheck } from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
 
 const steps = [
   {
-    icon: MessagesSquare,
-    title: 'ヒアリング',
-    description: '開発体制や課題、目指したい状態をお伺いします。',
+    icon: FileSignature,
+    title: 'ご契約',
+    description: 'プランを選んでお申し込み。契約は月単位で、いつでも解約できます。',
   },
   {
-    icon: Search,
-    title: '環境調査',
-    description: '既存のツールやコードベース、権限構成を確認します。',
+    icon: Handshake,
+    title: 'キックオフ',
+    description: '専用チャットを開設。ブランドのトーンや素材、依頼の進め方をすり合わせます。',
   },
   {
-    icon: MonitorSmartphone,
-    title: 'リモート設定',
-    description: 'Anydesk を用いてリモートで環境・設定を構築します。',
+    icon: MessageSquareText,
+    title: 'チャットで依頼',
+    description: '依頼内容をチャットに送るだけ。迷わず書ける依頼フォーマットもご用意します。',
   },
   {
-    icon: GraduationCap,
-    title: 'レクチャー',
-    description: '操作方法や運用のポイントをチームへご説明します。',
+    icon: Palette,
+    title: '初稿のご提出',
+    description: '着手から目安◯営業日で初稿をご提出します。内容により前後します。',
   },
   {
-    icon: LifeBuoy,
-    title: '運用サポート',
-    description: '導入後の調整やご相談にも継続して対応します。',
+    icon: PackageCheck,
+    title: '修正・納品',
+    description: 'フィードバックを反映して仕上げ、データを納品。完了次第、次の依頼に着手します。',
   },
 ]
 
@@ -34,13 +34,13 @@ export function FlowSection() {
   return (
     <section
       id="flow"
-      className="relative border-y border-border bg-card/30"
+      className="relative border-y border-border bg-muted/60"
     >
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
-          eyebrow="設定の流れ"
-          title="ご相談から運用まで、5つのステップ"
-          description="リモート中心で進めるため、遠隔地の企業でもスムーズに導入いただけます。"
+          eyebrow="ご利用の流れ"
+          title="契約から納品まで、5つのステップ"
+          description="やり取りはすべてオンラインで完結。日々の依頼はチャットだけで進みます。"
         />
 
         <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">

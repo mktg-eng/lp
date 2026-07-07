@@ -2,17 +2,17 @@ import Link from 'next/link'
 import { ArrowRight, Sparkles, TrendingUp, Copy } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
+import { COMPANY } from '@/lib/site'
 
 export function HeroSection() {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_top,black,transparent_72%)]" aria-hidden />
-      <div className="absolute -top-32 left-1/4 -z-0 h-72 w-[34rem] -translate-x-1/2 rounded-full bg-primary/25 blur-3xl" aria-hidden />
-      <div className="absolute -top-24 right-1/4 -z-0 h-64 w-[30rem] translate-x-1/2 rounded-full bg-accent/15 blur-3xl" aria-hidden />
+      <div className="absolute -top-24 right-1/4 -z-0 h-64 w-[30rem] translate-x-1/2 rounded-full bg-accent/10 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16 sm:pt-28 sm:pb-24">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3.5 py-1.5 font-mono text-xs text-accent">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 font-mono text-xs text-accent">
             <Sparkles className="size-3.5" aria-hidden />
             AI × フォーム営業で新規開拓
           </span>
@@ -50,7 +50,7 @@ export function HeroSection() {
           </div>
 
           <p className="mt-4 font-mono text-xs text-muted-foreground">
-            提供：株式会社CDC AI
+            提供：{COMPANY}
           </p>
         </div>
 
@@ -72,7 +72,7 @@ const bars = [34, 46, 41, 58, 52, 70, 66, 84, 92]
 
 function GrowthPreview() {
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-card/80 shadow-2xl shadow-primary/10">
+    <div className="overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-black/5">
       <div className="flex items-center justify-between gap-2 border-b border-border px-4 py-3">
         <div className="flex items-center gap-2">
           <span className="size-2.5 rounded-full bg-primary/70" aria-hidden />

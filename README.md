@@ -1,7 +1,7 @@
 # cdc-ai-lp — 株式会社CDC AI 新規事業LP（モノレポ）
 
-1つのリポジトリに、3事業のランディングページ（独立したNext.jsアプリ）を格納する。
-Vercelでは「Root Directory」を各サブフォルダに指定して、**1リポジトリ→3プロジェクト（3URL）**として個別にデプロイする。
+1つのリポジトリに、5事業のランディングページ（独立したNext.jsアプリ）を格納する。
+Vercelでは「Root Directory」を各サブフォルダに指定して、**1リポジトリ→5プロジェクト（5URL）**として個別にデプロイする。
 
 ## 構成
 
@@ -10,6 +10,8 @@ Vercelでは「Root Directory」を各サブフォルダに指定して、**1リ
 | `claude-code/` | ① Claude Code導入支援＋サブエージェント設定 | 導入・設定代行（Anydeskリモート） |
 | `mvp/` | ② AI開発：MVP相見積もり | 動くMVPを無料→相見積もりで本開発費を下げる |
 | `marketing/` | ③ デジタルマーケ：コピーできる集客 | AIでLP量産→フォーム営業（Sygnal連携） |
+| `design/` | ④ 定額制デザインサービス | 月額定額でデザイン依頼し放題（サービス名は仮） |
+| `articles/` | ⑤ SEO・AIO記事作成代行 | AI×人のハイブリッドで記事量産（サービス名は仮） |
 
 各アプリは Next.js (App Router) + TypeScript + Tailwind v4 + shadcn/ui。
 
@@ -25,9 +27,9 @@ npm run dev
 
 1. このリポジトリをGitHubにpush
 2. Vercelで「New Project」→ 同じリポジトリを選択
-3. **Root Directory** を `claude-code`（or `mvp` / `marketing`）に設定
+3. **Root Directory** を `claude-code`（or `mvp` / `marketing` / `design` / `articles`）に設定
 4. Deploy → 各アプリ専用のURLが発行される
-5. ②③も同様にプロジェクトを作成（計3プロジェクト）
+5. 他のアプリも同様にプロジェクトを作成（計5プロジェクト）。環境変数 `SLACK_WEBHOOK_URL` を各プロジェクトに設定
 
 push時はVercelのモノレポ検知で、変更があったアプリのみ再デプロイされる。
 

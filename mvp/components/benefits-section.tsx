@@ -31,7 +31,7 @@ const items = [
 
 export function BenefitsSection() {
   return (
-    <section id="results" className="relative border-y border-border bg-card/30">
+    <section id="results" className="relative border-y border-border bg-muted/60">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
           eyebrow="実績・信頼"
@@ -43,7 +43,7 @@ export function BenefitsSection() {
           {items.map((item) => (
             <div
               key={item.title}
-              className="flex gap-5 rounded-xl border border-border bg-background/60 p-6 sm:p-7"
+              className="flex gap-5 rounded-xl border border-border bg-background p-6 sm:p-7"
             >
               <span className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-primary">
                 <item.icon className="size-5.5" aria-hidden />

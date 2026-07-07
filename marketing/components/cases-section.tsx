@@ -1,6 +1,7 @@
 import { Newspaper, Briefcase, Building2 } from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
+import { SERVICE_NAME } from '@/lib/site'
 
 const cases = [
   {
@@ -37,19 +38,19 @@ const cases = [
 
 export function CasesSection() {
   return (
-    <section id="cases" className="relative border-y border-border bg-card/30">
+    <section id="cases" className="relative border-y border-border bg-muted/60">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
           eyebrow="適用事例"
           title="こんな新規開拓に使えます"
-          description="求職者メディアから人材紹介、自社サービスまで。ターゲットに合わせて“コピーできる集客”を展開します。"
+          description={`求職者メディアから人材紹介、自社サービスまで。ターゲットに合わせて“${SERVICE_NAME}”を展開します。`}
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {cases.map((item, index) => (
             <div
               key={item.title}
-              className="flex flex-col gap-5 rounded-2xl border border-border bg-background/60 p-7"
+              className="flex flex-col gap-5 rounded-2xl border border-border bg-background p-7"
             >
               <div className="flex items-center justify-between">
                 <span className="flex size-12 items-center justify-center rounded-xl bg-brand-soft text-primary">

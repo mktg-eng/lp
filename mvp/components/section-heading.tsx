@@ -25,7 +25,7 @@ export function SectionHeading({
         className,
       )}
     >
-      <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 font-mono text-xs tracking-wide text-accent">
+      <span className="inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
         <span className="size-1.5 rounded-full bg-accent" aria-hidden />
         {eyebrow}
       </span>

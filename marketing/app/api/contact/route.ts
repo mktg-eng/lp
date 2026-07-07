@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 
-const SERVICE = 'コピーできる集客（デジタルマーケティング）'
+import { SERVICE_NAME } from '@/lib/site'
+
+const SERVICE = `${SERVICE_NAME}（デジタルマーケティング）`
 
 export async function POST(request: Request) {
   try {

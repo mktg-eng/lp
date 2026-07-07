@@ -33,7 +33,7 @@ export function BenefitsSection() {
   return (
     <section
       id="benefits"
-      className="relative border-y border-border bg-card/30"
+      className="relative border-y border-border bg-muted/60"
     >
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
@@ -46,9 +46,9 @@ export function BenefitsSection() {
           {benefits.map((item) => (
             <div
               key={item.title}
-              className="flex gap-5 rounded-xl border border-border bg-background/60 p-6 sm:p-7"
+              className="flex gap-5 rounded-xl border border-border bg-background p-6 sm:p-7"
             >
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-primary">
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                 <item.icon className="size-5.5" aria-hidden />
               </span>
               <div className="flex flex-col gap-2">

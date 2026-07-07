@@ -34,7 +34,7 @@ export function FlowSection() {
   return (
     <section
       id="flow"
-      className="relative border-y border-border bg-card/30"
+      className="relative border-y border-border bg-muted/60"
     >
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading

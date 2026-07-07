@@ -7,11 +7,11 @@ export function HeroSection() {
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_top,black,transparent_72%)]" aria-hidden />
-      <div className="absolute -top-32 left-1/2 -z-0 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-primary/20 blur-3xl" aria-hidden />
+      <div className="absolute -top-32 left-1/2 -z-0 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16 sm:pt-28 sm:pb-24">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3.5 py-1.5 font-mono text-xs text-accent">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 font-mono text-xs text-accent">
             <Sparkles className="size-3.5" aria-hidden />
             AIエージェントで開発を自動化
           </span>
@@ -64,38 +64,38 @@ export function HeroSection() {
 
 function TerminalPreview() {
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-card/80 shadow-2xl shadow-primary/5">
-      <div className="flex items-center gap-2 border-b border-border px-4 py-3">
-        <span className="size-2.5 rounded-full bg-destructive/70" aria-hidden />
-        <span className="size-2.5 rounded-full bg-accent/60" aria-hidden />
-        <span className="size-2.5 rounded-full bg-primary/60" aria-hidden />
-        <span className="ml-2 font-mono text-xs text-muted-foreground">
+    <div className="overflow-hidden rounded-xl border border-border bg-[oklch(0.21_0.02_256)] shadow-lg shadow-black/5">
+      <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
+        <span className="size-2.5 rounded-full bg-white/20" aria-hidden />
+        <span className="size-2.5 rounded-full bg-white/20" aria-hidden />
+        <span className="size-2.5 rounded-full bg-white/20" aria-hidden />
+        <span className="ml-2 font-mono text-xs text-white/50">
           claude-code · sub-agents
         </span>
       </div>
       <div className="space-y-2 p-5 font-mono text-[13px] leading-relaxed">
-        <p className="text-muted-foreground">
-          <span className="text-accent">$</span> claude agents list
+        <p className="text-white/55">
+          <span className="text-[oklch(0.72_0.12_250)]">$</span> claude agents list
         </p>
-        <p className="text-foreground">
-          <span className="text-primary">reviewer</span>{' '}
+        <p className="text-white/80">
+          <span className="text-white">reviewer</span>{' '}
           コードレビュー担当エージェント{' '}
-          <span className="text-accent">● ready</span>
+          <span className="text-[oklch(0.72_0.12_250)]">● ready</span>
         </p>
-        <p className="text-foreground">
-          <span className="text-primary">tester</span>{'   '}
+        <p className="text-white/80">
+          <span className="text-white">tester</span>{'   '}
           テスト生成エージェント{'      '}
-          <span className="text-accent">● ready</span>
+          <span className="text-[oklch(0.72_0.12_250)]">● ready</span>
         </p>
-        <p className="text-foreground">
-          <span className="text-primary">docs</span>{'      '}
+        <p className="text-white/80">
+          <span className="text-white">docs</span>{'      '}
           ドキュメント整備エージェント{'  '}
-          <span className="text-accent">● ready</span>
+          <span className="text-[oklch(0.72_0.12_250)]">● ready</span>
         </p>
-        <p className="text-muted-foreground">
-          <span className="text-accent">$</span> MCP / 権限設定{' '}
-          <span className="text-accent">完了</span>
-          <span className="ml-1 inline-block h-4 w-2 animate-pulse bg-foreground/70 align-middle" aria-hidden />
+        <p className="text-white/55">
+          <span className="text-[oklch(0.72_0.12_250)]">$</span> MCP / 権限設定{' '}
+          <span className="text-[oklch(0.72_0.12_250)]">完了</span>
+          <span className="ml-1 inline-block h-4 w-2 animate-pulse bg-white/70 align-middle" aria-hidden />
         </p>
       </div>
     </div>

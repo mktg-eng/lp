@@ -43,7 +43,7 @@ export function FaqSection() {
             <div
               key={faq.question}
               className={cn(
-                'rounded-xl border bg-card/60 transition-colors',
+                'rounded-xl border bg-card transition-colors',
                 isOpen ? 'border-accent/40' : 'border-border',
               )}
             >

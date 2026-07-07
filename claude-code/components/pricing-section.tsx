@@ -61,8 +61,8 @@ export function PricingSection() {
             className={cn(
               'relative flex flex-col gap-6 rounded-2xl border p-7 sm:p-8',
               plan.featured
-                ? 'border-accent/60 bg-card shadow-xl shadow-primary/10'
-                : 'border-border bg-card/50',
+                ? 'border-accent/60 bg-card shadow-lg shadow-black/5'
+                : 'border-border bg-card',
             )}
           >
             {plan.featured ? (

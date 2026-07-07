@@ -44,7 +44,7 @@ export function ServicesSection() {
         {services.map((service) => (
           <div
             key={service.title}
-            className="flex flex-col gap-6 rounded-2xl border border-border bg-card/60 p-7 sm:p-8"
+            className="flex flex-col gap-6 rounded-2xl border border-border bg-card p-7 sm:p-8"
           >
             <div className="flex items-center gap-4">
               <span className="flex size-12 items-center justify-center rounded-xl bg-primary text-lg font-semibold text-primary-foreground">

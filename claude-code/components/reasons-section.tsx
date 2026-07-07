@@ -35,10 +35,10 @@ export function ReasonsSection() {
         {reasons.map((item, index) => (
           <div
             key={item.title}
-            className="flex flex-col gap-5 rounded-xl border border-border bg-card/60 p-7"
+            className="flex flex-col gap-5 rounded-xl border border-border bg-card p-7"
           >
             <div className="flex items-center justify-between">
-              <span className="flex size-12 items-center justify-center rounded-xl bg-primary/15 text-primary">
+              <span className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <item.icon className="size-5.5" aria-hidden />
               </span>
               <span className="font-mono text-sm text-muted-foreground/50">

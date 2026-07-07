@@ -42,9 +42,9 @@ export function ProblemsSection() {
         {problems.map((item) => (
           <div
             key={item.title}
-            className="group flex flex-col gap-4 rounded-xl border border-border bg-card/60 p-6 transition-colors hover:border-accent/40"
+            className="group flex flex-col gap-4 rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/40"
           >
-            <span className="flex size-11 items-center justify-center rounded-lg border border-border bg-secondary/60 text-accent">
+            <span className="flex size-11 items-center justify-center rounded-lg border border-border bg-secondary text-accent">
               <item.icon className="size-5" aria-hidden />
             </span>
             <h3 className="text-base font-semibold">{item.title}</h3>

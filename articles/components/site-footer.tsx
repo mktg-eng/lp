@@ -7,6 +7,7 @@ const footerLinks = [
   { label: 'お悩み', href: '#problems' },
   { label: 'サービス', href: '#services' },
   { label: '料金', href: '#pricing' },
+  { label: 'オプション', href: '#options' },
   { label: 'FAQ', href: '#faq' },
   { label: 'お問い合わせ', href: '#contact' },
 ]
@@ -24,7 +25,7 @@ export function SiteFooter() {
           </div>
           <p className="text-sm leading-relaxed text-muted-foreground">
             {SERVICE_NAME}。検索エンジンとAI検索の両方を見据えた記事を、
-            AIの下書き×人の編集で継続的にお届けします。
+            採点とファクトチェックを通った品質で継続的にお届けします。
           </p>
         </div>
 

@@ -26,8 +26,8 @@ export function HeroSection() {
 
           <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
             SEOだけでなく、AI検索（AIO）からの流入も見据えた記事を、
-            AIの下書き×人の編集で継続的に量産。
-            戦略設計からCV導線、公開後の改善まで丸ごと代行します。
+            企画から執筆・投稿・公開後の改善まで丸ごと代行。
+            記事単価2万円〜（目安）で、品質と本数を両立します。
           </p>
 
           <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row">
@@ -64,13 +64,13 @@ export function HeroSection() {
   )
 }
 
-const pipelineStages = ['企画', '執筆', '校閲', '公開']
+const pipelineStages = ['企画', '執筆', '採点', '校閲', '公開']
 
 const pipelineRows = [
-  { title: '基礎解説：はじめての◯◯', stage: 3, label: '公開済み' },
-  { title: '比較ガイド：◯◯の選び方', stage: 2, label: '校閲中' },
-  { title: '事例解説：◯◯導入の流れ', stage: 1, label: '執筆中' },
-  { title: 'Q&A：◯◯のよくある疑問', stage: 0, label: '企画中' },
+  { title: '基礎解説：はじめての◯◯', stage: 4, label: '公開済み' },
+  { title: '比較ガイド：◯◯の選び方', stage: 3, label: '校閲中' },
+  { title: '事例解説：◯◯導入の流れ', stage: 2, label: '採点中' },
+  { title: 'Q&A：◯◯のよくある疑問', stage: 1, label: '執筆中' },
 ]
 
 function PipelineBoardPreview() {
@@ -112,12 +112,12 @@ function PipelineBoardPreview() {
             <span
               className={cn(
                 'inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-0.5 font-mono text-[11px]',
-                row.stage === 3
+                row.stage === 4
                   ? 'bg-accent/10 text-accent'
                   : 'bg-secondary text-muted-foreground',
               )}
             >
-              {row.stage === 3 ? (
+              {row.stage === 4 ? (
                 <CheckCircle2 className="size-3" aria-hidden />
               ) : (
                 <span className="size-1.5 rounded-full bg-current" aria-hidden />

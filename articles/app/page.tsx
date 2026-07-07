@@ -6,6 +6,7 @@ import { ServicesSection } from '@/components/services-section'
 import { FlowSection } from '@/components/flow-section'
 import { ReasonsSection } from '@/components/reasons-section'
 import { PricingSection } from '@/components/pricing-section'
+import { OptionsSection } from '@/components/options-section'
 import { FaqSection } from '@/components/faq-section'
 import { ContactSection } from '@/components/contact-section'
 import { SiteFooter } from '@/components/site-footer'
@@ -22,6 +23,7 @@ export default function Page() {
         <FlowSection />
         <ReasonsSection />
         <PricingSection />
+        <OptionsSection />
         <FaqSection />
         <ContactSection />
       </main>

@@ -1,62 +1,68 @@
-import { Check, Compass, FileText, MousePointerClick, LineChart } from 'lucide-react'
+import {
+  Check,
+  Database,
+  PenLine,
+  Code2,
+  Gauge,
+  SearchCheck,
+} from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
 
-const services = [
+const stages = [
   {
-    badge: 'A',
-    icon: Compass,
-    title: '戦略設計',
+    step: '01',
+    icon: Database,
+    title: '情報取得',
     description:
-      '商材と競合を踏まえてキーワードを選定し、サイト全体のコンテンツ戦略を描きます。',
+      '書く前の下ごしらえ。外部の最新情報と、貴社にしかない一次情報を揃えます。',
     items: [
-      '商材・競合を踏まえたキーワード調査',
-      '検索意図とAI回答を意識したトピック設計',
-      'サイト構造・内部リンクの方針策定',
-      '記事ごとの狙いと目標の整理（目安設定）',
-      'コンテンツカレンダーの作成',
+      '外部から最新情報を収集してインプット',
+      '商品情報・サイト・資料など貴社独自情報も反映',
     ],
   },
   {
-    badge: 'B',
-    icon: FileText,
-    title: '記事制作',
+    step: '02',
+    icon: PenLine,
+    title: '記事執筆',
     description:
-      'AIの下書き×人の編集で、速さと品質を両立。必要に応じて専門家監修も組み合わせます。',
+      '記事の種類ごとに、最も性能を発揮できるAIモデルを選んで執筆します。',
     items: [
-      'AIによる構成案・下書きの高速作成',
-      '編集者による事実確認とリライト',
-      '必要に応じた専門家監修の手配',
-      '図表・画像の挿入と読みやすい装飾',
-      'CMSへの入稿・公開作業まで代行',
+      '記事に応じて最適なAIモデルを内部で選択',
+      'AIが読み取りやすい構造化で、AI検索対策にも対応',
     ],
   },
   {
-    badge: 'C',
-    icon: MousePointerClick,
-    title: 'CV設計',
+    step: '03',
+    icon: Code2,
+    title: 'コーディング',
     description:
-      '読んで終わりにしない。問い合わせ・購入へ進んでもらうための仕掛けをつくります。',
+      'そのままCMSに貼り付けて公開できる形に整えてお渡しします。',
     items: [
-      '記事内CTAの設計・配置',
-      '比較表・料金表など判断を助けるコンテンツ',
-      '診断・チェックリスト型コンテンツの企画',
-      '問い合わせフォームまでの導線整理',
-      'CVポイントの計測設計',
+      'コピペ投稿できるHTMLタグ付きで納品',
+      '見出し・装飾を整え、入稿の手間を削減',
     ],
   },
   {
-    badge: 'D',
-    icon: LineChart,
-    title: '運用伴走',
+    step: '04',
+    icon: Gauge,
+    title: '採点',
     description:
-      '公開後のデータをもとに、リライトと追加提案を継続。育つメディアに変えていきます。',
+      '貴社ごとに設定した採点基準でチェックし、届かない原稿は出しません。',
     items: [
-      '月次レポートと定例のふりかえり',
-      '順位・流入データに基づくリライト',
-      '内部リンク・回遊の継続改善',
-      '新規トピックの追加提案',
-      'AI検索での見え方のモニタリング',
+      '採点基準は会社ごとに設定し、運用しながら更新',
+      '基準未満（目安80点未満）の記事は書き直し',
+    ],
+  },
+  {
+    step: '05',
+    icon: SearchCheck,
+    title: 'ファクトチェック',
+    description:
+      '検索連動型のAIツールで事実関係を照合し、抜け漏れを防ぎます。',
+    items: [
+      '数値・固有名詞・最新性を検索結果と突き合わせ',
+      '疑わしい記述は修正・出典確認のうえで納品',
     ],
   },
 ]
@@ -66,35 +72,34 @@ export function ServicesSection() {
     <section id="services" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <SectionHeading
         eyebrow="サービス内容"
-        title="4つの柱で、記事づくりを丸ごと代行"
-        description="戦略から制作、CV設計、公開後の運用まで。必要な範囲だけの組み合わせもご相談いただけます。"
+        title="5段階の制作パイプラインで品質を担保"
+        description="1本の記事は、情報取得から採点・ファクトチェックまで5つの工程を通ってから納品されます。"
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-2">
-        {services.map((service) => (
+      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {stages.map((stage) => (
           <div
-            key={service.title}
-            className="flex flex-col gap-6 rounded-2xl border border-border bg-card p-7 sm:p-8"
+            key={stage.title}
+            className="flex flex-col gap-5 rounded-2xl border border-border bg-card p-7"
           >
             <div className="flex items-center gap-4">
-              <span className="flex size-12 items-center justify-center rounded-xl bg-primary text-lg font-semibold text-primary-foreground">
-                {service.badge}
+              <span className="flex size-12 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                <stage.icon className="size-5" aria-hidden />
               </span>
               <div>
-                <div className="flex items-center gap-2 text-accent">
-                  <service.icon className="size-4" aria-hidden />
-                  <span className="font-mono text-xs">SERVICE {service.badge}</span>
-                </div>
-                <h3 className="text-xl font-semibold">{service.title}</h3>
+                <span className="font-mono text-xs text-accent">
+                  STEP {stage.step}
+                </span>
+                <h3 className="text-xl font-semibold">{stage.title}</h3>
               </div>
             </div>
 
             <p className="text-sm leading-relaxed text-muted-foreground">
-              {service.description}
+              {stage.description}
             </p>
 
-            <ul className="flex flex-col gap-3 border-t border-border pt-6">
-              {service.items.map((item) => (
+            <ul className="flex flex-col gap-3 border-t border-border pt-5">
+              {stage.items.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm">
                   <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
                     <Check className="size-3.5" aria-hidden />
@@ -105,6 +110,15 @@ export function ServicesSection() {
             </ul>
           </div>
         ))}
+
+        <div className="flex flex-col justify-center gap-3 rounded-2xl border border-dashed border-accent/40 bg-accent/5 p-7">
+          <h3 className="text-base font-semibold">
+            使うAIは、固定しません
+          </h3>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            使用するAIツール・モデルは、メディアの特性やご要望、記事の種類に合わせて内部で随時見直しています。特定のツールに縛られず、その時点で最適な組み合わせで制作します。
+          </p>
+        </div>
       </div>
     </section>
   )

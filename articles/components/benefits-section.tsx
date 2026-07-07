@@ -1,31 +1,25 @@
-import { Search, Coins, MousePointerClick, LineChart } from 'lucide-react'
+import { BadgeCheck, Inbox, GraduationCap } from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
 
 const benefits = [
   {
-    icon: Search,
-    title: 'SEO×AIOの両取りを想定',
+    icon: BadgeCheck,
+    title: '高品質',
     description:
-      '検索エンジン向けの構成に加えて、AIが引用しやすい結論先出し・要約・Q&Aの形も意識して執筆。検索結果とAIの回答、両方からの流入を狙います（想定）。',
+      '記事ごとに相性のよいAIモデルを選んで執筆し、独自の採点基準に届かない原稿は提出せずに書き直します。仕上げには専門家・編集者の目も通すため、「生成しただけ」の記事は納品しません。',
   },
   {
-    icon: Coins,
-    title: '低コストで本数を確保（目安）',
+    icon: Inbox,
+    title: '手間いらず',
     description:
-      'AIが下書きを担うことで、人がゼロから書くより制作コストを抑えやすく、月あたりの本数も確保しやすくなります（目安であり、内容により変動します）。',
+      'キーワードの企画から執筆・投稿、公開後の分析と改善提案まで、記事運用の一連をまるごとお任せいただけます。社内のリソース状況にかかわらず、今の体制のまま始められます。',
   },
   {
-    icon: MousePointerClick,
-    title: 'CVまでの動線を設計',
+    icon: GraduationCap,
+    title: 'ノウハウが残る',
     description:
-      '記事単体で終わらせず、CTAの配置や比較表・診断コンテンツなど、問い合わせ・購入までの道筋をセットで設計します。',
-  },
-  {
-    icon: LineChart,
-    title: '公開後も月次で改善',
-    description:
-      '順位や流入の状況を見ながら、リライトや内部リンクの調整を毎月継続。記事を出しっぱなしにしません。',
+      '毎月の定例ミーティングと、制作過程を記録した記事作成シートを通じて、判断基準や改善の考え方を貴社に共有。契約が終わったあとも自走できる状態づくりを目指します。',
   },
 ]
 
@@ -38,25 +32,28 @@ export function BenefitsSection() {
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
           eyebrow="提供価値"
-          title="「量産」と「品質」を、両立させる"
-          description="AIと人の分業を前提に設計しているから、スピードと確かさを同時に追えます。"
+          title="品質・手離れ・再現性を、まとめて"
+          description="AIと人の役割分担を前提に設計したサービスだから、3つの価値を同時に提供できます。"
         />
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          {benefits.map((item) => (
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {benefits.map((item, index) => (
             <div
               key={item.title}
-              className="flex gap-5 rounded-xl border border-border bg-background p-6 sm:p-7"
+              className="flex flex-col gap-5 rounded-2xl border border-border bg-background p-7"
             >
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-primary">
-                <item.icon className="size-5.5" aria-hidden />
-              </span>
-              <div className="flex flex-col gap-2">
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {item.description}
-                </p>
+              <div className="flex items-center justify-between">
+                <span className="flex size-12 items-center justify-center rounded-xl bg-primary/15 text-primary">
+                  <item.icon className="size-5.5" aria-hidden />
+                </span>
+                <span className="font-mono text-sm text-muted-foreground/50">
+                  0{index + 1}
+                </span>
               </div>
+              <h3 className="text-lg font-semibold">{item.title}</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {item.description}
+              </p>
             </div>
           ))}
         </div>

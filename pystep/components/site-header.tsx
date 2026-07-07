@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Sparkles } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
-import { LOGIN_URL } from '@/lib/site'
+import { APP_URL } from '@/lib/site'
 
 const navItems = [
   { label: 'お悩み', href: '#problems' },
@@ -40,7 +40,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Button size="lg" nativeButton={false} render={<Link href={LOGIN_URL} />}>
+        <Button size="lg" nativeButton={false} render={<Link href={APP_URL} />}>
           無料で始める
         </Button>
       </div>

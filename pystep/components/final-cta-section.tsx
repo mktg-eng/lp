@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
-import { APP_URL, LOGIN_URL } from '@/lib/site'
+import { APP_URL } from '@/lib/site'
 
 const points = ['登録は1分・費用は無料', '環境構築は不要、ブラウザだけ', '進捗はログインすると自動で保存']
 
@@ -42,19 +42,10 @@ export function FinalCtaSection() {
             size="lg"
             className="h-12 px-6 text-base"
             nativeButton={false}
-            render={<Link href={LOGIN_URL} />}
+            render={<Link href={APP_URL} />}
           >
             無料で始める
             <ArrowRight className="size-4" aria-hidden />
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="h-12 px-6 text-base"
-            nativeButton={false}
-            render={<Link href={APP_URL} />}
-          >
-            30秒だけ試してみる
           </Button>
         </div>
       </div>

@@ -49,12 +49,6 @@ export function SiteFooter() {
           >
             PyStepを開く
           </Link>
-          <Link
-            href={`${APP_URL}/login`}
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            ログイン・新規登録
-          </Link>
         </nav>
       </div>
 

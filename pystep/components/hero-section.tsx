@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, Sparkles } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
-import { LOGIN_URL } from '@/lib/site'
+import { APP_URL } from '@/lib/site'
 
 export function HeroSection() {
   return (
@@ -34,7 +34,7 @@ export function HeroSection() {
               size="lg"
               className="h-12 px-6 text-base"
               nativeButton={false}
-              render={<Link href={LOGIN_URL} />}
+              render={<Link href={APP_URL} />}
             >
               無料で始める
               <ArrowRight className="size-4" aria-hidden />

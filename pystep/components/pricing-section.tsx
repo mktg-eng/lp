@@ -3,7 +3,7 @@ import { Check } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { SectionHeading } from '@/components/section-heading'
-import { LOGIN_URL } from '@/lib/site'
+import { APP_URL } from '@/lib/site'
 
 const features = [
   'Python文法・競プロ入門・基礎編・上級編の全コース',
@@ -56,7 +56,7 @@ export function PricingSection() {
             size="lg"
             className="h-11 w-full"
             nativeButton={false}
-            render={<Link href={LOGIN_URL} />}
+            render={<Link href={APP_URL} />}
           >
             無料で始める
           </Button>

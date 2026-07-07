@@ -74,9 +74,10 @@ export default function ServicePage() {
                     ))}
                   </div>
 
-                  {/* NOTE: 各LPの公開URL（Vercel）確定後、lib/services.ts の href を差し替える */}
                   <Link
                     href={service.href}
+                    target="_blank"
+                    rel="noopener"
                     className="group inline-flex items-center gap-1.5 text-sm text-primary transition-colors hover:text-primary/70"
                   >
                     サービスサイトへ

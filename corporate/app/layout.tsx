@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: '株式会社CDC AI｜AIを、実務で使える形にして届ける',
   description:
-    '株式会社CDC AI（旧社名：コーポレート・デジタルコミュニケーションズ株式会社）は、AI導入、開発、集客、デザイン、コンテンツの領域で、AIの力を企業の現場で成果につなげるサービスカンパニーです。Claude Code導入支援、MVP開発、BtoBリード獲得支援、定額制デザイン、SEO・AIO記事作成代行を提供しています。',
+    '株式会社CDC AIは、AI導入、開発、集客、デザイン、コンテンツの領域で、AIの力を企業の現場で成果につなげるサービスカンパニーです。Claude Code導入支援、MVP開発、BtoBリード獲得支援、定額制デザイン、SEO・AIO記事作成代行を提供しています。',
   icons: {
     icon: [
       {

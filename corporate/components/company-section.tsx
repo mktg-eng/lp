@@ -1,10 +1,9 @@
 import { SectionHeading } from '@/components/section-heading'
-import { COMPANY, FORMER_NAME } from '@/lib/site'
+import { COMPANY } from '@/lib/site'
 
 // NOTE: 「◯◯（確認中）」の項目は富田さんからの確定情報待ち。確定次第差し替える。
 const companyRows = [
   { label: '社名', value: COMPANY },
-  { label: '旧社名', value: FORMER_NAME },
   {
     label: '事業内容',
     value:

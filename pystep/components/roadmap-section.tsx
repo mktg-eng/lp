@@ -48,10 +48,10 @@ export function RoadmapSection() {
         {steps.map((step, index) => (
           <li key={step.title} className="relative flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <span className="flex size-11 items-center justify-center rounded-xl border border-border bg-card text-primary">
+              <span className="flex size-11 items-center justify-center rounded-xl bg-primary text-accent">
                 <step.icon className="size-5" aria-hidden />
               </span>
-              <span className="font-mono text-2xl font-semibold text-muted-foreground/50">
+              <span className="font-mono text-2xl font-semibold text-accent/70">
                 0{index + 1}
               </span>
             </div>

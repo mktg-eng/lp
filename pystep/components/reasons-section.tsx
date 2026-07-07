@@ -35,10 +35,10 @@ export function ReasonsSection() {
             className="flex flex-col gap-5 rounded-xl border border-border bg-card p-7"
           >
             <div className="flex items-center justify-between">
-              <span className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <span className="flex size-12 items-center justify-center rounded-xl bg-primary text-accent">
                 <item.icon className="size-5.5" aria-hidden />
               </span>
-              <span className="font-mono text-sm text-muted-foreground/50">
+              <span className="font-mono text-sm text-accent/70">
                 0{index + 1}
               </span>
             </div>

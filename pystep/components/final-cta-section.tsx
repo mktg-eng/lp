@@ -10,28 +10,28 @@ export function FinalCtaSection() {
   return (
     <section
       id="start"
-      className="relative overflow-hidden border-t border-border"
+      className="relative overflow-hidden bg-[var(--navy-950)] text-white"
     >
-      <div className="absolute inset-0 bg-dots [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
-      <div className="absolute -bottom-40 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-accent/15 blur-3xl" aria-hidden />
+      <div className="absolute inset-0 bg-dots-light [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
+      <div className="absolute -bottom-40 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-[var(--gold-500)]/20 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-6 px-5 py-20 text-center sm:py-24">
-        <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card px-3 py-1 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
-          <span className="size-1.5 rounded-full bg-accent" aria-hidden />
+        <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 font-mono text-xs uppercase tracking-[0.12em] text-white/70">
+          <span className="size-1.5 rounded-full bg-[var(--gold-400)]" aria-hidden />
           Get Started
         </span>
-        <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+        <h2 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">
           まずは1問だけ遊んでみよう
         </h2>
-        <p className="max-w-md text-pretty leading-relaxed text-muted-foreground">
+        <p className="max-w-md text-pretty leading-relaxed text-white/65">
           ログイン前でも、コードを書いて実行する雰囲気を少しだけ体験できます。
           ログインすると、解いた問題・タイピング記録・道場の進捗が残ります。
         </p>
 
-        <ul className="flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:gap-6">
+        <ul className="flex flex-col gap-2 text-sm text-white/65 sm:flex-row sm:gap-6">
           {points.map((point) => (
             <li key={point} className="flex items-center justify-center gap-2">
-              <CheckCircle2 className="size-4 shrink-0 text-accent" aria-hidden />
+              <CheckCircle2 className="size-4 shrink-0 text-[var(--gold-400)]" aria-hidden />
               {point}
             </li>
           ))}
@@ -40,7 +40,7 @@ export function FinalCtaSection() {
         <div className="mt-3 flex flex-col items-center gap-3 sm:flex-row">
           <Button
             size="lg"
-            className="h-12 px-6 text-base"
+            className="h-12 bg-[var(--gold-500)] px-6 text-base text-[var(--navy-950)] hover:bg-[var(--gold-400)]"
             nativeButton={false}
             render={<Link href={APP_URL} />}
           >

@@ -50,38 +50,47 @@
 
 :root {
   color-scheme: light;
-  --background: oklch(0.985 0.006 225);
-  --foreground: oklch(0.2 0.02 250);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.02 250);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.02 250);
-  --primary: oklch(0.29 0.05 250);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.96 0.008 230);
-  --secondary-foreground: oklch(0.29 0.05 250);
-  --muted: oklch(0.965 0.008 225);
-  --muted-foreground: oklch(0.51 0.02 250);
-  --accent: oklch(0.72 0.13 227);
-  --accent-foreground: oklch(0.99 0 0);
+  --background: #eef0ea;
+  --foreground: #1a1f2e;
+  --card: #ffffff;
+  --card-foreground: #1a1f2e;
+  --popover: #ffffff;
+  --popover-foreground: #1a1f2e;
+  --primary: #15213d;
+  --primary-foreground: #ffffff;
+  --secondary: #e3e6dd;
+  --secondary-foreground: #15213d;
+  --muted: #e6e8e0;
+  --muted-foreground: #545b70;
+  --accent: #c9a044;
+  --accent-foreground: #0e1830;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.91 0.008 225);
-  --input: oklch(0.91 0.008 225);
-  --ring: oklch(0.72 0.13 227);
-  --chart-1: oklch(0.72 0.13 227);
-  --chart-2: oklch(0.29 0.05 250);
-  --chart-3: oklch(0.5 0 0);
-  --chart-4: oklch(0.8 0.09 210);
-  --chart-5: oklch(0.7 0 0);
+  --border: #d8d9d0;
+  --input: #d8d9d0;
+  --ring: #c9a044;
+  --chart-1: #c9a044;
+  --chart-2: #15213d;
+  --chart-3: #545b70;
+  --chart-4: #57b8ea;
+  --chart-5: #d9ae55;
   --radius: 1rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.2 0.02 250);
-  --sidebar-primary: oklch(0.29 0.05 250);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.96 0.008 230);
-  --sidebar-accent-foreground: oklch(0.29 0.05 250);
-  --sidebar-border: oklch(0.91 0.008 225);
-  --sidebar-ring: oklch(0.72 0.13 227);
+  --sidebar: #eef0ea;
+  --sidebar-foreground: #1a1f2e;
+  --sidebar-primary: #15213d;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e3e6dd;
+  --sidebar-accent-foreground: #15213d;
+  --sidebar-border: #d8d9d0;
+  --sidebar-ring: #c9a044;
+
+  /* PyStep固有の追加トークン（紺×ゴールドの型・参考: ProgLearn風LP案） */
+  --navy-950: #0e1830;
+  --navy-900: #15213d;
+  --navy-800: #1c2a4a;
+  --gold-600: #b8872c;
+  --gold-500: #c9a044;
+  --gold-400: #d9ae55;
+  --code-blue: #57b8ea;
 }
 
 @layer base {
@@ -105,5 +114,10 @@
 
 @utility bg-dots {
   background-image: radial-gradient(oklch(0 0 0 / 7%) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@utility bg-dots-light {
+  background-image: radial-gradient(oklch(1 0 0 / 10%) 1px, transparent 1px);
   background-size: 22px 22px;
 }

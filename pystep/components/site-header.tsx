@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Sparkles } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { APP_URL } from '@/lib/site'
@@ -17,8 +16,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <Link href="#top" className="flex items-center gap-2.5">
-          <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <Sparkles className="size-4" aria-hidden />
+          <span className="flex size-8 items-center justify-center rounded-lg bg-primary font-mono text-xs font-bold text-accent">
+            Py
           </span>
           <span className="text-sm font-semibold tracking-tight">
             Py<span className="text-accent">Step</span>

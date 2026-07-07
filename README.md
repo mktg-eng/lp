@@ -12,6 +12,7 @@ Vercelでは「Root Directory」を各サブフォルダに指定して、**1リ
 | `marketing/` | ③ デジタルマーケ：コピーできる集客 | AIでLP量産→フォーム営業（Sygnal連携） |
 | `design/` | ④ 定額制デザインサービス | 月額定額でデザイン依頼し放題（サービス名は仮） |
 | `articles/` | ⑤ SEO・AIO記事作成代行 | AI×人のハイブリッドで記事量産（サービス名は仮） |
+| `pystep/` | PyStep（別案件） | 中高生向け無料の競技プログラミング学習アプリのLP。CDC AIの5事業とは別（岸田さん開発・富田さん経由の依頼）だが、同じデザイン・実装パターンで作成 |
 
 各アプリは Next.js (App Router) + TypeScript + Tailwind v4 + shadcn/ui。
 

@@ -30,8 +30,8 @@ const STROKE = {
 const LOGOS: Record<ServiceLogoId, LogoDef> = {
   // ターミナルプロンプト: '>' シェブロン + '_' アンダースコア
   'claude-code': {
-    from: '#0064b9', // oklch(0.5 0.16 250)
-    to: '#184da3', // oklch(0.44 0.15 260)
+    from: '#d97757', // oklch(0.65 0.15 40) - Claudeのテラコッタオレンジ
+    to: '#b85c3e', // oklch(0.56 0.16 35)
     glyph: (
       <g {...STROKE}>
         <polyline points="19,21 30,31.5 19,42" />

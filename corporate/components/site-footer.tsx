@@ -9,7 +9,6 @@ const footerLinks = [
   { label: '私たちについて', href: '/#about' },
   { label: 'サービス', href: '/service' },
   { label: 'お知らせ', href: '/#news' },
-  { label: '採用', href: '/#join' },
   { label: '会社概要', href: '/#company' },
   { label: 'お問い合わせ', href: '/#contact' },
 ]

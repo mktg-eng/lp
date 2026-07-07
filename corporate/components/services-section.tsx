@@ -16,7 +16,7 @@ export function ServicesSection() {
         <SectionHeading
           en="Services"
           ja="サービス"
-          description="CDC AIが立ち上げ、運営している5つのサービス。それぞれが独立したサービスサイトを持ちます。"
+          description="CDC AIが立ち上げ、運営している5つのサービス。"
         />
 
         <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">

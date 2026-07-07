@@ -9,7 +9,6 @@ const navItems = [
   { label: '私たちについて', href: '/#about' },
   { label: 'サービス', href: '/service' },
   { label: 'お知らせ', href: '/#news' },
-  { label: '採用', href: '/#join' },
 ]
 
 export function SiteHeader() {

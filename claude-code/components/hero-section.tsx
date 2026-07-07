@@ -75,26 +75,26 @@ function TerminalPreview() {
       </div>
       <div className="space-y-2 p-5 font-mono text-[13px] leading-relaxed">
         <p className="text-white/55">
-          <span className="text-[oklch(0.72_0.12_250)]">$</span> claude agents list
+          <span className="text-[oklch(0.75_0.13_45)]">$</span> claude agents list
         </p>
         <p className="text-white/80">
           <span className="text-white">reviewer</span>{' '}
           コードレビュー担当エージェント{' '}
-          <span className="text-[oklch(0.72_0.12_250)]">● ready</span>
+          <span className="text-[oklch(0.75_0.13_45)]">● ready</span>
         </p>
         <p className="text-white/80">
           <span className="text-white">tester</span>{'   '}
           テスト生成エージェント{'      '}
-          <span className="text-[oklch(0.72_0.12_250)]">● ready</span>
+          <span className="text-[oklch(0.75_0.13_45)]">● ready</span>
         </p>
         <p className="text-white/80">
           <span className="text-white">docs</span>{'      '}
           ドキュメント整備エージェント{'  '}
-          <span className="text-[oklch(0.72_0.12_250)]">● ready</span>
+          <span className="text-[oklch(0.75_0.13_45)]">● ready</span>
         </p>
         <p className="text-white/55">
-          <span className="text-[oklch(0.72_0.12_250)]">$</span> MCP / 権限設定{' '}
-          <span className="text-[oklch(0.72_0.12_250)]">完了</span>
+          <span className="text-[oklch(0.75_0.13_45)]">$</span> MCP / 権限設定{' '}
+          <span className="text-[oklch(0.75_0.13_45)]">完了</span>
           <span className="ml-1 inline-block h-4 w-2 animate-pulse bg-white/70 align-middle" aria-hidden />
         </p>
       </div>

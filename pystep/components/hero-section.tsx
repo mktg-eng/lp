@@ -16,8 +16,8 @@ export function HeroSection() {
       <div className="absolute -top-32 left-1/2 -z-0 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-accent/15 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto max-w-6xl px-5 pt-16 pb-20 sm:pt-20 sm:pb-24">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="min-w-0">
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 font-mono text-xs text-muted-foreground">
               <span className="size-1.5 rounded-full bg-accent" aria-hidden />
               中高生向け・完全無料
@@ -61,7 +61,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative min-w-0">
             <CodePreview />
             <div className="absolute -top-5 -right-5 hidden w-40 rounded-2xl border border-border bg-card px-4 py-3.5 shadow-xl sm:block">
               <div className="text-2xl font-extrabold tabular-nums text-primary">5</div>
@@ -83,7 +83,7 @@ function CodePreview() {
         <span className="size-2.5 rounded-full bg-white/20" aria-hidden />
         <span className="ml-2 font-mono text-xs text-white/50">demo.py</span>
       </div>
-      <div className="space-y-2 p-5 font-mono text-[13px] leading-relaxed">
+      <div className="space-y-2 overflow-x-auto p-5 font-mono text-[13px] leading-relaxed whitespace-nowrap">
         <p className="text-white/80">
           <span className="text-[var(--code-blue)]">name</span> = <span className="text-white">&quot;PyStep&quot;</span>
         </p>

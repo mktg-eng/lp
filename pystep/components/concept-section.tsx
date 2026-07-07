@@ -3,8 +3,8 @@ const STEP_HEIGHTS = [32, 50, 68, 86, 100]
 export function ConceptSection() {
   return (
     <section className="border-y border-border bg-card">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 sm:py-24 lg:grid-cols-[1fr_0.85fr]">
-        <div>
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-5 py-20 sm:py-24 lg:grid-cols-[1fr_0.85fr]">
+        <div className="min-w-0">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 font-mono text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
             <span className="size-1.5 rounded-full bg-accent" aria-hidden />
             Concept

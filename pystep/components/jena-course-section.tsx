@@ -1,39 +1,42 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowUpRight } from 'lucide-react'
 
+import { Button } from '@/components/ui/button'
+import { SectionHeading } from '@/components/section-heading'
 import { JENA_COURSE_URL } from '@/lib/site'
 
 export function JenaCourseSection() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-      <div className="overflow-hidden rounded-2xl border border-border bg-[#002b6b] text-white">
-        <div className="flex flex-col gap-8 p-8 sm:p-10 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-col gap-4">
+      <SectionHeading
+        eyebrow="次のステップ"
+        title="本気で情報オリンピック本戦を目指すなら"
+        description="PyStepで身につけた力をさらに伸ばしたい方へ。運営元のイエナアカデミーが、講師とともに本戦出場を目指す本格コースも提供しています。"
+      />
+
+      <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-border bg-card p-7 sm:p-8">
+        <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
+          <div className="flex flex-col items-center gap-3 sm:items-start">
             <Image
-              src="/jena-academy-logo-footer.svg"
+              src="/jena-academy-logo.jpg"
               alt="イエナアカデミー"
-              width={223}
-              height={45}
-              className="h-9 w-auto"
+              width={945}
+              height={248}
+              className="h-8 w-auto"
             />
-            <h2 className="text-balance text-2xl font-bold tracking-tight sm:text-3xl">
-              本気で情報オリンピック本戦を目指すなら。
-            </h2>
-            <p className="max-w-xl text-pretty leading-relaxed text-white/70">
-              PyStepで身につけた力をさらに伸ばしたい方へ。イエナアカデミーの情報オリンピック対策コースでは、Python基礎からC++実装力まで、全7コースの本格カリキュラムでJOI本戦出場をサポートします。
+            <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+              Python基礎からC++実装力まで、全7コースの本格カリキュラムでJOI本戦出場をサポートする、イエナアカデミー 情報オリンピック対策コース。
             </p>
           </div>
 
-          <Link
-            href={JENA_COURSE_URL}
-            target="_blank"
-            rel="noopener"
-            className="group inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-[#e63946] px-6 py-3.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
+          <Button
+            size="lg"
+            className="h-11 shrink-0 px-6"
+            nativeButton={false}
+            render={<Link href={JENA_COURSE_URL} target="_blank" rel="noopener" />}
           >
             コースを見る
-            <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden />
-          </Link>
+          </Button>
         </div>
       </div>
     </section>

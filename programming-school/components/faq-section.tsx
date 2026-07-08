@@ -63,7 +63,7 @@ export function FaqSection() {
                 </span>
                 <Plus
                   className={cn(
-                    'size-5 shrink-0 text-accent transition-transform duration-200',
+                    'size-5 shrink-0 text-primary transition-transform duration-200',
                     isOpen && 'rotate-45',
                   )}
                   aria-hidden

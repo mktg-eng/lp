@@ -17,7 +17,7 @@ export function ValuesBandSection() {
               index !== values.length - 1 ? 'border-white/10 sm:border-r' : ''
             } border-b border-white/10 last:border-b-0 sm:border-b-0`}
           >
-            <value.icon className="size-6 shrink-0 text-[var(--red-400)]" aria-hidden />
+            <value.icon className="size-6 shrink-0 text-[var(--code-blue)]" aria-hidden />
             <span className="text-sm font-semibold">{value.label}</span>
           </div>
         ))}

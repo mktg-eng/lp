@@ -44,7 +44,7 @@ export function ProblemsSection() {
             key={item.title}
             className="group flex flex-col gap-4 rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/40"
           >
-            <span className="flex size-11 items-center justify-center rounded-lg border border-border bg-secondary text-accent">
+            <span className="flex size-11 items-center justify-center rounded-lg border border-border bg-secondary text-primary">
               <item.icon className="size-5" aria-hidden />
             </span>
             <h3 className="text-base font-semibold">{item.title}</h3>

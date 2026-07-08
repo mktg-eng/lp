@@ -114,7 +114,7 @@ export function CurriculumSection() {
       />
 
       <div className="mt-10 flex items-center justify-center gap-2 rounded-xl border border-border bg-secondary px-4 py-3 text-center text-xs text-muted-foreground sm:text-sm">
-        <Keyboard className="size-4 shrink-0 text-accent" aria-hidden />
+        <Keyboard className="size-4 shrink-0 text-primary" aria-hidden />
         全コース共通：タイピング練習（6か月で速度5倍を目標。実装・作文・学校課題の効率化にも直結）
       </div>
 
@@ -125,14 +125,14 @@ export function CurriculumSection() {
             className="grid gap-6 border-b border-border py-10 first:pt-0 last:border-b-0 sm:grid-cols-[auto_1fr] sm:gap-8"
           >
             <div className="flex sm:flex-col sm:items-center">
-              <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-accent">
+              <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-white">
                 <course.icon className="size-6" aria-hidden />
               </span>
             </div>
 
             <div className="flex flex-col gap-4">
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                <span className="font-mono text-xs text-accent">
+                <span className="font-mono text-xs text-primary/60">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <h3 className="text-xl font-bold tracking-tight sm:text-2xl">
@@ -165,7 +165,7 @@ export function CurriculumSection() {
               <ul className="flex flex-col gap-1.5">
                 {course.goals.map((goal) => (
                   <li key={goal} className="flex items-start gap-2 text-sm font-medium">
-                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
+                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" aria-hidden />
                     {goal}
                   </li>
                 ))}

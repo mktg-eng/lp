@@ -1,10 +1,10 @@
 const TIMELINE = [
-  { label: '初級', months: 3 },
-  { label: '中級前期', months: 3 },
-  { label: '中級後期', months: 6 },
-  { label: '上級前期', months: 9 },
-  { label: '上級後期', months: 9 },
-  { label: '最上級', months: 12 },
+  { label: '初級', months: 3, bg: '#c3d4ee', text: '#0f1c33' },
+  { label: '中級前期', months: 3, bg: '#9ab2df', text: '#0f1c33' },
+  { label: '中級後期', months: 6, bg: '#6e8fd0', text: '#0f1c33' },
+  { label: '上級前期', months: 9, bg: '#3f66ac', text: '#ffffff' },
+  { label: '上級後期', months: 9, bg: '#1a3f88', text: '#ffffff' },
+  { label: '最上級', months: 12, bg: '#002b6b', text: '#ffffff' },
 ]
 
 const TOTAL_MONTHS = TIMELINE.reduce((sum, item) => sum + item.months, 0)
@@ -14,7 +14,7 @@ export function ConceptSection() {
     <section className="border-y border-border bg-card">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 font-mono text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
-          <span className="size-1.5 rounded-full bg-accent" aria-hidden />
+          <span className="size-1.5 rounded-full bg-primary" aria-hidden />
           Concept
         </span>
         <h2 className="mt-4 max-w-xl text-pretty text-3xl font-bold tracking-tight sm:text-4xl">
@@ -25,18 +25,16 @@ export function ConceptSection() {
         </p>
 
         <div className="mt-12 flex h-14 overflow-hidden rounded-xl border border-border" aria-hidden>
-          {TIMELINE.map((item, index) => (
+          {TIMELINE.map((item) => (
             <div
               key={item.label}
-              className={`flex items-center justify-center border-r border-white/10 px-2 text-center text-xs font-semibold text-white last:border-r-0 ${
-                index % 2 === 0 ? 'bg-[var(--navy-900)]' : 'bg-[var(--navy-800)]'
-              }`}
-              style={{ width: `${(item.months / TOTAL_MONTHS) * 100}%` }}
+              className="flex items-center justify-center border-r border-white/15 px-2 text-center text-xs font-semibold last:border-r-0"
+              style={{ width: `${(item.months / TOTAL_MONTHS) * 100}%`, background: item.bg, color: item.text }}
             >
               <span className="hidden sm:inline">{item.label}</span>
             </div>
           ))}
-          <div className="flex w-14 shrink-0 items-center justify-center bg-gradient-to-b from-[var(--red-400)] to-[var(--red-600)] text-xs font-bold text-[var(--navy-950)]">
+          <div className="flex w-14 shrink-0 items-center justify-center bg-gradient-to-b from-[var(--red-400)] to-[var(--red-600)] text-xs font-bold text-white">
             本戦
           </div>
         </div>

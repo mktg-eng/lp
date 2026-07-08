@@ -49,12 +49,12 @@ export function ContactSection() {
       className="relative overflow-hidden bg-[var(--navy-950)] text-white"
     >
       <div className="absolute inset-0 bg-dots-light [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
-      <div className="absolute -bottom-40 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-[var(--red-500)]/20 blur-3xl" aria-hidden />
+      <div className="absolute -bottom-40 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-[var(--code-blue)]/15 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-24 lg:grid-cols-2">
         <div className="flex flex-col gap-5">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 font-mono text-xs uppercase tracking-[0.12em] text-white/70">
-            <span className="size-1.5 rounded-full bg-[var(--red-400)]" aria-hidden />
+            <span className="size-1.5 rounded-full bg-[var(--code-blue)]" aria-hidden />
             無料相談
           </span>
           <h2 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">
@@ -71,7 +71,7 @@ export function ContactSection() {
               '無理な勧誘は行いません',
             ].map((item) => (
               <li key={item} className="flex items-center gap-3">
-                <CheckCircle2 className="size-4 text-[var(--red-400)]" aria-hidden />
+                <CheckCircle2 className="size-4 text-[var(--code-blue)]" aria-hidden />
                 {item}
               </li>
             ))}
@@ -81,7 +81,7 @@ export function ContactSection() {
         <div className="rounded-2xl border border-white/10 bg-white p-7 text-foreground sm:p-8">
           {submitted ? (
             <div className="flex h-full flex-col items-center justify-center gap-4 py-10 text-center">
-              <span className="flex size-14 items-center justify-center rounded-full bg-accent/15 text-accent">
+              <span className="flex size-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
                 <CheckCircle2 className="size-7" aria-hidden />
               </span>
               <h3 className="text-xl font-semibold">送信ありがとうございます</h3>

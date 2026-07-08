@@ -21,13 +21,13 @@ const courses = [
 export function HeroSection() {
   return (
     <section id="top" className="relative overflow-hidden">
-      <div className="absolute -top-32 left-1/2 -z-0 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-accent/15 blur-3xl" aria-hidden />
+      <div className="absolute -top-32 left-1/2 -z-0 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto max-w-6xl px-5 pt-16 pb-20 sm:pt-20 sm:pb-24">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="min-w-0">
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 font-mono text-xs text-muted-foreground">
-              <span className="size-1.5 rounded-full bg-accent" aria-hidden />
+              <span className="size-1.5 rounded-full bg-primary" aria-hidden />
               情報オリンピック本戦を目指す本格カリキュラム
             </span>
 
@@ -47,7 +47,7 @@ export function HeroSection() {
                   key={badge.label}
                   className="flex items-center gap-2 rounded-xl border border-border bg-card px-4 py-2.5 text-sm font-semibold shadow-sm"
                 >
-                  <badge.icon className="size-4 text-accent" aria-hidden />
+                  <badge.icon className="size-4 text-primary" aria-hidden />
                   {badge.label}
                 </span>
               ))}
@@ -90,7 +90,7 @@ export function HeroSection() {
                         course.done
                           ? 'bg-[var(--code-blue)] text-[var(--navy-950)]'
                           : course.current
-                            ? 'bg-[var(--red-500)] text-[var(--navy-950)]'
+                            ? 'bg-white text-[var(--navy-950)]'
                             : 'border border-white/20'
                       }`}
                     >

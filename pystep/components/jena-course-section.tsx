@@ -10,15 +10,13 @@ export function JenaCourseSection() {
       <div className="overflow-hidden rounded-2xl border border-border bg-[#002b6b] text-white">
         <div className="flex flex-col gap-8 p-8 sm:p-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-col gap-4">
-            <div className="w-fit rounded-lg bg-white px-4 py-3">
-              <Image
-                src="/jena-academy-logo.jpg"
-                alt="イエナアカデミー"
-                width={945}
-                height={248}
-                className="h-9 w-auto"
-              />
-            </div>
+            <Image
+              src="/jena-academy-logo-footer.svg"
+              alt="イエナアカデミー"
+              width={223}
+              height={45}
+              className="h-9 w-auto"
+            />
             <h2 className="text-balance text-2xl font-bold tracking-tight sm:text-3xl">
               本気で情報オリンピック本戦を目指すなら。
             </h2>

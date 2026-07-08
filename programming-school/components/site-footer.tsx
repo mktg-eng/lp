@@ -14,15 +14,13 @@ export function SiteFooter() {
     <footer className="border-t border-white/10 bg-[var(--navy-950)] text-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex max-w-sm flex-col gap-3">
-          <div className="w-fit rounded-lg bg-white px-4 py-3">
-            <Image
-              src="/jena-academy-logo.jpg"
-              alt="イエナアカデミー"
-              width={945}
-              height={248}
-              className="h-9 w-auto"
-            />
-          </div>
+          <Image
+            src="/jena-academy-logo-footer.svg"
+            alt="イエナアカデミー"
+            width={223}
+            height={45}
+            className="h-9 w-auto"
+          />
           <p className="text-sm leading-relaxed text-white/60">
             イエナアカデミー 情報オリンピック対策コース。
             プログラミング未経験から情報オリンピック本戦出場まで、全7コースで段階的に導きます。

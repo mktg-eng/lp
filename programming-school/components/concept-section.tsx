@@ -36,7 +36,7 @@ export function ConceptSection() {
               <span className="hidden sm:inline">{item.label}</span>
             </div>
           ))}
-          <div className="flex w-14 shrink-0 items-center justify-center bg-gradient-to-b from-[var(--gold-400)] to-[var(--gold-600)] text-xs font-bold text-[var(--navy-950)]">
+          <div className="flex w-14 shrink-0 items-center justify-center bg-gradient-to-b from-[var(--red-400)] to-[var(--red-600)] text-xs font-bold text-[var(--navy-950)]">
             本戦
           </div>
         </div>

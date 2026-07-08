@@ -49,12 +49,12 @@ export function ContactSection() {
       className="relative overflow-hidden bg-[var(--navy-950)] text-white"
     >
       <div className="absolute inset-0 bg-dots-light [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
-      <div className="absolute -bottom-40 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-[var(--gold-500)]/20 blur-3xl" aria-hidden />
+      <div className="absolute -bottom-40 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-[var(--red-500)]/20 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-24 lg:grid-cols-2">
         <div className="flex flex-col gap-5">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 font-mono text-xs uppercase tracking-[0.12em] text-white/70">
-            <span className="size-1.5 rounded-full bg-[var(--gold-400)]" aria-hidden />
+            <span className="size-1.5 rounded-full bg-[var(--red-400)]" aria-hidden />
             無料相談
           </span>
           <h2 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">
@@ -71,7 +71,7 @@ export function ContactSection() {
               '無理な勧誘は行いません',
             ].map((item) => (
               <li key={item} className="flex items-center gap-3">
-                <CheckCircle2 className="size-4 text-[var(--gold-400)]" aria-hidden />
+                <CheckCircle2 className="size-4 text-[var(--red-400)]" aria-hidden />
                 {item}
               </li>
             ))}

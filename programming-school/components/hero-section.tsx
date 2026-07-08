@@ -38,7 +38,7 @@ export function HeroSection() {
             </h1>
 
             <p className="mt-6 max-w-md text-pretty leading-relaxed text-muted-foreground">
-              Python基礎の習得からC++への本格移行、JOI（情報オリンピック）2次予選突破・本戦出場までを、全7コースで段階的に導く競技プログラミング教室です。
+              Python基礎の習得からC++への本格移行、JOI（情報オリンピック）2次予選突破・本戦出場までを、全7コースで段階的に導く、イエナアカデミー情報オリンピック対策コースです。
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
@@ -90,7 +90,7 @@ export function HeroSection() {
                         course.done
                           ? 'bg-[var(--code-blue)] text-[var(--navy-950)]'
                           : course.current
-                            ? 'bg-[var(--gold-500)] text-[var(--navy-950)]'
+                            ? 'bg-[var(--red-500)] text-[var(--navy-950)]'
                             : 'border border-white/20'
                       }`}
                     >

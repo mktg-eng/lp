@@ -17,7 +17,7 @@ export function ValueStripSection() {
               index !== values.length - 1 ? 'border-white/10 sm:border-r' : ''
             } border-b border-white/10 last:border-b-0 sm:border-b-0`}
           >
-            <value.icon className="size-7 shrink-0 text-[var(--gold-400)]" aria-hidden />
+            <value.icon className="size-7 shrink-0 text-[var(--red-400)]" aria-hidden />
             <span className="text-sm font-semibold leading-snug">{value.label}</span>
           </div>
         ))}

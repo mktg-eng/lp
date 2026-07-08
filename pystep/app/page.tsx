@@ -9,6 +9,7 @@ import { ReasonsSection } from '@/components/reasons-section'
 import { ValuesBandSection } from '@/components/values-band-section'
 import { FaqSection } from '@/components/faq-section'
 import { PricingSection } from '@/components/pricing-section'
+import { JenaCourseSection } from '@/components/jena-course-section'
 import { FinalCtaSection } from '@/components/final-cta-section'
 import { SiteFooter } from '@/components/site-footer'
 
@@ -27,6 +28,7 @@ export default function Page() {
         <ValuesBandSection />
         <FaqSection />
         <PricingSection />
+        <JenaCourseSection />
         <FinalCtaSection />
       </main>
       <SiteFooter />

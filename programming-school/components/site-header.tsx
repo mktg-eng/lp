@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Trophy } from 'lucide-react'
+import Image from 'next/image'
 
 import { Button } from '@/components/ui/button'
 
@@ -14,15 +14,17 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <Link href="#top" className="flex items-center gap-2.5">
-          <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-accent">
-            <Trophy className="size-4" aria-hidden />
-          </span>
-          <span className="text-sm font-semibold tracking-tight">
-            競技プログラミング教室
-            <span className="ml-1.5 hidden text-muted-foreground sm:inline">
-              情報オリンピック本戦対策
-            </span>
+        <Link href="#top" className="flex items-center gap-3">
+          <Image
+            src="/jena-academy-logo.jpg"
+            alt="イエナアカデミー"
+            width={945}
+            height={248}
+            className="h-8 w-auto"
+            priority
+          />
+          <span className="hidden text-sm font-semibold text-muted-foreground sm:inline">
+            情報オリンピック対策コース
           </span>
         </Link>
 

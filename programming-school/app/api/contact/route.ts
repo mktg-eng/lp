@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const SERVICE = '競技プログラミング教室（情報オリンピック本戦対策）'
+const SERVICE = 'イエナアカデミー 情報オリンピック対策コース'
 
 export async function POST(request: Request) {
   try {

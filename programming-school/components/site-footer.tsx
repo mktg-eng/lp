@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Trophy } from 'lucide-react'
+import Image from 'next/image'
 
 const footerLinks = [
   { label: 'お悩み', href: '#problems' },
@@ -14,15 +14,18 @@ export function SiteFooter() {
     <footer className="border-t border-white/10 bg-[var(--navy-950)] text-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex max-w-sm flex-col gap-3">
-          <div className="flex items-center gap-2.5">
-            <span className="flex size-8 items-center justify-center rounded-lg bg-[var(--gold-500)] text-[var(--navy-950)]">
-              <Trophy className="size-4" aria-hidden />
-            </span>
-            <span className="text-sm font-semibold">競技プログラミング教室</span>
+          <div className="w-fit rounded-lg bg-white px-3 py-2">
+            <Image
+              src="/jena-academy-logo.jpg"
+              alt="イエナアカデミー"
+              width={945}
+              height={248}
+              className="h-6 w-auto"
+            />
           </div>
           <p className="text-sm leading-relaxed text-white/60">
-            プログラミング未経験から情報オリンピック本戦出場まで。
-            Python基礎からC++実装力まで、全7コースで段階的に導きます。
+            イエナアカデミー 情報オリンピック対策コース。
+            プログラミング未経験から情報オリンピック本戦出場まで、全7コースで段階的に導きます。
           </p>
         </div>
 
@@ -42,8 +45,8 @@ export function SiteFooter() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} 競技プログラミング教室. All rights reserved.</p>
-          <p className="font-mono">情報オリンピック本戦対策コース</p>
+          <p>© {new Date().getFullYear()} イエナアカデミー. All rights reserved.</p>
+          <p className="font-mono">情報オリンピック対策コース</p>
         </div>
       </div>
     </footer>

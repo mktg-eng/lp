@@ -50,47 +50,47 @@
 
 :root {
   color-scheme: light;
-  --background: #eef0ea;
-  --foreground: #1a1f2e;
+  --background: #f7f9fc;
+  --foreground: #0f1c33;
   --card: #ffffff;
-  --card-foreground: #1a1f2e;
+  --card-foreground: #0f1c33;
   --popover: #ffffff;
-  --popover-foreground: #1a1f2e;
-  --primary: #15213d;
+  --popover-foreground: #0f1c33;
+  --primary: #002b6b;
   --primary-foreground: #ffffff;
-  --secondary: #e3e6dd;
-  --secondary-foreground: #15213d;
-  --muted: #e6e8e0;
-  --muted-foreground: #545b70;
-  --accent: #c9a044;
-  --accent-foreground: #0e1830;
+  --secondary: #eef1f6;
+  --secondary-foreground: #002b6b;
+  --muted: #eef1f6;
+  --muted-foreground: #55607a;
+  --accent: #e63946;
+  --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #d8d9d0;
-  --input: #d8d9d0;
-  --ring: #c9a044;
-  --chart-1: #c9a044;
-  --chart-2: #15213d;
-  --chart-3: #545b70;
-  --chart-4: #57b8ea;
-  --chart-5: #d9ae55;
+  --border: #dbe0ea;
+  --input: #dbe0ea;
+  --ring: #e63946;
+  --chart-1: #e63946;
+  --chart-2: #002b6b;
+  --chart-3: #55607a;
+  --chart-4: #4a7fd4;
+  --chart-5: #ec6b74;
   --radius: 1rem;
-  --sidebar: #eef0ea;
-  --sidebar-foreground: #1a1f2e;
-  --sidebar-primary: #15213d;
+  --sidebar: #f7f9fc;
+  --sidebar-foreground: #0f1c33;
+  --sidebar-primary: #002b6b;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #e3e6dd;
-  --sidebar-accent-foreground: #15213d;
-  --sidebar-border: #d8d9d0;
-  --sidebar-ring: #c9a044;
+  --sidebar-accent: #eef1f6;
+  --sidebar-accent-foreground: #002b6b;
+  --sidebar-border: #dbe0ea;
+  --sidebar-ring: #e63946;
 
-  /* PyStep固有の追加トークン（紺×ゴールドの型・参考: ProgLearn風LP案） */
-  --navy-950: #0e1830;
-  --navy-900: #15213d;
-  --navy-800: #1c2a4a;
-  --gold-600: #b8872c;
-  --gold-500: #c9a044;
-  --gold-400: #d9ae55;
-  --code-blue: #57b8ea;
+  /* イエナアカデミー ブランドカラー（ロゴ・既存LPからサンプリング） */
+  --navy-950: #001c47;
+  --navy-900: #002b6b;
+  --navy-800: #123a7a;
+  --red-600: #c62836;
+  --red-500: #e63946;
+  --red-400: #ec6b74;
+  --code-blue: #4a7fd4;
 }
 
 @layer base {

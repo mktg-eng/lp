@@ -9,16 +9,16 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: '競技プログラミング教室 | 情報オリンピック本戦を目指す本格カリキュラム',
+  title: 'イエナアカデミー 情報オリンピック対策コース | 情報オリンピック本戦を目指す本格カリキュラム',
   description:
-    'プログラミング未経験からPython基礎、C++移行、JOI（情報オリンピック）2次予選突破・本戦出場までを、全7コースで段階的に導く競技プログラミング教室。',
+    'プログラミング未経験からPython基礎、C++移行、JOI（情報オリンピック）2次予選突破・本戦出場までを、全7コースで段階的に導く、イエナアカデミーの情報オリンピック対策コース。',
 }
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   colorScheme: 'light',
-  themeColor: '#eef0ea',
+  themeColor: '#f7f9fc',
 }
 
 export default function RootLayout({

@@ -13,14 +13,14 @@ const navItems = [
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5">
         <Link href="#top" className="flex items-center gap-3">
           <Image
             src="/jena-academy-logo.jpg"
             alt="イエナアカデミー"
             width={945}
             height={248}
-            className="h-8 w-auto"
+            className="h-12 w-auto"
             priority
           />
           <span className="hidden text-sm font-semibold text-muted-foreground sm:inline">

@@ -6,6 +6,10 @@ interface SectionHeadingProps {
   description?: string
   className?: string
   align?: 'center' | 'left'
+  /** Big faded uppercase word rendered above the title, depo.design 風の英字ラベル */
+  kicker?: string
+  /** dark/coral な背景セクションで使う場合 */
+  invert?: boolean
 }
 
 export function SectionHeading({
@@ -14,26 +18,55 @@ export function SectionHeading({
   description,
   className,
   align = 'center',
+  kicker,
+  invert = false,
 }: SectionHeadingProps) {
   return (
     <div
       className={cn(
-        'flex flex-col gap-4',
+        'flex flex-col gap-3',
         align === 'center'
-          ? 'items-center text-center mx-auto max-w-2xl'
+          ? 'mx-auto max-w-2xl items-center text-center'
           : 'items-start text-left',
         className,
       )}
     >
-      <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 font-mono text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
-        <span className="size-1.5 rounded-full bg-accent" aria-hidden />
+      {kicker ? (
+        <span
+          className={cn(
+            'select-none text-4xl font-black uppercase italic tracking-tight sm:text-5xl',
+            invert ? 'text-white/15' : 'text-black/10',
+          )}
+          aria-hidden
+        >
+          {kicker}
+        </span>
+      ) : null}
+      <span
+        className={cn(
+          'inline-flex w-fit items-center gap-2 rounded-md px-3 py-1 font-mono text-xs font-bold tracking-[0.08em]',
+          invert
+            ? 'bg-white text-black'
+            : 'bg-primary text-primary-foreground',
+        )}
+      >
         {eyebrow}
       </span>
-      <h2 className="text-pretty text-3xl font-semibold tracking-tight sm:text-4xl">
+      <h2
+        className={cn(
+          'text-pretty text-3xl font-black leading-[1.25] tracking-tight sm:text-4xl',
+          invert ? 'text-white' : 'text-foreground',
+        )}
+      >
         {title}
       </h2>
       {description ? (
-        <p className="text-pretty leading-relaxed text-muted-foreground">
+        <p
+          className={cn(
+            'text-pretty leading-relaxed',
+            invert ? 'text-white/70' : 'text-muted-foreground',
+          )}
+        >
           {description}
         </p>
       ) : null}

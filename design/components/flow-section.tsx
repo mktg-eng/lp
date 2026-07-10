@@ -32,12 +32,10 @@ const steps = [
 
 export function FlowSection() {
   return (
-    <section
-      id="flow"
-      className="relative border-y border-border bg-muted/60"
-    >
+    <section id="flow" className="relative bg-brand-cream">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
+          kicker="FLOW"
           eyebrow="ご利用の流れ"
           title="契約から納品まで、5つのステップ"
           description="やり取りはすべてオンラインで完結。日々の依頼はチャットだけで進みます。"
@@ -45,17 +43,20 @@ export function FlowSection() {
 
         <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {steps.map((step, index) => (
-            <li key={step.title} className="relative flex flex-col gap-4">
+            <li
+              key={step.title}
+              className="relative flex flex-col gap-4 rounded-lg border-2 border-black bg-white p-5"
+            >
               <div className="flex items-center gap-3">
-                <span className="flex size-11 items-center justify-center rounded-xl border border-border bg-background text-primary">
+                <span className="flex size-11 items-center justify-center rounded-md bg-black text-brand-yellow">
                   <step.icon className="size-5" aria-hidden />
                 </span>
-                <span className="font-mono text-2xl font-semibold text-muted-foreground/50">
+                <span className="font-mono text-2xl font-black text-brand-coral/70">
                   0{index + 1}
                 </span>
               </div>
               <div className="flex flex-col gap-1.5">
-                <h3 className="text-base font-semibold">{step.title}</h3>
+                <h3 className="text-base font-bold">{step.title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {step.description}
                 </p>

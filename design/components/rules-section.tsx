@@ -37,12 +37,10 @@ const rules = [
 
 export function RulesSection() {
   return (
-    <section
-      id="rules"
-      className="relative border-y border-border bg-muted/60"
-    >
+    <section id="rules" className="relative bg-brand-cream">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
+          kicker="RULE"
           eyebrow="ご利用ルール"
           title="安心して使い続けられる、シンプルなルール"
           description="「定額だとどこまで頼めるの？」に迷わないよう、運用ルールをあらかじめ明確にしています。"
@@ -52,12 +50,12 @@ export function RulesSection() {
           {rules.map((item) => (
             <div
               key={item.title}
-              className="flex flex-col gap-4 rounded-xl border border-border bg-background p-6"
+              className="flex flex-col gap-4 rounded-lg border-2 border-black bg-white p-6"
             >
-              <span className="flex size-11 items-center justify-center rounded-lg border border-border bg-secondary text-accent">
+              <span className="flex size-11 items-center justify-center rounded-md bg-black text-brand-coral">
                 <item.icon className="size-5" aria-hidden />
               </span>
-              <h3 className="text-base font-semibold">{item.title}</h3>
+              <h3 className="text-base font-bold">{item.title}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {item.description}
               </p>

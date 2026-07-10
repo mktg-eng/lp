@@ -31,12 +31,10 @@ const benefits = [
 
 export function BenefitsSection() {
   return (
-    <section
-      id="benefits"
-      className="relative border-y border-border bg-muted/60"
-    >
+    <section id="benefits" className="relative bg-brand-yellow">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
+          kicker="BENEFITS"
           eyebrow="導入後の変化"
           title="「頼みたいとき、すぐ頼める」が当たり前になる"
           description="定額の制作体制が整うと、デザインまわりの動き方はこう変わります。"
@@ -46,13 +44,13 @@ export function BenefitsSection() {
           {benefits.map((item) => (
             <div
               key={item.title}
-              className="flex gap-5 rounded-xl border border-border bg-background p-6 sm:p-7"
+              className="flex gap-5 rounded-lg border-2 border-black bg-white p-6 sm:p-7"
             >
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-md bg-black text-brand-coral">
                 <item.icon className="size-5.5" aria-hidden />
               </span>
               <div className="flex flex-col gap-2">
-                <h3 className="text-lg font-semibold">{item.title}</h3>
+                <h3 className="text-lg font-bold">{item.title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>

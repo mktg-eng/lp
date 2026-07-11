@@ -71,6 +71,7 @@ export function ServicesSection() {
   return (
     <section id="services" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <SectionHeading
+        kicker="SERVICE"
         eyebrow="サービス内容"
         title="5段階の制作パイプラインで品質を担保"
         description="1本の記事は、情報取得から採点・ファクトチェックまで5つの工程を通ってから納品されます。"
@@ -87,10 +88,10 @@ export function ServicesSection() {
                 <stage.icon className="size-5" aria-hidden />
               </span>
               <div>
-                <span className="font-mono text-xs text-accent">
+                <span className="font-mono text-xs font-bold text-accent">
                   STEP {stage.step}
                 </span>
-                <h3 className="text-xl font-semibold">{stage.title}</h3>
+                <h3 className="text-xl font-bold text-primary">{stage.title}</h3>
               </div>
             </div>
 
@@ -112,7 +113,7 @@ export function ServicesSection() {
         ))}
 
         <div className="flex flex-col justify-center gap-3 rounded-2xl border border-dashed border-accent/40 bg-accent/5 p-7">
-          <h3 className="text-base font-semibold">
+          <h3 className="text-base font-bold text-primary">
             使うAIは、固定しません
           </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">

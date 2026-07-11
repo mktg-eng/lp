@@ -76,6 +76,7 @@ export function PricingSection() {
   return (
     <section id="pricing" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <SectionHeading
+        kicker="PRICING"
         eyebrow="料金"
         title="記事単価2万円〜。本数で選べるシンプルな料金"
         description="料金は「記事単価×月間本数」が基本。以下はいずれも目安の金額です。"
@@ -91,7 +92,7 @@ export function PricingSection() {
             <span className="text-xs font-medium text-muted-foreground">
               {item.label}
             </span>
-            <span className="text-2xl font-semibold tracking-tight">
+            <span className="text-2xl font-bold tracking-tight text-primary">
               {item.value}
             </span>
             {item.note ? (
@@ -106,7 +107,7 @@ export function PricingSection() {
       {/* 月間本数と月額の目安 */}
       <div className="mt-10 grid gap-6 lg:grid-cols-[2fr_3fr]">
         <div className="flex flex-col gap-4">
-          <h3 className="text-lg font-semibold">月間本数と月額の目安</h3>
+          <h3 className="text-lg font-bold text-primary">月間本数と月額の目安</h3>
           <div className="overflow-x-auto rounded-2xl border border-border bg-card">
             <table className="w-full min-w-[280px] border-collapse text-left">
               <thead>
@@ -147,7 +148,7 @@ export function PricingSection() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <h3 className="text-lg font-semibold">記事制作プランの対応範囲</h3>
+          <h3 className="text-lg font-bold text-primary">記事制作プランの対応範囲</h3>
           <div className="flex-1 rounded-2xl border border-border bg-card p-6 sm:p-7">
             <ul className="grid gap-3 sm:grid-cols-2">
               {scopeItems.map((item) => (
@@ -165,7 +166,7 @@ export function PricingSection() {
 
       {/* 3プラン比較 */}
       <div className="mt-16">
-        <h3 className="text-center text-lg font-semibold">
+        <h3 className="text-center text-lg font-bold text-primary">
           ご状況に合わせた3つのプラン
         </h3>
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
@@ -175,25 +176,25 @@ export function PricingSection() {
               className={cn(
                 'relative flex flex-col gap-6 rounded-2xl border p-7 sm:p-8',
                 plan.featured
-                  ? 'border-accent/60 bg-card shadow-lg shadow-black/5'
+                  ? 'border-accent/60 bg-card shadow-lg shadow-accent/10'
                   : 'border-border bg-card',
               )}
             >
               {plan.featured ? (
-                <span className="absolute -top-3 left-7 rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
+                <span className="absolute -top-3 left-7 rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-foreground">
                   基本プラン
                 </span>
               ) : null}
 
               <div className="flex flex-col gap-2">
-                <h4 className="text-lg font-semibold">{plan.name}</h4>
+                <h4 className="text-lg font-bold text-primary">{plan.name}</h4>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {plan.description}
                 </p>
               </div>
 
               <div className="flex flex-col gap-1 border-y border-border py-5">
-                <span className="text-3xl font-semibold tracking-tight">
+                <span className="text-3xl font-bold tracking-tight text-primary">
                   {plan.price}
                 </span>
                 <span className="font-mono text-xs text-muted-foreground">
@@ -215,7 +216,10 @@ export function PricingSection() {
               <Button
                 size="lg"
                 variant={plan.featured ? 'default' : 'outline'}
-                className="h-11 w-full"
+                className={cn(
+                  'h-11 w-full rounded-full',
+                  plan.featured && 'bg-accent text-accent-foreground hover:bg-accent/90',
+                )}
                 nativeButton={false}
                 render={<Link href="#contact" />}
               >

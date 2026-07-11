@@ -33,18 +33,25 @@ export function ProblemsSection() {
   return (
     <section id="problems" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <SectionHeading
+        kicker="Problems"
         eyebrow="こんな課題はありませんか？"
         title="新規リードが、思うように増えない"
         description="営業・広告のリソースが限られるBtoB企業では、新規開拓にこんなつまずきがよく見られます。"
       />
 
       <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {problems.map((item) => (
+        {problems.map((item, index) => (
           <div
             key={item.title}
-            className="group flex flex-col gap-4 rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/40"
+            className="group relative flex flex-col gap-4 overflow-hidden rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/40"
           >
-            <span className="flex size-11 items-center justify-center rounded-lg border border-border bg-secondary text-accent">
+            <span
+              className="pointer-events-none absolute -top-3 -right-2 font-mono text-5xl font-black text-foreground/[0.05] italic select-none"
+              aria-hidden
+            >
+              0{index + 1}
+            </span>
+            <span className="flex size-11 items-center justify-center rounded-lg border border-border bg-secondary text-primary">
               <item.icon className="size-5" aria-hidden />
             </span>
             <h3 className="text-base font-semibold">{item.title}</h3>

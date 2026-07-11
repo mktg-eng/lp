@@ -25,30 +25,31 @@ const reasons = [
 
 export function ReasonsSection() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+    <section className="mx-auto max-w-4xl px-5 py-20 sm:py-24">
       <SectionHeading
+        kicker="WHY US"
         eyebrow="選ばれる理由"
         title="“入れる”その先まで、伴走します"
       />
 
-      <div className="mt-12 grid gap-5 md:grid-cols-3">
+      <div className="mt-14 flex flex-col divide-y divide-border">
         {reasons.map((item, index) => (
           <div
             key={item.title}
-            className="flex flex-col gap-5 rounded-xl border border-border bg-card p-7"
+            className="flex flex-col gap-5 py-7 sm:flex-row sm:items-center sm:gap-8"
           >
-            <div className="flex items-center justify-between">
-              <span className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <item.icon className="size-5.5" aria-hidden />
-              </span>
-              <span className="font-mono text-sm text-muted-foreground/50">
-                0{index + 1}
-              </span>
+            <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-orange font-mono text-xl font-black text-brand-orange-foreground">
+              {index + 1}
+            </span>
+            <div className="flex flex-1 flex-col gap-2">
+              <div className="flex items-center gap-2.5">
+                <item.icon className="size-5 text-brand-orange" aria-hidden />
+                <h3 className="text-lg font-bold sm:text-xl">{item.title}</h3>
+              </div>
+              <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                {item.description}
+              </p>
             </div>
-            <h3 className="text-lg font-semibold">{item.title}</h3>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {item.description}
-            </p>
           </div>
         ))}
       </div>

@@ -15,10 +15,10 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <Link href="#top" className="flex items-center gap-2.5">
-          <span className="flex size-8 items-center justify-center rounded-lg bg-brand-gradient text-primary-foreground">
+          <span className="flex size-8 items-center justify-center rounded-lg bg-brand-gradient text-brand-lime-foreground">
             <CopyPlus className="size-4" aria-hidden />
           </span>
           <span className="text-sm font-semibold tracking-tight">
@@ -34,7 +34,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="font-mono text-xs font-medium tracking-wide text-muted-foreground uppercase transition-colors hover:text-primary"
             >
               {item.label}
             </Link>
@@ -45,6 +45,8 @@ export function SiteHeader() {
           無料で相談する
         </Button>
       </div>
+
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" aria-hidden />
     </header>
   )
 }

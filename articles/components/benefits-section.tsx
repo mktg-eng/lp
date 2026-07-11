@@ -25,12 +25,10 @@ const benefits = [
 
 export function BenefitsSection() {
   return (
-    <section
-      id="benefits"
-      className="relative border-y border-border bg-muted/60"
-    >
+    <section id="benefits" className="relative bg-brand-surface">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
+          kicker="VALUE"
           eyebrow="提供価値"
           title="品質・手離れ・再現性を、まとめて"
           description="AIと人の役割分担を前提に設計したサービスだから、3つの価値を同時に提供できます。"
@@ -40,17 +38,17 @@ export function BenefitsSection() {
           {benefits.map((item, index) => (
             <div
               key={item.title}
-              className="flex flex-col gap-5 rounded-2xl border border-border bg-background p-7"
+              className="flex flex-col gap-4 rounded-xl border border-border/70 bg-background p-7"
             >
               <div className="flex items-center justify-between">
-                <span className="flex size-12 items-center justify-center rounded-xl bg-primary/15 text-primary">
-                  <item.icon className="size-5.5" aria-hidden />
+                <span className="flex size-11 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                  <item.icon className="size-5" aria-hidden />
                 </span>
-                <span className="font-mono text-sm text-muted-foreground/50">
+                <span className="font-mono text-sm font-bold text-primary/15">
                   0{index + 1}
                 </span>
               </div>
-              <h3 className="text-lg font-semibold">{item.title}</h3>
+              <h3 className="text-lg font-bold text-primary">{item.title}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {item.description}
               </p>

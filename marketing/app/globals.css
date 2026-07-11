@@ -39,6 +39,11 @@
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
+  --color-brand-lime: var(--brand-lime);
+  --color-brand-lime-foreground: var(--brand-lime-foreground);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-charcoal: var(--brand-charcoal);
+  --color-brand-cyan: var(--brand-cyan);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -49,39 +54,47 @@
 }
 
 :root {
-  color-scheme: light;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.155 0 0);
-  --card: oklch(0.985 0 0);
-  --card-foreground: oklch(0.155 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.155 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.96 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.965 0 0);
-  --muted-foreground: oklch(0.5 0 0);
-  --accent: oklch(0.54 0.21 293);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.906 0 0);
-  --input: oklch(0.906 0 0);
-  --ring: oklch(0.5 0 0);
-  --chart-1: oklch(0.54 0.21 293);
-  --chart-2: oklch(0.55 0.13 205);
-  --chart-3: oklch(0.6 0.17 322);
-  --chart-4: oklch(0.56 0.15 262);
-  --chart-5: oklch(0.6 0.11 188);
-  --radius: 0.75rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.155 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.96 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.906 0 0);
-  --sidebar-ring: oklch(0.5 0 0);
+  color-scheme: dark;
+  --background: oklch(0.15 0.014 240);
+  --foreground: oklch(0.97 0.004 240);
+  --card: oklch(0.19 0.016 240);
+  --card-foreground: oklch(0.97 0.004 240);
+  --popover: oklch(0.19 0.016 240);
+  --popover-foreground: oklch(0.97 0.004 240);
+  --primary: oklch(0.91 0.24 130);
+  --primary-foreground: oklch(0.145 0.01 240);
+  --secondary: oklch(0.27 0.018 240);
+  --secondary-foreground: oklch(0.97 0.004 240);
+  --muted: oklch(0.23 0.016 240);
+  --muted-foreground: oklch(0.66 0.02 210);
+  --accent: oklch(0.91 0.24 130);
+  --accent-foreground: oklch(0.145 0.01 240);
+  --destructive: oklch(0.64 0.24 27);
+  --border: oklch(0.32 0.02 235);
+  --input: oklch(0.32 0.02 235);
+  --ring: oklch(0.91 0.24 130);
+  --chart-1: oklch(0.91 0.24 130);
+  --chart-2: oklch(0.8 0.19 155);
+  --chart-3: oklch(0.72 0.16 175);
+  --chart-4: oklch(0.86 0.21 100);
+  --chart-5: oklch(0.55 0.03 235);
+  --radius: 0.6rem;
+
+  /* 攻め・成長・データドリブンを表す electric lime × charcoal のブランドパレット */
+  --brand-lime: oklch(0.91 0.24 130);
+  --brand-lime-foreground: oklch(0.145 0.01 240);
+  --brand-ink: oklch(0.1 0.01 240);
+  --brand-charcoal: oklch(0.19 0.016 240);
+  --brand-cyan: oklch(0.78 0.14 195);
+
+  --sidebar: oklch(0.17 0.014 240);
+  --sidebar-foreground: oklch(0.97 0.004 240);
+  --sidebar-primary: oklch(0.91 0.24 130);
+  --sidebar-primary-foreground: oklch(0.145 0.01 240);
+  --sidebar-accent: oklch(0.23 0.016 240);
+  --sidebar-accent-foreground: oklch(0.97 0.004 240);
+  --sidebar-border: oklch(0.32 0.02 235);
+  --sidebar-ring: oklch(0.91 0.24 130);
 }
 
 @layer base {
@@ -98,21 +111,31 @@
 
 @utility bg-grid {
   background-image:
-    linear-gradient(to right, oklch(0 0 0 / 4%) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0 0 0 / 4%) 1px, transparent 1px);
+    linear-gradient(to right, oklch(1 0 0 / 6%) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(1 0 0 / 6%) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 
 @utility bg-dots {
-  background-image: radial-gradient(oklch(0 0 0 / 7%) 1px, transparent 1px);
+  background-image: radial-gradient(oklch(1 0 0 / 10%) 1px, transparent 1px);
   background-size: 22px 22px;
+}
+
+@utility bg-speed-stripes {
+  background-image: repeating-linear-gradient(
+    -55deg,
+    oklch(0.91 0.24 130 / 12%) 0px,
+    oklch(0.91 0.24 130 / 12%) 2px,
+    transparent 2px,
+    transparent 15px
+  );
 }
 
 @utility text-gradient {
   background-image: linear-gradient(
     100deg,
-    oklch(0.48 0.23 293),
-    oklch(0.52 0.13 205)
+    oklch(0.91 0.24 130),
+    oklch(0.8 0.19 155)
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -122,16 +145,16 @@
 @utility bg-brand-gradient {
   background-image: linear-gradient(
     120deg,
-    oklch(0.54 0.21 293),
-    oklch(0.52 0.17 262),
-    oklch(0.6 0.13 205)
+    oklch(0.91 0.24 130),
+    oklch(0.8 0.19 155),
+    oklch(0.78 0.14 195)
   );
 }
 
 @utility bg-brand-soft {
   background-image: linear-gradient(
     135deg,
-    oklch(0.62 0.22 293 / 14%),
-    oklch(0.79 0.14 205 / 10%)
+    oklch(0.91 0.24 130 / 16%),
+    oklch(0.78 0.14 195 / 10%)
   );
 }

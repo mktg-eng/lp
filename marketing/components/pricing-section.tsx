@@ -49,6 +49,7 @@ export function PricingSection() {
   return (
     <section id="pricing" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <SectionHeading
+        kicker="Pricing"
         eyebrow="料金"
         title="ご状況に合わせた3つのプラン"
         description="料金はターゲットや量産・配信の範囲により異なります。詳細はお見積りにて個別にご案内します。"
@@ -61,12 +62,12 @@ export function PricingSection() {
             className={cn(
               'relative flex flex-col gap-6 rounded-2xl border p-7 sm:p-8',
               plan.featured
-                ? 'border-accent/60 bg-card shadow-lg shadow-black/5'
+                ? 'border-primary/60 bg-card shadow-2xl shadow-primary/10'
                 : 'border-border bg-card',
             )}
           >
             {plan.featured ? (
-              <span className="absolute -top-3 left-7 rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
+              <span className="absolute -top-3 left-7 rounded-full bg-primary px-3 py-1 font-mono text-xs font-bold text-primary-foreground">
                 おすすめ
               </span>
             ) : null}
@@ -79,7 +80,7 @@ export function PricingSection() {
             </div>
 
             <div className="flex items-baseline gap-1.5 border-y border-border py-5">
-              <span className="text-3xl font-semibold tracking-tight">
+              <span className="font-mono text-3xl font-black tracking-tight">
                 {plan.price}
               </span>
             </div>
@@ -87,7 +88,7 @@ export function PricingSection() {
             <ul className="flex flex-1 flex-col gap-3">
               {plan.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-3 text-sm">
-                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
                     <Check className="size-3.5" aria-hidden />
                   </span>
                   <span className="leading-relaxed">{feature}</span>

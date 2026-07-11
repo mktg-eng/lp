@@ -31,28 +31,33 @@ const problems = [
 
 export function ProblemsSection() {
   return (
-    <section id="problems" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-      <SectionHeading
-        eyebrow="こんな状態では？"
-        title="導入したのに、活かしきれていない"
-        description="Claude Code をはじめとするAI開発ツールには、こんなつまずきがよく見られます。"
-      />
+    <section id="problems" className="relative overflow-hidden bg-sky-panel py-20 sm:py-24">
+      <div className="relative mx-auto max-w-6xl px-5">
+        <SectionHeading
+          kicker="PROBLEMS"
+          eyebrow="こんな状態では？"
+          title="導入したのに、活かしきれていない"
+          description="Claude Code をはじめとするAI開発ツールには、こんなつまずきがよく見られます。"
+        />
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {problems.map((item) => (
-          <div
-            key={item.title}
-            className="group flex flex-col gap-4 rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/40"
-          >
-            <span className="flex size-11 items-center justify-center rounded-lg border border-border bg-secondary text-accent">
-              <item.icon className="size-5" aria-hidden />
-            </span>
-            <h3 className="text-base font-semibold">{item.title}</h3>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {item.description}
-            </p>
-          </div>
-        ))}
+        <div className="mt-12 flex flex-col divide-y divide-brand-navy/10 overflow-hidden rounded-2xl border border-brand-navy/10 bg-white/70">
+          {problems.map((item) => (
+            <div
+              key={item.title}
+              className="flex flex-col gap-4 p-6 sm:flex-row sm:items-center sm:gap-6 sm:p-7"
+            >
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white text-brand-orange shadow-sm">
+                <item.icon className="size-5" aria-hidden />
+              </span>
+              <div className="flex flex-col gap-1">
+                <h3 className="text-base font-bold">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

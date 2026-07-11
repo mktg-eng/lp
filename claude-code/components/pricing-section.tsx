@@ -49,37 +49,38 @@ export function PricingSection() {
   return (
     <section id="pricing" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <SectionHeading
+        kicker="PLAN"
         eyebrow="料金"
         title="ご状況に合わせた3つのプラン"
         description="料金はチーム規模や対象範囲により異なります。詳細はお見積りにて個別にご案内します。"
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+      <div className="mt-12 grid items-start gap-6 lg:grid-cols-3">
         {plans.map((plan) => (
           <div
             key={plan.name}
             className={cn(
-              'relative flex flex-col gap-6 rounded-2xl border p-7 sm:p-8',
+              'relative flex flex-col gap-6 rounded-2xl border bg-card p-7 sm:p-8',
               plan.featured
-                ? 'border-accent/60 bg-card shadow-lg shadow-black/5'
-                : 'border-border bg-card',
+                ? 'border-2 border-brand-orange shadow-xl shadow-brand-orange/10 lg:-translate-y-3'
+                : 'border-border',
             )}
           >
             {plan.featured ? (
-              <span className="absolute -top-3 left-7 rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
+              <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-brand-orange px-4 py-1 text-xs font-bold text-brand-orange-foreground">
                 おすすめ
               </span>
             ) : null}
 
             <div className="flex flex-col gap-2">
-              <h3 className="text-lg font-semibold">{plan.name}</h3>
+              <h3 className="text-lg font-bold">{plan.name}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {plan.description}
               </p>
             </div>
 
             <div className="flex items-baseline gap-1.5 border-y border-border py-5">
-              <span className="text-3xl font-semibold tracking-tight">
+              <span className="text-3xl font-black tracking-tight">
                 {plan.price}
               </span>
             </div>
@@ -87,7 +88,7 @@ export function PricingSection() {
             <ul className="flex flex-1 flex-col gap-3">
               {plan.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-3 text-sm">
-                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-orange/15 text-brand-orange">
                     <Check className="size-3.5" aria-hidden />
                   </span>
                   <span className="leading-relaxed">{feature}</span>
@@ -97,8 +98,12 @@ export function PricingSection() {
 
             <Button
               size="lg"
-              variant={plan.featured ? 'default' : 'outline'}
-              className="h-11 w-full"
+              className={cn(
+                'h-11 w-full rounded-full',
+                plan.featured
+                  ? 'bg-brand-orange text-brand-orange-foreground hover:bg-brand-orange/85'
+                  : 'bg-brand-navy text-brand-navy-foreground hover:bg-brand-navy/85',
+              )}
               nativeButton={false}
               render={<Link href="#contact" />}
             >

@@ -5,22 +5,28 @@ import { Button } from '@/components/ui/button'
 import { COMPANY } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
+const heroStats = [
+  { label: 'SEO', note: '検索エンジン対策' },
+  { label: 'AIO', note: 'AI検索対策' },
+  { label: '2万円〜', note: '記事単価（目安）' },
+]
+
 export function HeroSection() {
   return (
-    <section id="top" className="relative overflow-hidden">
+    <section id="top" className="relative overflow-hidden bg-background">
       <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_top,black,transparent_72%)]" aria-hidden />
-      <div className="absolute -top-32 left-1/2 -z-0 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" aria-hidden />
+      <div className="absolute -top-32 right-0 -z-0 h-72 w-[40rem] rounded-full bg-accent/10 blur-3xl" aria-hidden />
 
-      <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16 sm:pt-28 sm:pb-24">
-        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 font-mono text-xs text-accent">
+      <div className="relative mx-auto grid max-w-6xl gap-12 px-5 pt-20 pb-16 sm:pt-28 sm:pb-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div className="flex flex-col items-start text-left">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 font-mono text-xs font-medium text-accent">
             <Sparkles className="size-3.5" aria-hidden />
             AI×人のハイブリッド記事制作
           </span>
 
-          <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.12] tracking-tight sm:text-5xl md:text-6xl">
+          <h1 className="mt-6 text-balance text-4xl font-bold leading-[1.25] tracking-tight text-primary sm:text-5xl">
             検索にも、AIにも、
-            <br className="hidden sm:block" />
+            <br />
             <span className="text-accent">見つかる記事</span>を。
           </h1>
 
@@ -30,10 +36,10 @@ export function HeroSection() {
             記事単価2万円〜（目安）で、品質と本数を両立します。
           </p>
 
-          <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row">
+          <div className="mt-9 flex flex-col items-start gap-3 sm:flex-row">
             <Button
               size="lg"
-              className="h-12 px-6 text-base"
+              className="h-12 rounded-full bg-accent px-6 text-base text-accent-foreground hover:bg-accent/90"
               nativeButton={false}
               render={<Link href="#contact" />}
             >
@@ -43,7 +49,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="h-12 px-6 text-base"
+              className="h-12 rounded-full px-6 text-base"
               nativeButton={false}
               render={<Link href="#services" />}
             >
@@ -51,14 +57,28 @@ export function HeroSection() {
             </Button>
           </div>
 
-          <p className="mt-4 font-mono text-xs text-muted-foreground">
+          <div className="mt-9 flex w-full flex-wrap gap-3">
+            {heroStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="flex flex-col gap-0.5 rounded-xl border border-border bg-card px-4 py-2.5"
+              >
+                <span className="text-lg font-bold tracking-tight text-primary">
+                  {stat.label}
+                </span>
+                <span className="text-[11px] text-muted-foreground">
+                  {stat.note}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-5 font-mono text-xs text-muted-foreground">
             提供：{COMPANY} ／ オンライン相談に対応
           </p>
         </div>
 
-        <div className="mx-auto mt-16 max-w-3xl">
-          <PipelineBoardPreview />
-        </div>
+        <PipelineBoardPreview />
       </div>
     </section>
   )
@@ -75,46 +95,46 @@ const pipelineRows = [
 
 function PipelineBoardPreview() {
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-black/5">
-      <div className="flex items-center gap-2 border-b border-border px-4 py-3">
-        <span className="size-2.5 rounded-full bg-destructive/70" aria-hidden />
-        <span className="size-2.5 rounded-full bg-accent/60" aria-hidden />
-        <span className="size-2.5 rounded-full bg-primary/60" aria-hidden />
-        <span className="ml-2 inline-flex items-center gap-1.5 font-mono text-xs text-muted-foreground">
+    <div className="overflow-hidden rounded-2xl bg-primary shadow-xl shadow-primary/20">
+      <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
+        <span className="size-2.5 rounded-full bg-white/20" aria-hidden />
+        <span className="size-2.5 rounded-full bg-white/20" aria-hidden />
+        <span className="size-2.5 rounded-full bg-white/20" aria-hidden />
+        <span className="ml-2 inline-flex items-center gap-1.5 font-mono text-xs text-white/60">
           <FileText className="size-3.5" aria-hidden />
           記事パイプライン（進行イメージ）
         </span>
       </div>
 
-      <div className="flex items-center gap-2 border-b border-border px-5 py-3">
+      <div className="flex flex-wrap items-center gap-2 border-b border-white/10 px-5 py-3">
         {pipelineStages.map((stage, index) => (
           <div key={stage} className="flex items-center gap-2">
-            <span className="rounded-full border border-border bg-secondary px-2.5 py-0.5 font-mono text-[11px] text-secondary-foreground">
+            <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-0.5 font-mono text-[11px] text-white/80">
               {stage}
             </span>
             {index < pipelineStages.length - 1 ? (
-              <ArrowRight className="size-3 text-muted-foreground/50" aria-hidden />
+              <ArrowRight className="size-3 text-white/25" aria-hidden />
             ) : null}
           </div>
         ))}
       </div>
 
-      <ul className="divide-y divide-border">
+      <ul className="divide-y divide-white/10">
         {pipelineRows.map((row) => (
           <li
             key={row.title}
             className="flex items-center justify-between gap-4 px-5 py-3.5"
           >
             <div className="flex min-w-0 items-center gap-3">
-              <FileText className="size-4 shrink-0 text-muted-foreground/70" aria-hidden />
-              <span className="truncate text-sm">{row.title}</span>
+              <FileText className="size-4 shrink-0 text-white/40" aria-hidden />
+              <span className="truncate text-sm text-white/85">{row.title}</span>
             </div>
             <span
               className={cn(
                 'inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-0.5 font-mono text-[11px]',
                 row.stage === 4
-                  ? 'bg-accent/10 text-accent'
-                  : 'bg-secondary text-muted-foreground',
+                  ? 'bg-brand-teal text-brand-teal-foreground'
+                  : 'bg-white/10 text-white/60',
               )}
             >
               {row.stage === 4 ? (
@@ -128,7 +148,7 @@ function PipelineBoardPreview() {
         ))}
       </ul>
 
-      <p className="border-t border-border px-5 py-2.5 text-right font-mono text-[11px] text-muted-foreground/70">
+      <p className="border-t border-white/10 px-5 py-2.5 text-right font-mono text-[11px] text-white/40">
         ※ 画面はイメージです
       </p>
     </div>

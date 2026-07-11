@@ -33,6 +33,7 @@ export function ProblemsSection() {
   return (
     <section id="problems" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <SectionHeading
+        kicker="PAIN POINTS"
         eyebrow="こんなお悩みは？"
         title="記事づくり、こんな壁に当たっていませんか"
         description="オウンドメディアやコラムの運用では、こうしたつまずきがよく見られます。"
@@ -42,12 +43,12 @@ export function ProblemsSection() {
         {problems.map((item) => (
           <div
             key={item.title}
-            className="group flex flex-col gap-4 rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/40"
+            className="group flex flex-col gap-4 rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5"
           >
-            <span className="flex size-11 items-center justify-center rounded-lg border border-border bg-secondary text-accent">
+            <span className="flex size-11 items-center justify-center rounded-lg bg-accent/10 text-accent">
               <item.icon className="size-5" aria-hidden />
             </span>
-            <h3 className="text-base font-semibold">{item.title}</h3>
+            <h3 className="text-base font-bold text-primary">{item.title}</h3>
             <p className="text-sm leading-relaxed text-muted-foreground">
               {item.description}
             </p>

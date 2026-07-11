@@ -9,6 +9,7 @@ import {
 } from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
+import { cn } from '@/lib/utils'
 
 const firstMonthSteps = [
   {
@@ -56,58 +57,81 @@ const monthlySteps = [
   },
 ]
 
+function FlowRow({
+  steps,
+  tone,
+}: {
+  steps: { icon: typeof ClipboardList; title: string; description: string }[]
+  tone: 'primary' | 'accent'
+}) {
+  return (
+    <ol className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-0">
+      {steps.map((step, index) => (
+        <li
+          key={step.title}
+          className="flex flex-1 items-start gap-4 sm:flex-col sm:items-center sm:text-center"
+        >
+          <div className="flex items-center sm:w-full">
+            <span
+              className={cn(
+                'flex size-14 shrink-0 items-center justify-center rounded-full border-2',
+                tone === 'primary'
+                  ? 'border-primary bg-primary/5 text-primary'
+                  : 'border-accent bg-accent/5 text-accent',
+              )}
+            >
+              <step.icon className="size-6" aria-hidden />
+            </span>
+            {index < steps.length - 1 ? (
+              <span
+                className={cn(
+                  'ml-3 hidden h-0.5 flex-1 sm:block',
+                  tone === 'primary' ? 'bg-primary/20' : 'bg-accent/20',
+                )}
+                aria-hidden
+              />
+            ) : null}
+          </div>
+          <div className="flex flex-col gap-1 pb-1 sm:mt-3 sm:px-2">
+            <h4 className="text-sm font-bold text-primary">
+              <span className="mr-1.5 font-mono text-muted-foreground/50">
+                0{index + 1}
+              </span>
+              {step.title}
+            </h4>
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              {step.description}
+            </p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
 export function FlowSection() {
   return (
-    <section
-      id="flow"
-      className="relative border-y border-border bg-muted/60"
-    >
+    <section id="flow" className="relative bg-brand-surface">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
+          kicker="FLOW"
           eyebrow="ご利用の流れ"
           title="初月で品質を合わせ、2ヶ月目から量産へ"
           description="初月はあえて本数を絞り、貴社の理想に合わせて品質のチューニングを優先します。"
         />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="mt-12 flex flex-col gap-6">
           <div className="flex flex-col gap-6 rounded-2xl border border-border bg-background p-7 sm:p-8">
             <div className="flex items-center gap-3">
-              <span className="rounded-full bg-primary px-3 py-1 font-mono text-xs font-medium text-primary-foreground">
+              <span className="rounded-full bg-primary px-3 py-1 font-mono text-xs font-bold text-primary-foreground">
                 初月
               </span>
-              <h3 className="text-lg font-semibold">
+              <h3 className="text-lg font-bold text-primary">
                 品質をすり合わせる1ヶ月
               </h3>
             </div>
 
-            <ol className="flex flex-col gap-6">
-              {firstMonthSteps.map((step, index) => (
-                <li key={step.title} className="flex gap-4">
-                  <div className="flex flex-col items-center">
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-border bg-card text-primary">
-                      <step.icon className="size-4.5" aria-hidden />
-                    </span>
-                    {index < firstMonthSteps.length - 1 ? (
-                      <span
-                        className="mt-2 w-px flex-1 bg-border"
-                        aria-hidden
-                      />
-                    ) : null}
-                  </div>
-                  <div className="flex flex-col gap-1 pb-1">
-                    <h4 className="text-sm font-semibold">
-                      <span className="mr-2 font-mono text-muted-foreground/60">
-                        0{index + 1}
-                      </span>
-                      {step.title}
-                    </h4>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {step.description}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+            <FlowRow steps={firstMonthSteps} tone="primary" />
 
             <p className="rounded-xl bg-accent/5 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
               初月は制作本数を絞り、フィードバックを重ねて貴社仕様の品質に合わせることを優先します。
@@ -116,40 +140,13 @@ export function FlowSection() {
 
           <div className="flex flex-col gap-6 rounded-2xl border border-border bg-background p-7 sm:p-8">
             <div className="flex items-center gap-3">
-              <span className="rounded-full bg-accent px-3 py-1 font-mono text-xs font-medium text-accent-foreground">
+              <span className="rounded-full bg-accent px-3 py-1 font-mono text-xs font-bold text-accent-foreground">
                 2ヶ月目〜
               </span>
-              <h3 className="text-lg font-semibold">毎月の運用サイクル</h3>
+              <h3 className="text-lg font-bold text-primary">毎月の運用サイクル</h3>
             </div>
 
-            <ol className="flex flex-col gap-6">
-              {monthlySteps.map((step, index) => (
-                <li key={step.title} className="flex gap-4">
-                  <div className="flex flex-col items-center">
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-border bg-card text-accent">
-                      <step.icon className="size-4.5" aria-hidden />
-                    </span>
-                    {index < monthlySteps.length - 1 ? (
-                      <span
-                        className="mt-2 w-px flex-1 bg-border"
-                        aria-hidden
-                      />
-                    ) : null}
-                  </div>
-                  <div className="flex flex-col gap-1 pb-1">
-                    <h4 className="text-sm font-semibold">
-                      <span className="mr-2 font-mono text-muted-foreground/60">
-                        0{index + 1}
-                      </span>
-                      {step.title}
-                    </h4>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {step.description}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+            <FlowRow steps={monthlySteps} tone="accent" />
           </div>
         </div>
 

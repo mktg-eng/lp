@@ -34,7 +34,7 @@ export function FaqSection() {
 
   return (
     <section id="faq" className="mx-auto max-w-3xl px-5 py-20 sm:py-24">
-      <SectionHeading eyebrow="FAQ" title="よくあるご質問" />
+      <SectionHeading kicker="FAQ" eyebrow="FAQ" title="よくあるご質問" />
 
       <div className="mt-12 flex flex-col gap-3">
         {faqs.map((faq, index) => {
@@ -44,7 +44,7 @@ export function FaqSection() {
               key={faq.question}
               className={cn(
                 'rounded-xl border bg-card transition-colors',
-                isOpen ? 'border-accent/40' : 'border-border',
+                isOpen ? 'border-primary/40' : 'border-border',
               )}
             >
               <button
@@ -58,7 +58,7 @@ export function FaqSection() {
                 </span>
                 <Plus
                   className={cn(
-                    'size-5 shrink-0 text-accent transition-transform duration-200',
+                    'size-5 shrink-0 text-primary transition-transform duration-200',
                     isOpen && 'rotate-45',
                   )}
                   aria-hidden

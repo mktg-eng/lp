@@ -44,47 +44,44 @@ export function ContactSection() {
   }
 
   return (
-    <section
-      id="contact"
-      className="relative overflow-hidden border-t border-border"
-    >
-      <div className="absolute inset-0 bg-dots [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
-      <div className="absolute -bottom-40 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" aria-hidden />
+    <section id="contact" className="relative overflow-hidden bg-primary">
+      <div className="absolute inset-0 bg-dots opacity-[0.08] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
+      <div className="absolute -bottom-40 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-brand-teal/10 blur-3xl" aria-hidden />
 
-      <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-24 lg:grid-cols-2">
+      <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-24 lg:grid-cols-2 lg:items-center">
         <div className="flex flex-col gap-5">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card px-3 py-1 font-mono text-xs text-accent">
-            <span className="size-1.5 rounded-full bg-accent" aria-hidden />
+          <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-3 py-1 font-mono text-xs font-bold text-white">
+            <span className="size-1.5 rounded-full bg-brand-teal" aria-hidden />
             お問い合わせ
           </span>
-          <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">
             まずは無料でご相談ください
           </h2>
-          <p className="max-w-md text-pretty leading-relaxed text-muted-foreground">
+          <p className="max-w-md text-pretty leading-relaxed text-white/70">
             サイトの現状や目標をお伺いし、進め方と概算をご提案します。
             「何から書けばいいか分からない」段階でも、お気軽にお問い合わせください。
           </p>
-          <ul className="mt-2 flex flex-col gap-3 text-sm text-muted-foreground">
+          <ul className="mt-2 flex flex-col gap-3 text-sm text-white/70">
             {[
               'オンラインでのご相談に対応',
               '無理な営業や勧誘は行いません',
               '内容に応じてお見積りをご提示',
             ].map((item) => (
               <li key={item} className="flex items-center gap-3">
-                <CheckCircle2 className="size-4 text-accent" aria-hidden />
+                <CheckCircle2 className="size-4 text-brand-teal" aria-hidden />
                 {item}
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="rounded-2xl border border-border bg-card p-7 sm:p-8">
+        <div className="rounded-2xl bg-white p-7 shadow-xl shadow-black/20 sm:p-8">
           {submitted ? (
             <div className="flex h-full flex-col items-center justify-center gap-4 py-10 text-center">
               <span className="flex size-14 items-center justify-center rounded-full bg-accent/15 text-accent">
                 <CheckCircle2 className="size-7" aria-hidden />
               </span>
-              <h3 className="text-xl font-semibold">送信ありがとうございます</h3>
+              <h3 className="text-xl font-bold text-primary">送信ありがとうございます</h3>
               <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
                 内容を確認のうえ、担当者よりご連絡いたします。少々お待ちください。
               </p>
@@ -118,7 +115,12 @@ export function ContactSection() {
                   required
                 />
               </div>
-              <Button type="submit" size="lg" disabled={submitting} className="h-12 w-full text-base">
+              <Button
+                type="submit"
+                size="lg"
+                disabled={submitting}
+                className="h-12 w-full rounded-full bg-accent text-base text-accent-foreground hover:bg-accent/90"
+              >
                 {submitting ? '送信中…' : '無料相談を申し込む'}
                 {!submitting && <ArrowRight className="size-4" aria-hidden />}
               </Button>

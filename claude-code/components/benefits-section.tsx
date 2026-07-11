@@ -31,28 +31,26 @@ const benefits = [
 
 export function BenefitsSection() {
   return (
-    <section
-      id="benefits"
-      className="relative border-y border-border bg-muted/60"
-    >
+    <section id="benefits" className="relative bg-white">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
+          kicker="AFTER"
           eyebrow="導入後の世界"
           title="AIエージェントが、チームの一員になる"
           description="設定と運用が整うことで、開発チームの動き方は少しずつ変わっていきます。"
         />
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((item) => (
             <div
               key={item.title}
-              className="flex gap-5 rounded-xl border border-border bg-background p-6 sm:p-7"
+              className="flex flex-col items-center gap-4 rounded-2xl border border-border bg-card p-7 text-center"
             >
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <item.icon className="size-5.5" aria-hidden />
+              <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-navy/5 text-brand-orange">
+                <item.icon className="size-6" aria-hidden />
               </span>
               <div className="flex flex-col gap-2">
-                <h3 className="text-lg font-semibold">{item.title}</h3>
+                <h3 className="text-base font-bold">{item.title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>

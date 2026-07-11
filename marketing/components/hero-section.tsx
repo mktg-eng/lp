@@ -1,29 +1,40 @@
 import Link from 'next/link'
-import { ArrowRight, Sparkles, TrendingUp, Copy } from 'lucide-react'
+import { ArrowRight, Zap, TrendingUp, Copy, ArrowUpRight } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { COMPANY } from '@/lib/site'
 
 export function HeroSection() {
   return (
-    <section id="top" className="relative overflow-hidden">
+    <section id="top" className="relative overflow-hidden bg-background">
       <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_top,black,transparent_72%)]" aria-hidden />
-      <div className="absolute -top-24 right-1/4 -z-0 h-64 w-[30rem] translate-x-1/2 rounded-full bg-accent/10 blur-3xl" aria-hidden />
+      <div
+        className="absolute inset-x-0 top-0 -z-0 h-72 origin-top-right -skew-y-3 bg-speed-stripes opacity-70 [mask-image:linear-gradient(to_bottom,black,transparent)]"
+        aria-hidden
+      />
+      <div className="absolute -top-24 right-1/4 -z-0 h-64 w-[30rem] translate-x-1/2 rounded-full bg-primary/15 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16 sm:pt-28 sm:pb-24">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 font-mono text-xs text-accent">
-            <Sparkles className="size-3.5" aria-hidden />
+          <span
+            className="pointer-events-none absolute top-6 left-1/2 -z-0 -translate-x-1/2 text-6xl font-black tracking-tight text-foreground/[0.06] italic uppercase select-none sm:text-8xl"
+            aria-hidden
+          >
+            Growth Loop
+          </span>
+
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 font-mono text-xs font-semibold tracking-wide text-primary">
+            <Zap className="size-3.5" aria-hidden />
             AI × フォーム営業で新規開拓
           </span>
 
-          <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.12] tracking-tight sm:text-5xl md:text-6xl">
+          <h1 className="mt-6 text-4xl leading-[1.12] font-black tracking-tight text-balance sm:text-5xl md:text-6xl">
             “当たる集客”を、
             <br className="hidden sm:block" />
             <span className="text-gradient">コピーして増やす。</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
             AIでLP・オファーを高速量産 → フォーム営業で検証 → 当たった型を横展開。
             低コストで新規リードを回す仕組みを提供します。
           </p>
@@ -71,17 +82,21 @@ const metrics = [
 const bars = [34, 46, 41, 58, 52, 70, 66, 84, 92]
 
 function GrowthPreview() {
+  const points = bars
+    .map((h, i) => `${(i / (bars.length - 1)) * 100},${100 - h}`)
+    .join(' ')
+
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-card shadow-lg shadow-black/5">
+    <div className="overflow-hidden rounded-xl border border-border bg-card shadow-2xl shadow-black/40">
       <div className="flex items-center justify-between gap-2 border-b border-border px-4 py-3">
         <div className="flex items-center gap-2">
           <span className="size-2.5 rounded-full bg-primary/70" aria-hidden />
-          <span className="size-2.5 rounded-full bg-accent/60" aria-hidden />
+          <span className="size-2.5 rounded-full bg-brand-cyan/60" aria-hidden />
           <span className="ml-2 font-mono text-xs text-muted-foreground">
             campaign dashboard
           </span>
         </div>
-        <span className="inline-flex items-center gap-1 font-mono text-xs text-accent">
+        <span className="inline-flex items-center gap-1 font-mono text-xs font-semibold text-primary">
           <TrendingUp className="size-3.5" aria-hidden />
           growth
         </span>
@@ -97,12 +112,15 @@ function GrowthPreview() {
               <span
                 className={
                   m.accent
-                    ? 'text-2xl font-semibold tracking-tight text-accent'
-                    : 'text-2xl font-semibold tracking-tight'
+                    ? 'font-mono text-3xl font-black tracking-tight tabular-nums text-primary'
+                    : 'font-mono text-3xl font-black tracking-tight tabular-nums'
                 }
               >
                 {m.value}
               </span>
+              {m.accent ? (
+                <ArrowUpRight className="size-4 text-primary" aria-hidden />
+              ) : null}
               <span className="text-xs text-muted-foreground">{m.unit}</span>
             </p>
           </div>
@@ -119,15 +137,31 @@ function GrowthPreview() {
             週次リード推移
           </span>
         </div>
-        <div className="flex h-28 items-end gap-1.5">
+        <div className="relative flex h-28 items-end gap-1.5">
           {bars.map((h, i) => (
             <div
               key={i}
               className="flex-1 rounded-t-sm bg-brand-gradient"
-              style={{ height: `${h}%`, opacity: 0.45 + (i / bars.length) * 0.55 }}
+              style={{ height: `${h}%`, opacity: 0.35 + (i / bars.length) * 0.5 }}
               aria-hidden
             />
           ))}
+          <svg
+            className="pointer-events-none absolute inset-0 text-primary drop-shadow-[0_0_6px_var(--brand-lime)]"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            aria-hidden
+          >
+            <polyline
+              points={points}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              vectorEffect="non-scaling-stroke"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </div>
       </div>
 

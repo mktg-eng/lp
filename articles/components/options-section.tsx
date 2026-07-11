@@ -78,65 +78,46 @@ const options: {
 
 export function OptionsSection() {
   return (
-    <section
-      id="options"
-      className="relative border-y border-border bg-muted/60"
-    >
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+    <section id="options" className="relative overflow-hidden bg-primary">
+      <div className="absolute inset-0 bg-grid opacity-[0.06] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
+
+      <div className="relative mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
+          kicker="OPTIONS"
           eyebrow="オプション"
           title="必要な分だけ、記事単位で追加"
           description="監修の強化から画像・図解、記事の二次活用まで。金額はいずれも目安です。"
+          invert
         />
 
-        <div className="mt-12 overflow-x-auto rounded-2xl border border-border bg-card">
-          <table className="w-full min-w-[560px] border-collapse text-left">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="p-4 text-sm font-semibold text-muted-foreground sm:p-5">
-                  オプション
-                </th>
-                <th className="w-36 p-4 text-sm font-semibold sm:p-5">
-                  金額（目安）
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {options.map((option) => (
-                <tr
-                  key={option.label}
-                  className="border-b border-border/70 last:border-b-0"
-                >
-                  <th scope="row" className="p-4 sm:p-5">
-                    <span className="flex items-start gap-3">
-                      <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-secondary text-muted-foreground">
-                        <option.icon className="size-4" aria-hidden />
-                      </span>
-                      <span className="flex flex-col gap-0.5">
-                        <span className="text-sm font-medium text-foreground">
-                          {option.label}
-                        </span>
-                        <span className="text-xs font-normal text-muted-foreground">
-                          {option.note}
-                        </span>
-                      </span>
-                    </span>
-                  </th>
-                  <td className="p-4 sm:p-5">
-                    <span className="font-mono text-sm font-semibold tracking-tight text-foreground">
-                      {option.price}
-                    </span>
-                    <span className="ml-0.5 font-mono text-xs text-muted-foreground">
-                      {option.unit}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {options.map((option) => (
+            <div
+              key={option.label}
+              className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-6"
+            >
+              <span className="flex size-10 items-center justify-center rounded-lg bg-brand-teal text-brand-teal-foreground">
+                <option.icon className="size-4.5" aria-hidden />
+              </span>
+              <span className="text-sm font-bold text-white">
+                {option.label}
+              </span>
+              <span className="text-xs leading-relaxed text-white/55">
+                {option.note}
+              </span>
+              <span className="mt-auto flex items-baseline gap-1 border-t border-white/10 pt-3">
+                <span className="font-mono text-base font-bold text-brand-teal">
+                  {option.price}
+                </span>
+                <span className="font-mono text-[11px] text-white/40">
+                  {option.unit}
+                </span>
+              </span>
+            </div>
+          ))}
         </div>
 
-        <p className="mt-6 text-center text-xs text-muted-foreground">
+        <p className="mt-6 text-center text-xs text-white/40">
           ※ 金額・条件は目安です。正式なお見積りはヒアリング後にご案内します。
         </p>
       </div>

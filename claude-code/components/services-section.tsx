@@ -33,48 +33,51 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-      <SectionHeading
-        eyebrow="サービス内容"
-        title="導入支援とエージェント設定を、一気通貫で"
-        description="「入れる」だけでなく「使い続けられる」状態まで。2つの軸でご支援します。"
-      />
+    <section id="services" className="border-y border-border bg-muted/60">
+      <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+        <SectionHeading
+          kicker="SERVICES"
+          eyebrow="サービス内容"
+          title="導入支援とエージェント設定を、一気通貫で"
+          description="「入れる」だけでなく「使い続けられる」状態まで。2つの軸でご支援します。"
+        />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-2">
-        {services.map((service) => (
-          <div
-            key={service.title}
-            className="flex flex-col gap-6 rounded-2xl border border-border bg-card p-7 sm:p-8"
-          >
-            <div className="flex items-center gap-4">
-              <span className="flex size-12 items-center justify-center rounded-xl bg-primary text-lg font-semibold text-primary-foreground">
-                {service.badge}
-              </span>
-              <div>
-                <div className="flex items-center gap-2 text-accent">
-                  <service.icon className="size-4" aria-hidden />
-                  <span className="font-mono text-xs">SERVICE {service.badge}</span>
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className="flex flex-col gap-6 rounded-2xl border border-border bg-background p-7 sm:p-8"
+            >
+              <div className="flex items-center gap-4">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand-navy text-lg font-black text-brand-navy-foreground">
+                  {service.badge}
+                </span>
+                <div>
+                  <div className="flex items-center gap-2 text-brand-orange">
+                    <service.icon className="size-4" aria-hidden />
+                    <span className="font-mono text-xs font-bold">SERVICE {service.badge}</span>
+                  </div>
+                  <h3 className="text-xl font-bold">{service.title}</h3>
                 </div>
-                <h3 className="text-xl font-semibold">{service.title}</h3>
               </div>
+
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {service.description}
+              </p>
+
+              <ul className="flex flex-col gap-3 border-t border-border pt-6">
+                {service.items.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm">
+                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-orange/15 text-brand-orange">
+                      <Check className="size-3.5" aria-hidden />
+                    </span>
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {service.description}
-            </p>
-
-            <ul className="flex flex-col gap-3 border-t border-border pt-6">
-              {service.items.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm">
-                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
-                    <Check className="size-3.5" aria-hidden />
-                  </span>
-                  <span className="leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )

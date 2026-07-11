@@ -26,22 +26,27 @@ const reasons = [
 export function ReasonsSection() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-      <SectionHeading eyebrow="選ばれる理由" title="量産・分析・実行を、まとめて任せられる" />
+      <SectionHeading
+        kicker="Why Us"
+        eyebrow="選ばれる理由"
+        title="量産・分析・実行を、まとめて任せられる"
+      />
 
       <div className="mt-12 grid gap-5 md:grid-cols-3">
         {reasons.map((item, index) => (
           <div
             key={item.title}
-            className="flex flex-col gap-5 rounded-xl border border-border bg-card p-7"
+            className="relative flex flex-col gap-5 overflow-hidden rounded-xl border border-border bg-card p-7"
           >
-            <div className="flex items-center justify-between">
-              <span className="flex size-12 items-center justify-center rounded-xl bg-brand-soft text-primary">
-                <item.icon className="size-5.5" aria-hidden />
-              </span>
-              <span className="font-mono text-sm text-muted-foreground/50">
-                0{index + 1}
-              </span>
-            </div>
+            <span
+              className="pointer-events-none absolute -top-4 -right-2 font-mono text-6xl font-black text-primary/[0.08] italic select-none"
+              aria-hidden
+            >
+              0{index + 1}
+            </span>
+            <span className="flex size-12 items-center justify-center rounded-xl bg-brand-soft text-primary">
+              <item.icon className="size-5.5" aria-hidden />
+            </span>
             <h3 className="text-lg font-semibold">{item.title}</h3>
             <p className="text-sm leading-relaxed text-muted-foreground">
               {item.description}

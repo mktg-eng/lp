@@ -53,11 +53,10 @@ export function ContactSection() {
 
       <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-24 lg:grid-cols-2">
         <div className="flex flex-col gap-5">
-          <span className="inline-flex w-fit items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
-            <span className="size-1.5 rounded-full bg-accent" aria-hidden />
+          <span className="inline-flex w-fit items-center gap-2 rounded-md bg-primary px-3 py-1 font-mono text-xs font-bold tracking-[0.08em] text-primary-foreground">
             お問い合わせ
           </span>
-          <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-black tracking-tight text-balance sm:text-4xl">
             まずは無料でご相談ください
           </h2>
           <p className="max-w-md text-pretty leading-relaxed text-muted-foreground">
@@ -71,7 +70,7 @@ export function ContactSection() {
               '内容に応じてお見積りをご提示',
             ].map((item) => (
               <li key={item} className="flex items-center gap-3">
-                <CheckCircle2 className="size-4 text-accent" aria-hidden />
+                <CheckCircle2 className="size-4 text-primary" aria-hidden />
                 {item}
               </li>
             ))}
@@ -81,7 +80,7 @@ export function ContactSection() {
         <div className="rounded-2xl border border-border bg-card p-7 sm:p-8">
           {submitted ? (
             <div className="flex h-full flex-col items-center justify-center gap-4 py-10 text-center">
-              <span className="flex size-14 items-center justify-center rounded-full bg-accent/15 text-accent">
+              <span className="flex size-14 items-center justify-center rounded-full bg-primary/15 text-primary">
                 <CheckCircle2 className="size-7" aria-hidden />
               </span>
               <h3 className="text-xl font-semibold">送信ありがとうございます</h3>

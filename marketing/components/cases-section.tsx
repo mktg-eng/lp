@@ -3,6 +3,8 @@ import { Newspaper, Briefcase, Building2 } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 import { SERVICE_NAME } from '@/lib/site'
 
+const sparkPoints = [30, 55, 42, 68, 60, 82, 90]
+
 const cases = [
   {
     icon: Newspaper,
@@ -37,10 +39,20 @@ const cases = [
 ]
 
 export function CasesSection() {
+  const points = sparkPoints
+    .map((h, i) => `${(i / (sparkPoints.length - 1)) * 100},${100 - h}`)
+    .join(' ')
+
   return (
-    <section id="cases" className="relative border-y border-border bg-muted/60">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+    <section id="cases" className="relative py-6">
+      <div
+        className="absolute inset-0 -z-10 bg-brand-charcoal [clip-path:polygon(0_32px,100%_0,100%_100%,0_calc(100%-32px))]"
+        aria-hidden
+      />
+
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <SectionHeading
+          kicker="Cases"
           eyebrow="適用事例"
           title="こんな新規開拓に使えます"
           description={`求職者メディアから人材紹介、自社サービスまで。ターゲットに合わせて“${SERVICE_NAME}”を展開します。`}
@@ -50,13 +62,13 @@ export function CasesSection() {
           {cases.map((item, index) => (
             <div
               key={item.title}
-              className="flex flex-col gap-5 rounded-2xl border border-border bg-background p-7"
+              className="flex flex-col gap-5 overflow-hidden rounded-2xl border border-border bg-background p-7"
             >
               <div className="flex items-center justify-between">
                 <span className="flex size-12 items-center justify-center rounded-xl bg-brand-soft text-primary">
                   <item.icon className="size-5.5" aria-hidden />
                 </span>
-                <span className="font-mono text-xs text-muted-foreground/50">
+                <span className="font-mono text-xs text-muted-foreground/50 tabular-nums">
                   CASE 0{index + 1}
                 </span>
               </div>
@@ -66,11 +78,30 @@ export function CasesSection() {
                 {item.description}
               </p>
 
+              <div className="relative h-10 w-full text-primary/70">
+                <svg
+                  className="absolute inset-0 h-full w-full"
+                  viewBox="0 0 100 100"
+                  preserveAspectRatio="none"
+                  aria-hidden
+                >
+                  <polyline
+                    points={points}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    vectorEffect="non-scaling-stroke"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+
               <div className="grid grid-cols-2 gap-3 border-t border-border pt-5">
                 {item.stats.map((stat) => (
                   <div key={stat.label} className="flex flex-col gap-1">
                     <span className="flex items-baseline gap-0.5">
-                      <span className="text-2xl font-semibold tracking-tight text-gradient">
+                      <span className="font-mono text-2xl font-black tracking-tight tabular-nums text-gradient">
                         {stat.value}
                       </span>
                       {stat.unit ? (

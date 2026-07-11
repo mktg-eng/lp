@@ -44,47 +44,44 @@ export function ContactSection() {
   }
 
   return (
-    <section
-      id="contact"
-      className="relative overflow-hidden border-t border-border"
-    >
-      <div className="absolute inset-0 bg-dots [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
-      <div className="absolute -bottom-40 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" aria-hidden />
+    <section id="contact" className="relative overflow-hidden bg-brand-navy">
+      <div className="absolute inset-0 bg-grid-invert [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
+      <div className="absolute -bottom-40 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-brand-orange/15 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-24 lg:grid-cols-2">
         <div className="flex flex-col gap-5">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card px-3 py-1 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
-            <span className="size-1.5 rounded-full bg-accent" aria-hidden />
+          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 font-mono text-xs uppercase tracking-[0.12em] text-white/70">
+            <span className="size-1.5 rounded-full bg-brand-orange" aria-hidden />
             お問い合わせ
           </span>
-          <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="text-balance text-3xl font-black tracking-tight text-white sm:text-4xl">
             まずは無料でご相談ください
           </h2>
-          <p className="max-w-md text-pretty leading-relaxed text-muted-foreground">
+          <p className="max-w-md text-pretty leading-relaxed text-white/70">
             導入状況やお悩みをお伺いし、最適な進め方をご提案します。
             「何から始めればいいか分からない」段階でも、お気軽にお問い合わせください。
           </p>
-          <ul className="mt-2 flex flex-col gap-3 text-sm text-muted-foreground">
+          <ul className="mt-2 flex flex-col gap-3 text-sm text-white/70">
             {[
               'オンラインでのご相談に対応',
               '無理な営業や勧誘は行いません',
               '内容に応じてお見積りをご提示',
             ].map((item) => (
               <li key={item} className="flex items-center gap-3">
-                <CheckCircle2 className="size-4 text-accent" aria-hidden />
+                <CheckCircle2 className="size-4 text-brand-orange" aria-hidden />
                 {item}
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="rounded-2xl border border-border bg-card p-7 sm:p-8">
+        <div className="rounded-2xl bg-white p-7 shadow-2xl shadow-black/30 sm:p-8">
           {submitted ? (
             <div className="flex h-full flex-col items-center justify-center gap-4 py-10 text-center">
-              <span className="flex size-14 items-center justify-center rounded-full bg-accent/15 text-accent">
+              <span className="flex size-14 items-center justify-center rounded-full bg-brand-orange/15 text-brand-orange">
                 <CheckCircle2 className="size-7" aria-hidden />
               </span>
-              <h3 className="text-xl font-semibold">送信ありがとうございます</h3>
+              <h3 className="text-xl font-bold">送信ありがとうございます</h3>
               <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
                 内容を確認のうえ、担当者よりご連絡いたします。少々お待ちください。
               </p>
@@ -118,7 +115,12 @@ export function ContactSection() {
                   required
                 />
               </div>
-              <Button type="submit" size="lg" disabled={submitting} className="h-12 w-full text-base">
+              <Button
+                type="submit"
+                size="lg"
+                disabled={submitting}
+                className="h-12 w-full rounded-full bg-brand-orange text-base text-brand-orange-foreground hover:bg-brand-orange/85"
+              >
                 {submitting ? '送信中…' : '無料相談を申し込む'}
                 {!submitting && <ArrowRight className="size-4" aria-hidden />}
               </Button>

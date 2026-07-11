@@ -6,9 +6,9 @@ interface SectionHeadingProps {
   description?: string
   className?: string
   align?: 'center' | 'left'
-  /** Big faded uppercase word rendered above the title, depo.design 風の英字ラベル */
+  /** Chapter-style large faint serif word rendered behind the heading */
   kicker?: string
-  /** dark/coral な背景セクションで使う場合 */
+  /** dark/ink な背景セクションで使う場合 */
   invert?: boolean
 }
 
@@ -24,7 +24,7 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        'flex flex-col gap-3',
+        'relative flex flex-col gap-4',
         align === 'center'
           ? 'mx-auto max-w-2xl items-center text-center'
           : 'items-start text-left',
@@ -34,8 +34,9 @@ export function SectionHeading({
       {kicker ? (
         <span
           className={cn(
-            'select-none text-4xl font-black uppercase italic tracking-tight sm:text-5xl',
-            invert ? 'text-white/15' : 'text-black/10',
+            'pointer-events-none absolute -top-6 text-6xl leading-none font-display font-bold italic select-none sm:-top-10 sm:text-8xl',
+            align === 'center' ? 'left-1/2 -translate-x-1/2' : 'left-0',
+            invert ? 'text-white/[0.06]' : 'text-brand-ink/[0.05]',
           )}
           aria-hidden
         >
@@ -44,17 +45,22 @@ export function SectionHeading({
       ) : null}
       <span
         className={cn(
-          'inline-flex w-fit items-center gap-2 rounded-md px-3 py-1 font-mono text-xs font-bold tracking-[0.08em]',
-          invert
-            ? 'bg-white text-black'
-            : 'bg-primary text-primary-foreground',
+          'relative inline-flex w-fit items-center gap-2.5 font-mono text-[11px] font-medium tracking-[0.28em] uppercase',
+          invert ? 'text-white/60' : 'text-muted-foreground',
         )}
       >
+        <span
+          className={cn(
+            'h-px w-6',
+            invert ? 'bg-white/40' : 'bg-brand-vermillion',
+          )}
+          aria-hidden
+        />
         {eyebrow}
       </span>
       <h2
         className={cn(
-          'text-pretty text-3xl font-black leading-[1.25] tracking-tight sm:text-4xl',
+          'relative text-pretty font-display text-4xl leading-[1.2] font-bold tracking-tight sm:text-5xl',
           invert ? 'text-white' : 'text-foreground',
         )}
       >
@@ -63,7 +69,7 @@ export function SectionHeading({
       {description ? (
         <p
           className={cn(
-            'text-pretty leading-relaxed',
+            'relative text-pretty leading-relaxed',
             invert ? 'text-white/70' : 'text-muted-foreground',
           )}
         >

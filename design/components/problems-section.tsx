@@ -1,6 +1,7 @@
 import { FileClock, Shuffle, Wallet, MessageCircleQuestion } from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
+import { Reveal } from '@/components/reveal'
 
 const problems = [
   {
@@ -33,33 +34,34 @@ export function ProblemsSection() {
   return (
     <section id="problems" className="bg-brand-cream">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-        <SectionHeading
-          kicker="ISSUE"
-          eyebrow="こんなお悩みは？"
-          title="デザインを“外に頼む”のは、意外と大変"
-          description="デザインの外注や内製化には、こんなつまずきがよく見られます。"
-        />
+        <Reveal>
+          <SectionHeading
+            kicker="Issue"
+            eyebrow="こんなお悩みは？"
+            title="デザインを“外に頼む”のは、意外と大変"
+            description="デザインの外注や内製化には、こんなつまずきがよく見られます。"
+          />
+        </Reveal>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {problems.map((item, index) => (
-            <div
-              key={item.title}
-              className="group relative flex flex-col gap-4 overflow-hidden rounded-lg border-2 border-black bg-white p-6 transition-transform hover:-translate-y-1"
-            >
-              <span
-                className="pointer-events-none absolute -top-3 -right-2 select-none font-black text-black/[0.06] text-7xl"
-                aria-hidden
-              >
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <span className="relative flex size-11 items-center justify-center rounded-md bg-black text-brand-yellow">
-                <item.icon className="size-5" aria-hidden />
-              </span>
-              <h3 className="relative text-base font-bold">{item.title}</h3>
-              <p className="relative text-sm leading-relaxed text-muted-foreground">
-                {item.description}
-              </p>
-            </div>
+            <Reveal key={item.title} delay={index * 90}>
+              <div className="group relative flex h-full flex-col gap-5 overflow-hidden rounded-sm border border-brand-ink/12 bg-brand-paper p-6 shadow-[0_1px_2px_rgba(36,31,26,0.04),0_16px_40px_-20px_rgba(36,31,26,0.35)] transition-transform duration-300 hover:-translate-y-1">
+                <span
+                  className="pointer-events-none absolute -top-4 -right-2 select-none font-display text-7xl leading-none font-bold text-brand-ink/[0.05]"
+                  aria-hidden
+                >
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <item.icon className="relative size-5 text-brand-vermillion" aria-hidden />
+                <h3 className="relative font-display text-lg font-bold text-brand-ink">
+                  {item.title}
+                </h3>
+                <p className="relative text-sm leading-relaxed text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

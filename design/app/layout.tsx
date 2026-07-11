@@ -1,11 +1,20 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist_Mono, Shippori_Mincho_B1, Zen_Kaku_Gothic_New } from 'next/font/google'
 import './globals.css'
 
 import { COMPANY, SERVICE_NAME } from '@/lib/site'
 
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
+const displaySerif = Shippori_Mincho_B1({
+  variable: '--font-display-serif',
+  subsets: ['latin'],
+  weight: ['700', '800'],
+})
+const bodyGothic = Zen_Kaku_Gothic_New({
+  variable: '--font-body-gothic',
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+})
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
@@ -36,7 +45,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#ffffff',
+  themeColor: '#f2ecdf',
 }
 
 export default function RootLayout({
@@ -47,7 +56,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${geistSans.variable} ${geistMono.variable} bg-background`}
+      className={`${displaySerif.variable} ${bodyGothic.variable} ${geistMono.variable} bg-background`}
     >
       <body className="font-sans antialiased">
         {children}

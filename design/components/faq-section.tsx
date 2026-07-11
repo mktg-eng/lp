@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Plus } from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
+import { Reveal } from '@/components/reveal'
 import { cn } from '@/lib/utils'
 
 const faqs = [
@@ -44,53 +45,63 @@ export function FaqSection() {
 
   return (
     <section id="faq" className="mx-auto max-w-3xl px-5 py-20 sm:py-24">
-      <SectionHeading kicker="FAQ" eyebrow="FAQ" title="よくあるご質問" />
+      <Reveal>
+        <SectionHeading kicker="FAQ" eyebrow="FAQ" title="よくあるご質問" />
+      </Reveal>
 
-      <div className="mt-12 flex flex-col gap-3">
+      <div className="mt-14 flex flex-col gap-3">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index
           return (
-            <div
-              key={faq.question}
-              className={cn(
-                'rounded-lg border-2 bg-white transition-colors',
-                isOpen ? 'border-brand-coral' : 'border-black',
-              )}
-            >
-              <button
-                type="button"
-                onClick={() => setOpenIndex(isOpen ? null : index)}
-                aria-expanded={isOpen}
-                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
-              >
-                <span className="text-sm font-bold sm:text-base">
-                  {faq.question}
-                </span>
-                <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-black text-brand-yellow">
-                  <Plus
-                    className={cn(
-                      'size-4 transition-transform duration-200',
-                      isOpen && 'rotate-45',
-                    )}
-                    aria-hidden
-                  />
-                </span>
-              </button>
+            <Reveal key={faq.question} delay={Math.min(index, 4) * 60}>
               <div
                 className={cn(
-                  'grid transition-all duration-200',
-                  isOpen
-                    ? 'grid-rows-[1fr] opacity-100'
-                    : 'grid-rows-[0fr] opacity-0',
+                  'overflow-hidden rounded-sm border bg-brand-paper transition-colors',
+                  isOpen ? 'border-brand-vermillion/40' : 'border-brand-ink/12',
                 )}
               >
-                <div className="overflow-hidden">
-                  <p className="px-5 pb-5 text-sm leading-relaxed text-muted-foreground">
-                    {faq.answer}
-                  </p>
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  aria-expanded={isOpen}
+                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                >
+                  <span className="font-display text-sm font-bold text-brand-ink sm:text-base">
+                    {faq.question}
+                  </span>
+                  <span
+                    className={cn(
+                      'flex size-7 shrink-0 items-center justify-center rounded-full border transition-colors',
+                      isOpen
+                        ? 'border-brand-vermillion/40 text-brand-vermillion'
+                        : 'border-brand-ink/15 text-brand-ink',
+                    )}
+                  >
+                    <Plus
+                      className={cn(
+                        'size-4 transition-transform duration-200',
+                        isOpen && 'rotate-45',
+                      )}
+                      aria-hidden
+                    />
+                  </span>
+                </button>
+                <div
+                  className={cn(
+                    'grid transition-all duration-200',
+                    isOpen
+                      ? 'grid-rows-[1fr] opacity-100'
+                      : 'grid-rows-[0fr] opacity-0',
+                  )}
+                >
+                  <div className="overflow-hidden">
+                    <p className="px-5 pb-5 text-sm leading-relaxed text-muted-foreground">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           )
         })}
       </div>

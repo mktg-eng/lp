@@ -1,6 +1,7 @@
 import { CalendarCheck, Layers, UserRoundCheck, PencilRuler } from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
+import { Reveal } from '@/components/reveal'
 
 const benefits = [
   {
@@ -31,31 +32,37 @@ const benefits = [
 
 export function BenefitsSection() {
   return (
-    <section id="benefits" className="relative bg-brand-yellow">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-        <SectionHeading
-          kicker="BENEFITS"
-          eyebrow="導入後の変化"
-          title="「頼みたいとき、すぐ頼める」が当たり前になる"
-          description="定額の制作体制が整うと、デザインまわりの動き方はこう変わります。"
-        />
+    <section id="benefits" className="relative bg-brand-paper">
+      <div className="pointer-events-none absolute inset-0 bg-grain opacity-[0.25] mix-blend-multiply" aria-hidden />
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          {benefits.map((item) => (
-            <div
+      <div className="relative mx-auto max-w-6xl px-5 py-20 sm:py-24">
+        <Reveal>
+          <SectionHeading
+            kicker="Change"
+            eyebrow="導入後の変化"
+            title="「頼みたいとき、すぐ頼める」が当たり前になる"
+            description="定額の制作体制が整うと、デザインまわりの動き方はこう変わります。"
+          />
+        </Reveal>
+
+        <div className="mt-14 grid gap-x-12 gap-y-10 border-t border-brand-ink/10 sm:grid-cols-2">
+          {benefits.map((item, index) => (
+            <Reveal
               key={item.title}
-              className="flex gap-5 rounded-lg border-2 border-black bg-white p-6 sm:p-7"
+              delay={index * 100}
+              className="flex flex-col gap-4 border-b border-brand-ink/10 py-8"
             >
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-md bg-black text-brand-coral">
-                <item.icon className="size-5.5" aria-hidden />
-              </span>
-              <div className="flex flex-col gap-2">
-                <h3 className="text-lg font-bold">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {item.description}
-                </p>
+              <div className="flex items-center justify-between">
+                <item.icon className="size-5 text-brand-vermillion" aria-hidden />
+                <span className="font-mono text-xs tracking-[0.1em] text-muted-foreground/60">
+                  0{index + 1}
+                </span>
               </div>
-            </div>
+              <h3 className="font-display text-xl font-bold text-brand-ink">{item.title}</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {item.description}
+              </p>
+            </Reveal>
           ))}
         </div>
       </div>

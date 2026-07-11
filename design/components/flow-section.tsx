@@ -1,6 +1,7 @@
 import { FileSignature, Handshake, MessageSquareText, Palette, PackageCheck } from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
+import { Reveal } from '@/components/reveal'
 
 const steps = [
   {
@@ -34,33 +35,34 @@ export function FlowSection() {
   return (
     <section id="flow" className="relative bg-brand-cream">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-        <SectionHeading
-          kicker="FLOW"
-          eyebrow="ご利用の流れ"
-          title="契約から納品まで、5つのステップ"
-          description="やり取りはすべてオンラインで完結。日々の依頼はチャットだけで進みます。"
-        />
+        <Reveal>
+          <SectionHeading
+            kicker="Flow"
+            eyebrow="ご利用の流れ"
+            title="契約から納品まで、5つのステップ"
+            description="やり取りはすべてオンラインで完結。日々の依頼はチャットだけで進みます。"
+          />
+        </Reveal>
 
-        <ol className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <ol className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-0 lg:divide-x lg:divide-brand-ink/10">
           {steps.map((step, index) => (
-            <li
-              key={step.title}
-              className="relative flex flex-col gap-4 rounded-lg border-2 border-black bg-white p-5"
-            >
-              <div className="flex items-center gap-3">
-                <span className="flex size-11 items-center justify-center rounded-md bg-black text-brand-yellow">
-                  <step.icon className="size-5" aria-hidden />
-                </span>
-                <span className="font-mono text-2xl font-black text-brand-coral/70">
-                  0{index + 1}
-                </span>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <h3 className="text-base font-bold">{step.title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {step.description}
-                </p>
-              </div>
+            <li key={step.title} className="relative lg:px-6 lg:first:pl-0 lg:last:pr-0">
+              <Reveal delay={index * 100} className="flex h-full flex-col gap-4">
+                <div className="flex items-center justify-between">
+                  <span className="font-display text-4xl leading-none font-bold text-brand-ink/15">
+                    0{index + 1}
+                  </span>
+                  <step.icon className="size-5 text-brand-vermillion" aria-hidden />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <h3 className="font-display text-base font-bold text-brand-ink">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {step.description}
+                  </p>
+                </div>
+              </Reveal>
             </li>
           ))}
         </ol>

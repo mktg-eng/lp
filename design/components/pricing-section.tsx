@@ -3,6 +3,7 @@ import { Check } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { SectionHeading } from '@/components/section-heading'
+import { Reveal } from '@/components/reveal'
 import { cn } from '@/lib/utils'
 
 const plans = [
@@ -52,70 +53,72 @@ const plans = [
 export function PricingSection() {
   return (
     <section id="pricing" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-      <SectionHeading
-        kicker="PLAN"
-        eyebrow="料金"
-        title="使い方に合わせて選べる3つのプラン"
-        description="料金はご依頼の内容や量により異なります。ヒアリングのうえ、月額の目安をお見積りでご提示します。"
-      />
+      <Reveal>
+        <SectionHeading
+          kicker="Plan"
+          eyebrow="料金"
+          title="使い方に合わせて選べる3つのプラン"
+          description="料金はご依頼の内容や量により異なります。ヒアリングのうえ、月額の目安をお見積りでご提示します。"
+        />
+      </Reveal>
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
-        {plans.map((plan) => (
-          <div
-            key={plan.name}
-            className={cn(
-              'relative flex flex-col gap-6 rounded-lg border-2 border-black p-7 sm:p-8',
-              plan.featured ? 'bg-brand-yellow' : 'bg-white',
-            )}
-          >
-            {plan.featured ? (
-              <span className="absolute -top-3.5 left-7 rounded-sm bg-brand-coral px-3 py-1 text-xs font-bold text-brand-coral-foreground">
-                おすすめ
-              </span>
-            ) : null}
-
-            <div className="flex flex-col gap-2">
-              <span className="w-fit rounded-sm bg-black px-2 py-1 font-mono text-[11px] font-bold text-white">
-                {plan.tag}
-              </span>
-              <h3 className="text-lg font-black">{plan.name}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {plan.description}
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-1 border-y-2 border-black/10 py-5">
-              <span className="text-3xl font-black tracking-tight">
-                {plan.price}
-              </span>
-              <span className="text-xs text-muted-foreground">{plan.priceNote}</span>
-            </div>
-
-            <ul className="flex flex-1 flex-col gap-3">
-              {plan.features.map((feature) => (
-                <li key={feature} className="flex items-start gap-3 text-sm">
-                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-coral/15 text-brand-coral">
-                    <Check className="size-3.5" aria-hidden />
-                  </span>
-                  <span className="leading-relaxed">{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            <Button
-              size="lg"
+      <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        {plans.map((plan, index) => (
+          <Reveal key={plan.name} delay={index * 100}>
+            <div
               className={cn(
-                'h-11 w-full rounded-md',
-                plan.featured
-                  ? 'bg-black text-white hover:bg-black/85'
-                  : 'bg-brand-coral text-brand-coral-foreground hover:bg-brand-coral/85',
+                'relative flex h-full flex-col gap-6 rounded-sm border bg-brand-paper p-7 shadow-[0_1px_2px_rgba(36,31,26,0.04),0_16px_40px_-20px_rgba(36,31,26,0.35)] sm:p-8',
+                plan.featured ? 'border-brand-vermillion/40' : 'border-brand-ink/10',
               )}
-              nativeButton={false}
-              render={<Link href="#contact" />}
             >
-              このプランを相談する
-            </Button>
-          </div>
+              {plan.featured ? (
+                <span className="absolute -top-3 left-7 rounded-sm bg-brand-vermillion px-3 py-1 font-mono text-[11px] font-bold tracking-wide text-brand-vermillion-foreground">
+                  おすすめ
+                </span>
+              ) : null}
+
+              <div className="flex flex-col gap-2">
+                <span className="w-fit rounded-sm border border-brand-ink/15 px-2 py-1 font-mono text-[11px] font-medium text-muted-foreground">
+                  {plan.tag}
+                </span>
+                <h3 className="font-display text-lg font-bold text-brand-ink">{plan.name}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {plan.description}
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-1 border-y border-brand-ink/10 py-5">
+                <span className="font-display text-3xl font-bold tracking-tight text-brand-ink">
+                  {plan.price}
+                </span>
+                <span className="text-xs text-muted-foreground">{plan.priceNote}</span>
+              </div>
+
+              <ul className="flex flex-1 flex-col gap-3">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3 text-sm">
+                    <Check className="mt-0.5 size-4 shrink-0 text-brand-vermillion" aria-hidden />
+                    <span className="leading-relaxed text-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                size="lg"
+                variant={plan.featured ? 'default' : 'outline'}
+                className={cn(
+                  'h-11 w-full rounded-sm',
+                  plan.featured
+                    ? 'bg-brand-ink text-brand-ink-foreground hover:bg-brand-ink/85'
+                    : 'border-brand-ink/25 bg-transparent text-brand-ink hover:bg-brand-ink/5',
+                )}
+                nativeButton={false}
+                render={<Link href="#contact" />}
+              >
+                このプランを相談する
+              </Button>
+            </div>
+          </Reveal>
         ))}
       </div>
 

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import { Reveal } from '@/components/reveal'
 
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false)
@@ -44,42 +45,52 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-primary">
-      <div className="absolute inset-0 bg-dots opacity-20 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
+    <section id="contact" className="relative overflow-hidden bg-brand-cream">
+      <div className="pointer-events-none absolute inset-0 bg-grain opacity-[0.3] mix-blend-multiply" aria-hidden />
+      <div
+        className="pointer-events-none absolute inset-0 bg-dots opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]"
+        aria-hidden
+      />
 
       <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-24 lg:grid-cols-2">
-        <div className="flex flex-col gap-5">
-          <span className="inline-flex w-fit items-center gap-2 rounded-md bg-brand-coral px-3 py-1 font-mono text-xs font-bold uppercase tracking-[0.12em] text-brand-coral-foreground">
+        <Reveal className="flex flex-col gap-5">
+          <span className="inline-flex w-fit items-center gap-2.5 font-mono text-[11px] font-medium tracking-[0.28em] text-muted-foreground uppercase">
+            <span className="h-px w-6 bg-brand-vermillion" aria-hidden />
             お問い合わせ
           </span>
-          <h2 className="text-balance text-3xl font-black tracking-tight text-white sm:text-4xl">
+          <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl">
             まずは無料でご相談ください
           </h2>
-          <p className="max-w-md text-pretty leading-relaxed text-white/70">
+          <p className="max-w-md text-pretty leading-relaxed text-muted-foreground">
             頼みたいデザインの種類や、月あたりのおおよその量をお伺いし、最適なプランと月額の目安をご提案します。
             「定額に収まるか分からない」という段階でも、お気軽にお問い合わせください。
           </p>
-          <ul className="mt-2 flex flex-col gap-3 text-sm text-white/80">
+          <ul className="mt-2 flex flex-col gap-3 text-sm text-foreground/80">
             {[
               'オンラインでのご相談に対応',
               '無理な営業や勧誘は行いません',
               '内容に応じてお見積りをご提示',
             ].map((item) => (
               <li key={item} className="flex items-center gap-3">
-                <CheckCircle2 className="size-4 text-brand-yellow" aria-hidden />
+                <CheckCircle2 className="size-4 text-brand-vermillion" aria-hidden />
                 {item}
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
 
-        <div className="rounded-lg border-2 border-black bg-white p-7 sm:p-8">
+        <Reveal
+          delay={120}
+          className="rounded-sm border border-brand-ink/12 bg-brand-paper p-7 shadow-[0_1px_2px_rgba(36,31,26,0.04),0_16px_40px_-20px_rgba(36,31,26,0.35)] sm:p-8"
+        >
           {submitted ? (
             <div className="flex h-full flex-col items-center justify-center gap-4 py-10 text-center">
-              <span className="flex size-14 items-center justify-center rounded-full bg-brand-coral/15 text-brand-coral">
+              <span className="flex size-14 items-center justify-center rounded-full bg-brand-vermillion/12 text-brand-vermillion">
                 <CheckCircle2 className="size-7" aria-hidden />
               </span>
-              <h3 className="text-xl font-bold">送信ありがとうございます</h3>
+              <h3 className="font-display text-xl font-bold text-brand-ink">
+                送信ありがとうございます
+              </h3>
               <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
                 内容を確認のうえ、担当者よりご連絡いたします。少々お待ちください。
               </p>
@@ -117,7 +128,7 @@ export function ContactSection() {
                 type="submit"
                 size="lg"
                 disabled={submitting}
-                className="h-12 w-full rounded-md bg-brand-coral text-base text-brand-coral-foreground hover:bg-brand-coral/85"
+                className="h-12 w-full rounded-sm bg-brand-vermillion text-base text-brand-vermillion-foreground hover:bg-brand-vermillion/85"
               >
                 {submitting ? '送信中…' : '無料相談を申し込む'}
                 {!submitting && <ArrowRight className="size-4" aria-hidden />}
@@ -130,7 +141,7 @@ export function ContactSection() {
               </p>
             </form>
           )}
-        </div>
+        </Reveal>
       </div>
     </section>
   )

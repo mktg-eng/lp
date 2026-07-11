@@ -1,6 +1,7 @@
 import { ListOrdered, Repeat2, FileCheck2, Clock, DoorOpen } from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
+import { Reveal } from '@/components/reveal'
 
 const rules = [
   {
@@ -39,27 +40,31 @@ export function RulesSection() {
   return (
     <section id="rules" className="relative bg-brand-cream">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-        <SectionHeading
-          kicker="RULE"
-          eyebrow="ご利用ルール"
-          title="安心して使い続けられる、シンプルなルール"
-          description="「定額だとどこまで頼めるの？」に迷わないよう、運用ルールをあらかじめ明確にしています。"
-        />
+        <Reveal>
+          <SectionHeading
+            kicker="Rule"
+            eyebrow="ご利用ルール"
+            title="安心して使い続けられる、シンプルなルール"
+            description="「定額だとどこまで頼めるの？」に迷わないよう、運用ルールをあらかじめ明確にしています。"
+          />
+        </Reveal>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {rules.map((item) => (
-            <div
-              key={item.title}
-              className="flex flex-col gap-4 rounded-lg border-2 border-black bg-white p-6"
-            >
-              <span className="flex size-11 items-center justify-center rounded-md bg-black text-brand-coral">
-                <item.icon className="size-5" aria-hidden />
-              </span>
-              <h3 className="text-base font-bold">{item.title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {item.description}
-              </p>
-            </div>
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {rules.map((item, index) => (
+            <Reveal key={item.title} delay={index * 90}>
+              <div className="flex h-full flex-col gap-4 rounded-sm border border-brand-ink/12 bg-brand-paper p-6 shadow-[0_1px_2px_rgba(36,31,26,0.04),0_16px_40px_-20px_rgba(36,31,26,0.35)]">
+                <div className="flex items-center justify-between">
+                  <item.icon className="size-5 text-brand-vermillion" aria-hidden />
+                  <span className="font-mono text-[11px] text-muted-foreground/60">
+                    0{index + 1}
+                  </span>
+                </div>
+                <h3 className="font-display text-base font-bold text-brand-ink">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

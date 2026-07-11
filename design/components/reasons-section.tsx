@@ -1,4 +1,6 @@
-import { Sparkles, Lightbulb, HeartHandshake, Plus } from 'lucide-react'
+import { Sparkles, Lightbulb, HeartHandshake } from 'lucide-react'
+
+import { Reveal } from '@/components/reveal'
 
 const reasons = [
   {
@@ -26,42 +28,48 @@ const reasons = [
 
 export function ReasonsSection() {
   return (
-    <section className="bg-white py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-5">
-        <div className="grid gap-10 lg:grid-cols-[260px_1fr] lg:gap-14">
-          <div className="flex flex-col items-start gap-5 lg:sticky lg:top-24 lg:self-start">
-            <span className="flex size-14 items-center justify-center rounded-full border-2 border-black text-brand-coral">
-              <Sparkles className="size-6" aria-hidden />
+    <section className="relative bg-brand-paper py-20 sm:py-24">
+      <div className="pointer-events-none absolute inset-0 bg-grain opacity-[0.2] mix-blend-multiply" aria-hidden />
+
+      <div className="relative mx-auto max-w-6xl px-5">
+        <div className="grid gap-10 lg:grid-cols-[280px_1fr] lg:gap-16">
+          <Reveal className="flex flex-col items-start gap-5 lg:sticky lg:top-24 lg:self-start">
+            <span className="inline-flex items-center gap-2.5 font-mono text-[11px] font-medium tracking-[0.28em] text-muted-foreground uppercase">
+              <span className="h-px w-6 bg-brand-vermillion" aria-hidden />
+              Difference
             </span>
-            <p className="text-2xl leading-snug font-black">
+            <p className="font-display text-3xl leading-snug font-bold text-brand-ink">
               他の定額サービスと
               <br />
-              <span className="text-brand-coral">ここが違う!!</span>
+              <span className="text-brand-vermillion italic">ここが違う!!</span>
             </p>
-          </div>
+          </Reveal>
 
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col divide-y divide-brand-ink/10 border-t border-brand-ink/10">
             {reasons.map((item, index) => (
-              <div
+              <Reveal
                 key={item.title}
-                className="relative flex flex-col gap-4 rounded-lg border-2 border-black bg-brand-yellow p-6 sm:flex-row sm:items-center sm:gap-6 sm:p-8"
+                delay={index * 120}
+                className="flex flex-col gap-4 py-8 sm:flex-row sm:items-start sm:gap-8"
               >
-                <span className="text-6xl leading-none font-black text-black/15 sm:w-16 sm:shrink-0 sm:text-7xl">
-                  {index + 1}
+                <span className="font-display text-5xl leading-none font-bold text-brand-ink/[0.08] sm:w-20 sm:shrink-0 sm:text-6xl">
+                  {String(index + 1).padStart(2, '0')}
                 </span>
                 <div className="flex flex-1 flex-col gap-2">
-                  <h3 className="text-lg font-black sm:text-xl">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-black/70">
+                  <div className="flex items-center gap-2.5">
+                    <item.icon className="size-4 text-brand-vermillion" aria-hidden />
+                    <h3 className="font-display text-lg font-bold text-brand-ink sm:text-xl">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
                     {item.description}
                   </p>
                 </div>
-                <span className="hidden shrink-0 font-mono text-[11px] tracking-widest text-black/40 sm:block">
+                <span className="hidden shrink-0 font-mono text-[11px] tracking-widest text-muted-foreground/50 sm:block">
                   {item.label}
                 </span>
-                <span className="absolute right-5 bottom-5 flex size-8 shrink-0 items-center justify-center rounded-full bg-black text-brand-yellow sm:static">
-                  <Plus className="size-4" aria-hidden />
-                </span>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

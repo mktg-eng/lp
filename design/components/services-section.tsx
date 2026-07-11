@@ -1,6 +1,7 @@
-import { ArrowRight, Image, LayoutTemplate, Presentation, Printer } from 'lucide-react'
+import { Image, LayoutTemplate, Presentation, Printer } from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
+import { Reveal } from '@/components/reveal'
 
 const categories = [
   {
@@ -55,56 +56,53 @@ const categories = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-      <SectionHeading
-        kicker="EXAMPLE"
-        eyebrow="対応範囲"
-        title="日々のデザイン業務を、まとめて任せられる"
-        description="よくいただくご依頼の例です。この他のデザインも、まずはお気軽にご相談ください。"
-      />
+    <section id="services" className="relative mx-auto max-w-6xl px-5 py-20 sm:py-24">
+      <Reveal>
+        <SectionHeading
+          kicker="Index"
+          eyebrow="対応範囲"
+          title="日々のデザイン業務を、まとめて任せられる"
+          description="よくいただくご依頼の例です。この他のデザインも、まずはお気軽にご相談ください。"
+        />
+      </Reveal>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {categories.map((category) => (
-          <div
+      <div className="mt-14 flex flex-col border-y border-brand-ink/10">
+        {categories.map((category, index) => (
+          <Reveal
             key={category.title}
-            className="flex flex-col overflow-hidden rounded-lg border-2 border-black bg-white"
+            delay={index * 100}
+            className={index !== 0 ? 'border-t border-brand-ink/10' : ''}
           >
-            <div className="relative flex h-28 items-center justify-center bg-brand-yellow">
-              <category.icon className="size-10 text-black/70" aria-hidden />
-              <span className="absolute top-2 right-2.5 font-mono text-[10px] tracking-wide text-black/50">
-                {category.label}
+            <div className="group grid gap-5 py-8 sm:grid-cols-[88px_1fr] sm:items-start sm:gap-8 lg:grid-cols-[120px_1fr_300px] lg:items-center">
+              <span className="font-display text-6xl leading-none font-bold text-brand-ink/[0.07] transition-colors duration-300 group-hover:text-brand-vermillion/[0.14] lg:text-7xl">
+                {category.badge}
               </span>
-            </div>
 
-            <div className="flex flex-1 flex-col gap-4 p-5">
-              <div>
-                <span className="font-mono text-[11px] text-brand-coral">
-                  RANGE {category.badge}
+              <div className="flex flex-col gap-2.5">
+                <span className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-brand-vermillion uppercase">
+                  <category.icon className="size-3.5" aria-hidden />
+                  {category.label}
                 </span>
-                <h3 className="text-lg font-bold">{category.title}</h3>
+                <h3 className="font-display text-2xl font-bold text-brand-ink">
+                  {category.title}
+                </h3>
+                <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
+                  {category.description}
+                </p>
               </div>
 
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {category.description}
-              </p>
-
-              <div className="mt-auto flex flex-wrap gap-1.5 border-t border-border pt-4">
+              <div className="flex flex-wrap gap-1.5 sm:col-span-2 lg:col-span-1 lg:justify-end">
                 {category.items.map((item) => (
                   <span
                     key={item}
-                    className="rounded-sm border border-black/70 px-2 py-0.5 text-[11px] font-medium"
+                    className="rounded-sm border border-brand-ink/15 px-2.5 py-1 text-[11px] font-medium text-brand-ink/75"
                   >
                     {item}
                   </span>
                 ))}
               </div>
-
-              <span className="mt-1 inline-flex items-center gap-1 text-xs font-bold text-brand-coral">
-                More
-                <ArrowRight className="size-3.5" aria-hidden />
-              </span>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
 

@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Palette } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { SERVICE_NAME } from '@/lib/site'
@@ -15,18 +14,14 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-primary text-primary-foreground">
+    <header className="sticky top-0 z-50 border-b border-brand-ink/10 bg-brand-cream/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <Link href="#top" className="flex items-center gap-2.5">
-          <span className="flex items-center gap-1.5 rounded-sm bg-brand-yellow px-2 py-1 text-[10px] font-black leading-none text-brand-yellow-foreground">
-            <Palette className="size-3" aria-hidden />
-            定額制
+        <Link href="#top" className="flex items-baseline gap-2">
+          <span className="font-display text-lg font-bold tracking-tight text-brand-ink">
+            CDC AI
           </span>
-          <span className="text-sm font-black tracking-tight">
-            CDC&nbsp;AI
-            <span className="ml-1.5 hidden font-medium text-white/60 sm:inline">
-              {SERVICE_NAME}
-            </span>
+          <span className="hidden font-mono text-[11px] tracking-[0.08em] text-muted-foreground sm:inline">
+            {SERVICE_NAME}
           </span>
         </Link>
 
@@ -35,7 +30,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-brand-ink"
             >
               {item.label}
             </Link>
@@ -44,7 +39,7 @@ export function SiteHeader() {
 
         <Button
           size="lg"
-          className="rounded-md bg-brand-coral text-brand-coral-foreground hover:bg-brand-coral/85"
+          className="rounded-sm bg-brand-ink text-brand-ink-foreground hover:bg-brand-ink/85"
           nativeButton={false}
           render={<Link href="#contact" />}
         >

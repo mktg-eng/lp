@@ -44,24 +44,24 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-brand-navy">
-      <div className="absolute inset-0 bg-grid-invert [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
+    <section id="contact" className="relative overflow-hidden bg-gradient-to-br from-brand-sky/60 via-white to-brand-orange/5">
+      <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
       <div className="absolute -bottom-40 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-brand-orange/15 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-24 lg:grid-cols-2">
         <div className="flex flex-col gap-5">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 font-mono text-xs uppercase tracking-[0.12em] text-white/70">
+          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-navy/10 bg-white px-3 py-1 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground shadow-sm">
             <span className="size-1.5 rounded-full bg-brand-orange" aria-hidden />
             お問い合わせ
           </span>
-          <h2 className="text-balance text-3xl font-black tracking-tight text-white sm:text-4xl">
+          <h2 className="text-balance text-3xl font-black tracking-tight text-brand-navy sm:text-4xl">
             まずは無料でご相談ください
           </h2>
-          <p className="max-w-md text-pretty leading-relaxed text-white/70">
+          <p className="max-w-md text-pretty leading-relaxed text-muted-foreground">
             導入状況やお悩みをお伺いし、最適な進め方をご提案します。
             「何から始めればいいか分からない」段階でも、お気軽にお問い合わせください。
           </p>
-          <ul className="mt-2 flex flex-col gap-3 text-sm text-white/70">
+          <ul className="mt-2 flex flex-col gap-3 text-sm text-muted-foreground">
             {[
               'オンラインでのご相談に対応',
               '無理な営業や勧誘は行いません',
@@ -75,7 +75,7 @@ export function ContactSection() {
           </ul>
         </div>
 
-        <div className="rounded-2xl bg-white p-7 shadow-2xl shadow-black/30 sm:p-8">
+        <div className="rounded-2xl border border-border bg-white p-7 shadow-xl shadow-brand-navy/10 sm:p-8">
           {submitted ? (
             <div className="flex h-full flex-col items-center justify-center gap-4 py-10 text-center">
               <span className="flex size-14 items-center justify-center rounded-full bg-brand-orange/15 text-brand-orange">

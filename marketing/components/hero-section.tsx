@@ -12,7 +12,7 @@ export function HeroSection() {
         className="absolute inset-x-0 top-0 -z-0 h-72 origin-top-right -skew-y-3 bg-speed-stripes opacity-70 [mask-image:linear-gradient(to_bottom,black,transparent)]"
         aria-hidden
       />
-      <div className="absolute -top-24 right-1/4 -z-0 h-64 w-[30rem] translate-x-1/2 rounded-full bg-primary/15 blur-3xl" aria-hidden />
+      <div className="absolute -top-24 right-1/4 -z-0 h-64 w-[30rem] translate-x-1/2 rounded-full bg-primary/20 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16 sm:pt-28 sm:pb-24">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -87,7 +87,7 @@ function GrowthPreview() {
     .join(' ')
 
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-card shadow-2xl shadow-black/40">
+    <div className="overflow-hidden rounded-xl border border-border bg-card shadow-xl shadow-slate-900/10">
       <div className="flex items-center justify-between gap-2 border-b border-border px-4 py-3">
         <div className="flex items-center gap-2">
           <span className="size-2.5 rounded-full bg-primary/70" aria-hidden />
@@ -147,7 +147,7 @@ function GrowthPreview() {
             />
           ))}
           <svg
-            className="pointer-events-none absolute inset-0 text-primary drop-shadow-[0_0_6px_var(--brand-lime)]"
+            className="pointer-events-none absolute inset-0 text-primary"
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
             aria-hidden

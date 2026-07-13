@@ -14,15 +14,15 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-white/95 text-foreground backdrop-blur">
+    <header className="sticky top-0 z-50 bg-brand-navy/97 text-brand-navy-foreground backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <Link href="#top" className="flex items-center gap-2.5">
           <span className="flex size-8 items-center justify-center rounded-md bg-brand-orange text-brand-orange-foreground">
             <Terminal className="size-4" aria-hidden />
           </span>
-          <span className="text-sm font-bold tracking-tight text-brand-navy">
+          <span className="text-sm font-bold tracking-tight text-brand-navy-foreground">
             CDC&nbsp;AI
-            <span className="ml-1.5 hidden font-medium text-muted-foreground sm:inline">
+            <span className="ml-1.5 hidden font-medium text-brand-navy-foreground/55 sm:inline">
               Claude Code 導入支援
             </span>
           </span>
@@ -33,7 +33,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-brand-navy"
+              className="text-sm font-medium text-brand-navy-foreground/65 transition-colors hover:text-brand-navy-foreground"
             >
               {item.label}
             </Link>

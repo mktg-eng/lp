@@ -44,15 +44,14 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-gradient-to-br from-brand-sky/60 via-white to-brand-orange/5">
+    <section id="contact" className="relative overflow-hidden bg-brand-sky/40">
       <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden />
-      <div className="absolute -bottom-40 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-brand-orange/15 blur-3xl" aria-hidden />
 
-      <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-24 lg:grid-cols-2">
+      <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-24 lg:grid-cols-[1fr_1.1fr] lg:items-start">
         <div className="flex flex-col gap-5">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-navy/10 bg-white px-3 py-1 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground shadow-sm">
-            <span className="size-1.5 rounded-full bg-brand-orange" aria-hidden />
-            お問い合わせ
+          <span className="inline-flex w-fit items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-brand-orange">
+            <span className="h-px w-6 bg-brand-orange" aria-hidden />
+            Contact
           </span>
           <h2 className="text-balance text-3xl font-black tracking-tight text-brand-navy sm:text-4xl">
             まずは無料でご相談ください
@@ -61,7 +60,7 @@ export function ContactSection() {
             導入状況やお悩みをお伺いし、最適な進め方をご提案します。
             「何から始めればいいか分からない」段階でも、お気軽にお問い合わせください。
           </p>
-          <ul className="mt-2 flex flex-col gap-3 text-sm text-muted-foreground">
+          <ul className="mt-2 flex flex-col gap-3 border-t border-brand-navy/10 pt-5 text-sm text-muted-foreground">
             {[
               'オンラインでのご相談に対応',
               '無理な営業や勧誘は行いません',
@@ -75,63 +74,74 @@ export function ContactSection() {
           </ul>
         </div>
 
-        <div className="rounded-2xl border border-border bg-white p-7 shadow-xl shadow-brand-navy/10 sm:p-8">
-          {submitted ? (
-            <div className="flex h-full flex-col items-center justify-center gap-4 py-10 text-center">
-              <span className="flex size-14 items-center justify-center rounded-full bg-brand-orange/15 text-brand-orange">
-                <CheckCircle2 className="size-7" aria-hidden />
-              </span>
-              <h3 className="text-xl font-bold">送信ありがとうございます</h3>
-              <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-                内容を確認のうえ、担当者よりご連絡いたします。少々お待ちください。
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-              <div className="flex flex-col gap-2">
-                <Label htmlFor="company">会社名</Label>
-                <Input id="company" name="company" placeholder="株式会社サンプル" required />
+        <div className="overflow-hidden rounded-lg border border-brand-navy/15 bg-white shadow-sm">
+          <div className="flex items-center gap-2 bg-brand-navy px-4 py-2.5">
+            <span className="flex gap-1.5" aria-hidden>
+              <span className="size-2 rounded-full bg-brand-navy-foreground/25" />
+              <span className="size-2 rounded-full bg-brand-navy-foreground/25" />
+              <span className="size-2 rounded-full bg-brand-orange" />
+            </span>
+            <span className="font-mono text-xs text-brand-navy-foreground/70">contact --new</span>
+          </div>
+
+          <div className="p-7 sm:p-8">
+            {submitted ? (
+              <div className="flex h-full flex-col items-center justify-center gap-4 py-10 text-center">
+                <span className="flex size-14 items-center justify-center rounded-full bg-brand-orange/15 text-brand-orange">
+                  <CheckCircle2 className="size-7" aria-hidden />
+                </span>
+                <h3 className="text-xl font-bold">送信ありがとうございます</h3>
+                <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
+                  内容を確認のうえ、担当者よりご連絡いたします。少々お待ちください。
+                </p>
               </div>
-              <div className="flex flex-col gap-2">
-                <Label htmlFor="name">お名前</Label>
-                <Input id="name" name="name" placeholder="山田 太郎" required />
-              </div>
-              <div className="flex flex-col gap-2">
-                <Label htmlFor="email">メールアドレス</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <Label htmlFor="message">ご相談内容</Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  placeholder="現在の開発体制や、ご相談したい内容をご記入ください。"
-                  required
-                />
-              </div>
-              <Button
-                type="submit"
-                size="lg"
-                disabled={submitting}
-                className="h-12 w-full rounded-full bg-brand-orange text-base text-brand-orange-foreground hover:bg-brand-orange/85"
-              >
-                {submitting ? '送信中…' : '無料相談を申し込む'}
-                {!submitting && <ArrowRight className="size-4" aria-hidden />}
-              </Button>
-              {error && (
-                <p className="text-center text-sm text-destructive">{error}</p>
-              )}
-              <p className="text-center text-xs text-muted-foreground">
-                送信いただいた内容は、お問い合わせ対応のみに利用します。
-              </p>
-            </form>
-          )}
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="company">会社名</Label>
+                  <Input id="company" name="company" placeholder="株式会社サンプル" required />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="name">お名前</Label>
+                  <Input id="name" name="name" placeholder="山田 太郎" required />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="email">メールアドレス</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="message">ご相談内容</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="現在の開発体制や、ご相談したい内容をご記入ください。"
+                    required
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={submitting}
+                  className="h-12 w-full rounded-full bg-brand-orange text-base text-brand-orange-foreground hover:bg-brand-orange/85"
+                >
+                  {submitting ? '送信中…' : '無料相談を申し込む'}
+                  {!submitting && <ArrowRight className="size-4" aria-hidden />}
+                </Button>
+                {error && (
+                  <p className="text-center text-sm text-destructive">{error}</p>
+                )}
+                <p className="text-center text-xs text-muted-foreground">
+                  送信いただいた内容は、お問い合わせ対応のみに利用します。
+                </p>
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </section>

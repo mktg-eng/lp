@@ -16,11 +16,20 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur-md">
+      {/* SEO×AIOの二軸を示す極細グラデーションライン */}
+      <div
+        className="h-[3px] w-full bg-gradient-to-r from-brand-navy via-accent to-brand-teal"
+        aria-hidden
+      />
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <Link href="#top" className="flex items-center gap-2.5">
-          <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+        <Link href="#top" className="group flex items-center gap-2.5">
+          <span className="relative flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <Newspaper className="size-4" aria-hidden />
+            <span
+              className="absolute -bottom-1 -right-1 flex size-3 items-center justify-center rounded-full border-2 border-background bg-accent"
+              aria-hidden
+            />
           </span>
           <span className="text-sm font-bold tracking-tight text-primary">
             CDC&nbsp;AI
@@ -30,12 +39,15 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="メインナビゲーション">
+        <nav
+          className="hidden items-center gap-0.5 rounded-full border border-border/80 bg-secondary/50 p-1 lg:flex"
+          aria-label="メインナビゲーション"
+        >
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              className="rounded-full px-3.5 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-background hover:text-accent hover:shadow-sm"
             >
               {item.label}
             </Link>
@@ -44,7 +56,7 @@ export function SiteHeader() {
 
         <Button
           size="lg"
-          className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
+          className="rounded-full bg-accent text-accent-foreground shadow-sm shadow-accent/30 hover:bg-accent/90"
           nativeButton={false}
           render={<Link href="#contact" />}
         >

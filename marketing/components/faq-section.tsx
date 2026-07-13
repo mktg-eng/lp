@@ -64,7 +64,12 @@ export function FaqSection() {
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between gap-4 py-3 text-left"
                 >
-                  <span className="text-sm font-medium sm:text-base">
+                  <span
+                    className={cn(
+                      'text-sm transition-colors sm:text-base',
+                      isOpen ? 'font-semibold text-foreground' : 'font-medium text-foreground/90',
+                    )}
+                  >
                     {faq.question}
                   </span>
                   <Plus
@@ -84,9 +89,17 @@ export function FaqSection() {
                   )}
                 >
                   <div className="overflow-hidden">
-                    <p className="rounded-lg bg-secondary/60 p-4 text-sm leading-relaxed text-muted-foreground">
-                      {faq.answer}
-                    </p>
+                    {/* 開いた質問だけに付くライムグリーンのインジケーターバー。他サービスのプレーンなカード開閉とは異なる意匠。 */}
+                    <div
+                      className={cn(
+                        'border-l-2 pl-4 transition-colors',
+                        isOpen ? 'border-primary' : 'border-transparent',
+                      )}
+                    >
+                      <p className="rounded-r-lg bg-brand-soft p-4 text-sm leading-relaxed text-muted-foreground">
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

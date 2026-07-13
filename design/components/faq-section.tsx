@@ -49,42 +49,35 @@ export function FaqSection() {
         <SectionHeading eyebrow="FAQ" title="よくあるご質問" />
       </Reveal>
 
-      <div className="mt-14 flex flex-col gap-3">
+      <div className="mt-14 flex flex-col border-y border-brand-ink/10">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index
           return (
-            <Reveal key={faq.question} delay={Math.min(index, 4) * 60}>
-              <div
-                className={cn(
-                  'overflow-hidden rounded-sm border bg-brand-paper transition-colors',
-                  isOpen ? 'border-brand-vermillion/40' : 'border-brand-ink/12',
-                )}
-              >
+            <Reveal
+              key={faq.question}
+              delay={Math.min(index, 4) * 60}
+              className={index !== 0 ? 'border-t border-brand-ink/10' : ''}
+            >
+              <div>
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                  className="flex w-full items-center gap-5 py-5 text-left"
                 >
-                  <span className="font-display text-sm font-bold text-brand-ink sm:text-base">
+                  <span className="font-mono text-xs text-brand-vermillion/70">
+                    Q{String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="flex-1 font-display text-sm font-bold text-brand-ink sm:text-base">
                     {faq.question}
                   </span>
-                  <span
+                  <Plus
                     className={cn(
-                      'flex size-7 shrink-0 items-center justify-center rounded-full border transition-colors',
-                      isOpen
-                        ? 'border-brand-vermillion/40 text-brand-vermillion'
-                        : 'border-brand-ink/15 text-brand-ink',
+                      'size-4 shrink-0 text-brand-ink/40 transition-transform duration-200',
+                      isOpen && 'rotate-45',
                     )}
-                  >
-                    <Plus
-                      className={cn(
-                        'size-4 transition-transform duration-200',
-                        isOpen && 'rotate-45',
-                      )}
-                      aria-hidden
-                    />
-                  </span>
+                    aria-hidden
+                  />
                 </button>
                 <div
                   className={cn(
@@ -95,7 +88,7 @@ export function FaqSection() {
                   )}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 pb-5 text-sm leading-relaxed text-muted-foreground">
+                    <p className="pb-5 pl-10 text-sm leading-relaxed text-muted-foreground">
                       {faq.answer}
                     </p>
                   </div>

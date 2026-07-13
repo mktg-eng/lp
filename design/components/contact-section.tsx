@@ -52,11 +52,10 @@ export function ContactSection() {
         aria-hidden
       />
 
-      <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-24 lg:grid-cols-2">
+      <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:py-24 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal className="flex flex-col gap-5">
-          <span className="inline-flex w-fit items-center gap-2.5 font-mono text-[11px] font-medium tracking-[0.28em] text-muted-foreground uppercase">
-            <span className="h-px w-6 bg-brand-vermillion" aria-hidden />
-            お問い合わせ
+          <span className="flex w-fit flex-col items-center rounded-sm bg-brand-ink px-2.5 py-1.5 text-[10px] font-black leading-tight text-brand-ink-foreground">
+            <span>お問い合わせ</span>
           </span>
           <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl">
             まずは無料でご相談ください
@@ -65,7 +64,7 @@ export function ContactSection() {
             頼みたいデザインの種類や、月あたりのおおよその量をお伺いし、最適なプランと月額の目安をご提案します。
             「定額に収まるか分からない」という段階でも、お気軽にお問い合わせください。
           </p>
-          <ul className="mt-2 flex flex-col gap-3 text-sm text-foreground/80">
+          <ul className="mt-2 flex flex-col gap-3 border-t border-brand-ink/10 pt-5 text-sm text-foreground/80">
             {[
               'オンラインでのご相談に対応',
               '無理な営業や勧誘は行いません',
@@ -79,10 +78,7 @@ export function ContactSection() {
           </ul>
         </Reveal>
 
-        <Reveal
-          delay={120}
-          className="rounded-sm border border-brand-ink/12 bg-brand-paper p-7 shadow-[0_1px_2px_rgba(36,31,26,0.04),0_16px_40px_-20px_rgba(36,31,26,0.35)] sm:p-8"
-        >
+        <Reveal delay={120} className="border-t-2 border-brand-ink pt-8">
           {submitted ? (
             <div className="flex h-full flex-col items-center justify-center gap-4 py-10 text-center">
               <span className="flex size-14 items-center justify-center rounded-full bg-brand-vermillion/12 text-brand-vermillion">

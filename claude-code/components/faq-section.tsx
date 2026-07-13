@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Plus } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
 import { cn } from '@/lib/utils'
@@ -33,34 +33,44 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="bg-muted/60">
+    <section id="faq" className="bg-white">
       <div className="mx-auto max-w-3xl px-5 py-20 sm:py-24">
         <SectionHeading eyebrow="FAQ" title="よくあるご質問" />
 
-        <div className="mt-12 flex flex-col gap-3">
+        <div className="mt-12 divide-y divide-brand-navy/10 overflow-hidden rounded-lg border border-brand-navy/10">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index
             return (
               <div
                 key={faq.question}
                 className={cn(
-                  'rounded-xl border bg-background transition-colors',
-                  isOpen ? 'border-brand-orange/50' : 'border-border',
+                  'relative transition-colors',
+                  isOpen ? 'bg-brand-sky/40' : 'bg-transparent',
                 )}
               >
+                <span
+                  className={cn(
+                    'absolute inset-y-0 left-0 w-0.5 bg-brand-orange transition-opacity',
+                    isOpen ? 'opacity-100' : 'opacity-0',
+                  )}
+                  aria-hidden
+                />
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                  className="flex w-full items-center gap-4 px-5 py-4 text-left"
                 >
-                  <span className="text-sm font-medium sm:text-base">
+                  <span className="font-mono text-sm text-brand-navy/40" aria-hidden>
+                    &gt;
+                  </span>
+                  <span className="flex-1 text-sm font-medium sm:text-base">
                     {faq.question}
                   </span>
-                  <Plus
+                  <ChevronDown
                     className={cn(
-                      'size-5 shrink-0 text-brand-orange transition-transform duration-200',
-                      isOpen && 'rotate-45',
+                      'size-4 shrink-0 text-brand-navy/40 transition-transform duration-200',
+                      isOpen && 'rotate-180 text-brand-orange',
                     )}
                     aria-hidden
                   />
@@ -74,7 +84,7 @@ export function FaqSection() {
                   )}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 pb-5 text-sm leading-relaxed text-muted-foreground">
+                    <p className="px-5 pb-5 pl-14 text-sm leading-relaxed text-muted-foreground">
                       {faq.answer}
                     </p>
                   </div>

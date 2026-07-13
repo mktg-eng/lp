@@ -76,7 +76,6 @@ export function PricingSection() {
   return (
     <section id="pricing" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <SectionHeading
-        kicker="PRICING"
         eyebrow="料金"
         title="記事単価2万円〜。本数で選べるシンプルな料金"
         description="料金は「記事単価×月間本数」が基本。以下はいずれも目安の金額です。"

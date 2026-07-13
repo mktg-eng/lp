@@ -6,8 +6,6 @@ interface SectionHeadingProps {
   description?: string
   className?: string
   align?: 'center' | 'left'
-  /** Big faded uppercase word rendered above the title, Claude導入くん 風の英字ラベル */
-  kicker?: string
   /** 濃紺の背景セクションで使う場合 */
   invert?: boolean
 }
@@ -18,7 +16,6 @@ export function SectionHeading({
   description,
   className,
   align = 'center',
-  kicker,
   invert = false,
 }: SectionHeadingProps) {
   return (
@@ -31,17 +28,6 @@ export function SectionHeading({
         className,
       )}
     >
-      {kicker ? (
-        <span
-          className={cn(
-            'select-none text-4xl font-black uppercase tracking-tight sm:text-5xl',
-            invert ? 'text-white/10' : 'text-brand-navy/8',
-          )}
-          aria-hidden
-        >
-          {kicker}
-        </span>
-      ) : null}
       <span
         className={cn(
           'inline-flex w-fit items-center gap-2 rounded-sm px-3 py-1 font-mono text-xs font-bold tracking-[0.08em]',

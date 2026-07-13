@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import { Lightbulb, LayoutTemplate, Send, Layers } from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
@@ -34,6 +35,9 @@ const steps = [
   },
 ]
 
+// ステップが進むほど積み上がっていく様子を表す、装飾用の相対的な高さ（実数値ではない）
+const climb = [18, 42, 68, 96]
+
 export function BenefitsSection() {
   return (
     <section id="solution" className="relative py-6">
@@ -50,33 +54,60 @@ export function BenefitsSection() {
           description="一度きりの当たりで終わらせず、再現できる仕組みに変える。4つのステップで新規リードを回します。"
         />
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          {steps.map((item, index) => (
-            <div
-              key={item.title}
-              className="flex gap-5 rounded-xl border border-border bg-background p-6 sm:p-7"
-            >
-              <div className="flex shrink-0 flex-col items-center gap-2">
-                <span className="flex size-12 items-center justify-center rounded-lg bg-primary/15 text-primary">
+        {/* ステップが進むほど右肩上がりに積み上がっていく折れ線グラフの節目として各ステップを配置する */}
+        <div className="relative mt-16">
+          <svg
+            className="pointer-events-none absolute inset-x-0 top-0 hidden h-40 w-full text-primary/30 md:block"
+            viewBox="0 0 400 100"
+            preserveAspectRatio="none"
+            aria-hidden
+          >
+            <polyline
+              points={climb
+                .map(
+                  (h, i) =>
+                    `${(i / (climb.length - 1)) * 400},${100 - h}`,
+                )
+                .join(' ')}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeDasharray="5 6"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+
+          <div className="grid gap-5 md:grid-cols-4 md:gap-4">
+            {steps.map((item, index) => (
+              <div
+                key={item.title}
+                className="flex flex-col gap-4 md:mt-[var(--climb-offset)] md:justify-end"
+                style={
+                  {
+                    '--climb-offset': `${(100 - climb[index]) * 0.5}px`,
+                  } as CSSProperties
+                }
+              >
+                <span className="relative z-10 flex size-12 items-center justify-center rounded-full border-2 border-primary/50 bg-background text-primary shadow-sm">
                   <item.icon className="size-5.5" aria-hidden />
                 </span>
-                <span className="font-mono text-xs text-muted-foreground/50 tabular-nums">
-                  0{index + 1}
-                </span>
-              </div>
-              <div className="flex flex-col gap-2">
-                <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="text-lg font-semibold">{item.title}</h3>
-                  <span className="rounded-full border border-border bg-card px-2.5 py-0.5 font-mono text-[11px] text-primary">
+                <div className="flex flex-col gap-2 rounded-xl border border-border bg-background p-5">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono text-xs text-muted-foreground/50 tabular-nums">
+                      0{index + 1}
+                    </span>
+                    <h3 className="text-base font-semibold">{item.title}</h3>
+                  </div>
+                  <span className="w-fit rounded-full border border-border bg-card px-2.5 py-0.5 font-mono text-[11px] text-primary">
                     {item.label}
                   </span>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </p>
                 </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {item.description}
-                </p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

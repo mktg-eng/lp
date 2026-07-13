@@ -34,7 +34,6 @@ export function BenefitsSection() {
     <section id="benefits" className="relative bg-white">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
-          kicker="AFTER"
           eyebrow="導入後の世界"
           title="AIエージェントが、チームの一員になる"
           description="設定と運用が整うことで、開発チームの動き方は少しずつ変わっていきます。"

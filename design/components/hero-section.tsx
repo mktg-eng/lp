@@ -161,12 +161,10 @@ const queueItems = [
 function RequestQueuePreview() {
   return (
     <div className="overflow-hidden rounded-sm border border-brand-ink/12 bg-brand-paper shadow-[0_1px_2px_rgba(36,31,26,0.04),0_16px_40px_-20px_rgba(36,31,26,0.35)]">
-      <div className="flex items-center gap-2 border-b border-brand-ink/10 px-5 py-3.5">
-        <span className="font-mono text-[11px] tracking-[0.1em] text-muted-foreground/80 uppercase">
-          依頼キュー — design-requests
-        </span>
-        <span className="ml-auto hidden rounded-sm bg-brand-vermillion px-2.5 py-0.5 font-mono text-[11px] font-bold text-brand-vermillion-foreground sm:inline">
-          月額定額
+      <div className="flex items-baseline gap-3 border-b border-brand-ink/10 px-5 py-4">
+        <span className="font-display text-sm font-bold text-brand-ink">制作進行表</span>
+        <span className="font-mono text-[11px] tracking-[0.08em] text-muted-foreground/70">
+          No. 0248 ／ 本日分
         </span>
       </div>
 
@@ -176,25 +174,25 @@ function RequestQueuePreview() {
             key={item.title}
             className="flex flex-col gap-2 px-5 py-4 sm:flex-row sm:items-center sm:gap-4"
           >
-            <span className="w-fit shrink-0 rounded-sm bg-secondary px-2 py-0.5 font-mono text-[11px] font-medium text-secondary-foreground sm:w-16 sm:text-center">
+            <span className="w-fit shrink-0 font-mono text-[11px] tracking-[0.06em] text-muted-foreground/70 sm:w-14">
               {item.tag}
             </span>
             <span className="flex-1 text-left text-sm text-foreground">
               {item.title}
             </span>
             {item.tone === 'active' && (
-              <span className="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full bg-brand-vermillion/10 px-2.5 py-0.5 text-xs font-medium text-brand-vermillion">
-                <span className="size-1.5 animate-pulse rounded-full bg-brand-vermillion" aria-hidden />
+              <span className="inline-flex w-fit shrink-0 items-center gap-1.5 text-xs font-medium text-brand-vermillion">
+                <span className="size-1.5 rounded-full bg-brand-vermillion" aria-hidden />
                 {item.status}
               </span>
             )}
             {item.tone === 'queued' && (
-              <span className="inline-flex w-fit shrink-0 items-center rounded-full border border-border bg-background px-2.5 py-0.5 text-xs text-muted-foreground">
+              <span className="inline-flex w-fit shrink-0 items-center text-xs text-muted-foreground">
                 {item.status}
               </span>
             )}
             {item.tone === 'done' && (
-              <span className="inline-flex w-fit shrink-0 items-center gap-1 rounded-full bg-secondary px-2.5 py-0.5 text-xs text-muted-foreground">
+              <span className="inline-flex w-fit shrink-0 items-center gap-1 text-xs text-muted-foreground">
                 <Check className="size-3" aria-hidden />
                 {item.status}
               </span>

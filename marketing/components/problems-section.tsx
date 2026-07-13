@@ -39,25 +39,34 @@ export function ProblemsSection() {
         description="営業・広告のリソースが限られるBtoB企業では、新規開拓にこんなつまずきがよく見られます。"
       />
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-12 flex flex-col rounded-xl border border-border bg-card">
         {problems.map((item, index) => (
           <div
             key={item.title}
-            className="group relative flex flex-col gap-4 overflow-hidden rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/40"
+            className="group relative flex gap-5 border-b border-border px-5 py-6 last:border-b-0 sm:gap-6 sm:px-7"
           >
-            <span
-              className="pointer-events-none absolute -top-3 -right-2 font-mono text-5xl font-black text-foreground/[0.05] italic select-none"
-              aria-hidden
-            >
-              0{index + 1}
-            </span>
-            <span className="flex size-11 items-center justify-center rounded-lg border border-border bg-secondary text-primary">
-              <item.icon className="size-5" aria-hidden />
-            </span>
-            <h3 className="text-base font-semibold">{item.title}</h3>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {item.description}
-            </p>
+            <div className="flex flex-col items-center">
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-border bg-secondary text-primary">
+                <item.icon className="size-5" aria-hidden />
+              </span>
+              {index < problems.length - 1 ? (
+                <span
+                  className="mt-2 w-px flex-1 bg-border"
+                  aria-hidden
+                />
+              ) : null}
+            </div>
+            <div className="flex flex-1 flex-col gap-1.5 pb-2 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+              <div className="flex flex-col gap-1.5">
+                <span className="font-mono text-[11px] tracking-[0.12em] text-muted-foreground/60 uppercase">
+                  Issue 0{index + 1}
+                </span>
+                <h3 className="text-base font-semibold">{item.title}</h3>
+              </div>
+              <p className="text-sm leading-relaxed text-muted-foreground sm:max-w-sm">
+                {item.description}
+              </p>
+            </div>
           </div>
         ))}
       </div>

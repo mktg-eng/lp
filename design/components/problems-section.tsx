@@ -36,7 +36,6 @@ export function ProblemsSection() {
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <Reveal>
           <SectionHeading
-            kicker="Issue"
             eyebrow="こんなお悩みは？"
             title="デザインを“外に頼む”のは、意外と大変"
             description="デザインの外注や内製化には、こんなつまずきがよく見られます。"

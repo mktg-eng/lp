@@ -34,47 +34,42 @@ const services = [
 export function ServicesSection() {
   return (
     <section id="services" className="border-y border-border bg-muted/60">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+      <div className="mx-auto max-w-5xl px-5 py-20 sm:py-24">
         <SectionHeading
-          kicker="SERVICES"
           eyebrow="サービス内容"
           title="導入支援とエージェント設定を、一気通貫で"
           description="「入れる」だけでなく「使い続けられる」状態まで。2つの軸でご支援します。"
         />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          {services.map((service) => (
+        <div className="mt-14 flex flex-col">
+          {services.map((service, index) => (
             <div
               key={service.title}
-              className="flex flex-col gap-6 rounded-2xl border border-border bg-background p-7 sm:p-8"
+              className="flex flex-col gap-6 border-t border-border py-10 first:border-t-0 sm:flex-row sm:gap-10"
             >
-              <div className="flex items-center gap-4">
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand-navy text-lg font-black text-brand-navy-foreground">
-                  {service.badge}
+              <div className="flex shrink-0 items-start gap-4 sm:w-56">
+                <span className="font-mono text-4xl font-black leading-none text-brand-navy/15 sm:text-5xl">
+                  0{index + 1}
                 </span>
-                <div>
-                  <div className="flex items-center gap-2 text-brand-orange">
-                    <service.icon className="size-4" aria-hidden />
-                    <span className="font-mono text-xs font-bold">SERVICE {service.badge}</span>
-                  </div>
-                  <h3 className="text-xl font-bold">{service.title}</h3>
-                </div>
+                <span className="mt-1 flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-navy text-brand-navy-foreground">
+                  <service.icon className="size-4.5" aria-hidden />
+                </span>
               </div>
 
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {service.description}
-              </p>
-
-              <ul className="flex flex-col gap-3 border-t border-border pt-6">
-                {service.items.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm">
-                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-orange/15 text-brand-orange">
-                      <Check className="size-3.5" aria-hidden />
-                    </span>
-                    <span className="leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="flex flex-1 flex-col gap-4">
+                <h3 className="text-xl font-bold">{service.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {service.description}
+                </p>
+                <ul className="grid gap-2.5 sm:grid-cols-2">
+                  {service.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm">
+                      <Check className="mt-0.5 size-4 shrink-0 text-brand-orange" aria-hidden />
+                      <span className="leading-relaxed text-foreground/80">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

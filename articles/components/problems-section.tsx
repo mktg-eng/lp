@@ -33,7 +33,6 @@ export function ProblemsSection() {
   return (
     <section id="problems" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <SectionHeading
-        kicker="PAIN POINTS"
         eyebrow="こんなお悩みは？"
         title="記事づくり、こんな壁に当たっていませんか"
         description="オウンドメディアやコラムの運用では、こうしたつまずきがよく見られます。"

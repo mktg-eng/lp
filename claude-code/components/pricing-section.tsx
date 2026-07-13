@@ -49,7 +49,6 @@ export function PricingSection() {
   return (
     <section id="pricing" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <SectionHeading
-        kicker="PLAN"
         eyebrow="料金"
         title="ご状況に合わせた3つのプラン"
         description="料金はチーム規模や対象範囲により異なります。詳細はお見積りにて個別にご案内します。"

@@ -30,30 +30,36 @@ export function ReasonsSection() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <SectionHeading
-        kicker="REASONS"
         eyebrow="選ばれる理由"
         title="“書いて納める”の、その先まで"
       />
 
-      <div className="mt-12 grid gap-5 md:grid-cols-3">
+      <div className="mt-12 flex flex-col divide-y divide-border border-y border-border">
         {reasons.map((item, index) => (
           <div
             key={item.title}
-            className="flex flex-col gap-5 rounded-2xl border border-border bg-card p-7 sm:p-8"
+            className="flex flex-col gap-4 py-8 sm:flex-row sm:items-center sm:gap-10"
           >
-            <div className="flex items-start justify-between gap-4">
-              <span className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-brand-teal font-mono text-xl font-black text-brand-teal-foreground">
-                0{index + 1}
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/25 bg-accent/5 px-2.5 py-1 font-mono text-[10px] font-bold tracking-wider text-accent">
-                <item.icon className="size-3" aria-hidden />
-                {item.tag}
-              </span>
+            <span
+              className="shrink-0 font-mono text-5xl font-black leading-none text-accent/15 sm:w-20 sm:text-6xl"
+              aria-hidden
+            >
+              0{index + 1}
+            </span>
+            <div className="flex flex-1 flex-col gap-2.5">
+              <div className="flex flex-wrap items-center gap-3">
+                <h3 className="text-lg font-bold text-primary sm:text-xl">
+                  {item.title}
+                </h3>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/25 bg-accent/5 px-2.5 py-1 font-mono text-[10px] font-bold tracking-wider text-accent">
+                  <item.icon className="size-3" aria-hidden />
+                  {item.tag}
+                </span>
+              </div>
+              <p className="text-sm leading-relaxed text-muted-foreground sm:max-w-2xl">
+                {item.description}
+              </p>
             </div>
-            <h3 className="text-lg font-bold text-primary">{item.title}</h3>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {item.description}
-            </p>
           </div>
         ))}
       </div>

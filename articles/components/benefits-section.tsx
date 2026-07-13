@@ -28,7 +28,6 @@ export function BenefitsSection() {
     <section id="benefits" className="relative bg-brand-surface">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
-          kicker="VALUE"
           eyebrow="提供価値"
           title="品質・手離れ・再現性を、まとめて"
           description="AIと人の役割分担を前提に設計したサービスだから、3つの価値を同時に提供できます。"

@@ -5,10 +5,11 @@ import { Button } from '@/components/ui/button'
 import { COMPANY } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
+const heroHighlight = { label: '2万円〜', note: '記事単価（目安）' }
+
 const heroStats = [
   { label: 'SEO', note: '検索エンジン対策' },
   { label: 'AIO', note: 'AI検索対策' },
-  { label: '2万円〜', note: '記事単価（目安）' },
 ]
 
 export function HeroSection() {
@@ -57,20 +58,30 @@ export function HeroSection() {
             </Button>
           </div>
 
-          <div className="mt-9 flex w-full flex-wrap gap-3">
-            {heroStats.map((stat) => (
-              <div
-                key={stat.label}
-                className="flex flex-col gap-0.5 rounded-xl border border-border bg-card px-4 py-2.5"
-              >
-                <span className="text-lg font-bold tracking-tight text-primary">
-                  {stat.label}
-                </span>
-                <span className="text-[11px] text-muted-foreground">
-                  {stat.note}
-                </span>
-              </div>
-            ))}
+          <div className="mt-9 flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center">
+            <div className="flex flex-col gap-0.5 rounded-2xl border-2 border-accent/30 bg-accent/5 px-5 py-3.5">
+              <span className="text-3xl font-black leading-none tracking-tight text-accent sm:text-4xl">
+                {heroHighlight.label}
+              </span>
+              <span className="text-xs text-muted-foreground">
+                {heroHighlight.note}
+              </span>
+            </div>
+            <div className="flex gap-3">
+              {heroStats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="flex flex-col gap-0.5 rounded-xl border border-border bg-card px-4 py-2.5"
+                >
+                  <span className="text-lg font-bold tracking-tight text-primary">
+                    {stat.label}
+                  </span>
+                  <span className="text-[11px] text-muted-foreground">
+                    {stat.note}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
 
           <p className="mt-5 font-mono text-xs text-muted-foreground">

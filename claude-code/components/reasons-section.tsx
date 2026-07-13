@@ -27,7 +27,6 @@ export function ReasonsSection() {
   return (
     <section className="mx-auto max-w-4xl px-5 py-20 sm:py-24">
       <SectionHeading
-        kicker="WHY US"
         eyebrow="選ばれる理由"
         title="“入れる”その先まで、伴走します"
       />

@@ -55,7 +55,6 @@ export function PricingSection() {
     <section id="pricing" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <Reveal>
         <SectionHeading
-          kicker="Plan"
           eyebrow="料金"
           title="使い方に合わせて選べる3つのプラン"
           description="料金はご依頼の内容や量により異なります。ヒアリングのうえ、月額の目安をお見積りでご提示します。"

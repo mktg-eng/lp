@@ -6,8 +6,6 @@ interface SectionHeadingProps {
   description?: string
   className?: string
   align?: 'center' | 'left'
-  /** バクヤスAI記事代行 風、見出し上に置く薄く大きな英字ラベル */
-  kicker?: string
   /** 濃紺など暗い背景セクションで使う場合 */
   invert?: boolean
 }
@@ -18,7 +16,6 @@ export function SectionHeading({
   description,
   className,
   align = 'center',
-  kicker,
   invert = false,
 }: SectionHeadingProps) {
   return (
@@ -31,17 +28,6 @@ export function SectionHeading({
         className,
       )}
     >
-      {kicker ? (
-        <span
-          className={cn(
-            'select-none font-mono text-xs font-bold tracking-[0.3em] uppercase',
-            invert ? 'text-brand-blue' : 'text-accent',
-          )}
-          aria-hidden
-        >
-          {kicker}
-        </span>
-      ) : null}
       <span
         className={cn(
           'inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 font-mono text-xs font-bold tracking-[0.08em]',

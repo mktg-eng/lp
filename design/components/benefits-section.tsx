@@ -38,7 +38,6 @@ export function BenefitsSection() {
       <div className="relative mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <Reveal>
           <SectionHeading
-            kicker="Change"
             eyebrow="導入後の変化"
             title="「頼みたいとき、すぐ頼める」が当たり前になる"
             description="定額の制作体制が整うと、デザインまわりの動き方はこう変わります。"

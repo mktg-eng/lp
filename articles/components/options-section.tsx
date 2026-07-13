@@ -83,37 +83,56 @@ export function OptionsSection() {
 
       <div className="relative mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
-          kicker="OPTIONS"
           eyebrow="オプション"
           title="必要な分だけ、記事単位で追加"
           description="監修の強化から画像・図解、記事の二次活用まで。金額はいずれも目安です。"
         />
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {options.map((option) => (
-            <div
-              key={option.label}
-              className="flex flex-col gap-3 rounded-2xl border border-border bg-white p-6 transition-colors hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5"
-            >
-              <span className="flex size-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                <option.icon className="size-4.5" aria-hidden />
-              </span>
-              <span className="text-sm font-bold text-primary">
-                {option.label}
-              </span>
-              <span className="text-xs leading-relaxed text-muted-foreground">
-                {option.note}
-              </span>
-              <span className="mt-auto flex items-baseline gap-1 border-t border-border pt-3">
-                <span className="font-mono text-base font-bold text-accent">
-                  {option.price}
-                </span>
-                <span className="font-mono text-[11px] text-muted-foreground/70">
-                  {option.unit}
-                </span>
-              </span>
-            </div>
-          ))}
+        <div className="mt-12 overflow-x-auto rounded-2xl border border-border bg-white">
+          <table className="w-full min-w-[480px] border-collapse text-left">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="p-4 text-sm font-semibold text-muted-foreground sm:p-5">
+                  オプション内容
+                </th>
+                <th className="p-4 text-right text-sm font-semibold text-muted-foreground sm:p-5">
+                  金額（目安）
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {options.map((option) => (
+                <tr
+                  key={option.label}
+                  className="border-b border-border/70 last:border-b-0"
+                >
+                  <th scope="row" className="p-4 align-top font-normal sm:p-5">
+                    <div className="flex items-start gap-3">
+                      <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                        <option.icon className="size-4" aria-hidden />
+                      </span>
+                      <div className="flex flex-col gap-0.5">
+                        <span className="text-sm font-bold text-primary">
+                          {option.label}
+                        </span>
+                        <span className="text-xs leading-relaxed text-muted-foreground">
+                          {option.note}
+                        </span>
+                      </div>
+                    </div>
+                  </th>
+                  <td className="p-4 text-right align-top sm:p-5">
+                    <span className="font-mono text-sm font-bold text-accent">
+                      {option.price}
+                    </span>
+                    <span className="block font-mono text-[11px] text-muted-foreground/70">
+                      {option.unit}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         <p className="mt-6 text-center text-xs text-muted-foreground">

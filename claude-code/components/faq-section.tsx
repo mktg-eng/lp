@@ -35,7 +35,7 @@ export function FaqSection() {
   return (
     <section id="faq" className="bg-muted/60">
       <div className="mx-auto max-w-3xl px-5 py-20 sm:py-24">
-        <SectionHeading kicker="FAQ" eyebrow="FAQ" title="よくあるご質問" />
+        <SectionHeading eyebrow="FAQ" title="よくあるご質問" />
 
         <div className="mt-12 flex flex-col gap-3">
           {faqs.map((faq, index) => {

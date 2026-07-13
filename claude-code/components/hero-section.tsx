@@ -55,49 +55,34 @@ export function HeroSection() {
         </div>
 
         <div className="mx-auto mt-16 max-w-3xl">
-          <TerminalPreview />
+          <ClientLogoStrip />
         </div>
       </div>
     </section>
   )
 }
 
-function TerminalPreview() {
+const placeholderClients = ['A社', 'B社', 'C社', 'D社', 'E社', 'F社']
+
+function ClientLogoStrip() {
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-white shadow-2xl shadow-brand-navy/10">
-      <div className="flex items-center gap-2 border-b border-border bg-muted/60 px-4 py-3">
-        <span className="size-2.5 rounded-full bg-brand-navy/15" aria-hidden />
-        <span className="size-2.5 rounded-full bg-brand-navy/15" aria-hidden />
-        <span className="size-2.5 rounded-full bg-brand-navy/15" aria-hidden />
-        <span className="ml-2 font-mono text-xs text-muted-foreground">
-          claude-code · sub-agents
-        </span>
+    <div>
+      <p className="text-center font-mono text-xs tracking-[0.1em] text-muted-foreground">
+        導入企業ロゴ例（イメージ）
+      </p>
+      <div className="mt-5 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        {placeholderClients.map((name) => (
+          <span
+            key={name}
+            className="flex h-12 min-w-28 items-center justify-center rounded-lg border border-brand-navy/10 bg-white px-5 text-sm font-bold tracking-wide text-brand-navy/40 shadow-sm"
+          >
+            {name}
+          </span>
+        ))}
       </div>
-      <div className="space-y-2 p-5 font-mono text-[13px] leading-relaxed">
-        <p className="text-muted-foreground">
-          <span className="text-brand-orange">$</span> claude agents list
-        </p>
-        <p className="text-foreground/80">
-          <span className="text-foreground">reviewer</span>{' '}
-          コードレビュー担当エージェント{' '}
-          <span className="text-brand-orange">● ready</span>
-        </p>
-        <p className="text-foreground/80">
-          <span className="text-foreground">tester</span>{'   '}
-          テスト生成エージェント{'      '}
-          <span className="text-brand-orange">● ready</span>
-        </p>
-        <p className="text-foreground/80">
-          <span className="text-foreground">docs</span>{'      '}
-          ドキュメント整備エージェント{'  '}
-          <span className="text-brand-orange">● ready</span>
-        </p>
-        <p className="text-muted-foreground">
-          <span className="text-brand-orange">$</span> MCP / 権限設定{' '}
-          <span className="text-brand-orange">完了</span>
-          <span className="ml-1 inline-block h-4 w-2 animate-pulse bg-brand-navy/70 align-middle" aria-hidden />
-        </p>
-      </div>
+      <p className="mt-3 text-center text-[11px] leading-relaxed text-muted-foreground">
+        ※ 実在の導入企業ロゴではなく、掲載イメージのプレースホルダーです。
+      </p>
     </div>
   )
 }

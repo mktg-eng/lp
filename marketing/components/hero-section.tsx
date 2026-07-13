@@ -16,13 +16,6 @@ export function HeroSection() {
 
       <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16 sm:pt-28 sm:pb-24">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <span
-            className="pointer-events-none absolute top-6 left-1/2 -z-0 -translate-x-1/2 text-6xl font-black tracking-tight text-foreground/[0.06] italic uppercase select-none sm:text-8xl"
-            aria-hidden
-          >
-            Growth Loop
-          </span>
-
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 font-mono text-xs font-semibold tracking-wide text-primary">
             <Zap className="size-3.5" aria-hidden />
             AI × フォーム営業で新規開拓

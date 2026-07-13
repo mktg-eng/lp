@@ -71,7 +71,6 @@ export function ServicesSection() {
   return (
     <section id="services" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <SectionHeading
-        kicker="SERVICE"
         eyebrow="サービス内容"
         title="5段階の制作パイプラインで品質を担保"
         description="1本の記事は、情報取得から採点・ファクトチェックまで5つの工程を通ってから納品されます。"

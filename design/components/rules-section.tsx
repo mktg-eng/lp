@@ -42,7 +42,6 @@ export function RulesSection() {
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <Reveal>
           <SectionHeading
-            kicker="Rule"
             eyebrow="ご利用ルール"
             title="安心して使い続けられる、シンプルなルール"
             description="「定額だとどこまで頼めるの？」に迷わないよう、運用ルールをあらかじめ明確にしています。"

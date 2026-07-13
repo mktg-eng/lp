@@ -36,46 +36,58 @@ export function FaqSection() {
     <section id="faq" className="mx-auto max-w-3xl px-5 py-20 sm:py-24">
       <SectionHeading kicker="FAQ" eyebrow="FAQ" title="よくあるご質問" />
 
-      <div className="mt-12 flex flex-col gap-3">
+      <div className="mt-12 flex flex-col">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index
           return (
-            <div
-              key={faq.question}
-              className={cn(
-                'rounded-xl border bg-card transition-colors',
-                isOpen ? 'border-primary/40' : 'border-border',
-              )}
-            >
-              <button
-                type="button"
-                onClick={() => setOpenIndex(isOpen ? null : index)}
-                aria-expanded={isOpen}
-                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
-              >
-                <span className="text-sm font-medium sm:text-base">
-                  {faq.question}
-                </span>
-                <Plus
+            <div key={faq.question} className="flex gap-4">
+              <div className="flex flex-col items-center pt-4">
+                <span
                   className={cn(
-                    'size-5 shrink-0 text-primary transition-transform duration-200',
-                    isOpen && 'rotate-45',
+                    'flex size-7 shrink-0 items-center justify-center rounded-full border font-mono text-[10px] font-bold transition-colors',
+                    isOpen
+                      ? 'border-primary bg-primary text-primary-foreground'
+                      : 'border-border text-muted-foreground',
                   )}
-                  aria-hidden
-                />
-              </button>
-              <div
-                className={cn(
-                  'grid transition-all duration-200',
-                  isOpen
-                    ? 'grid-rows-[1fr] opacity-100'
-                    : 'grid-rows-[0fr] opacity-0',
-                )}
-              >
-                <div className="overflow-hidden">
-                  <p className="px-5 pb-5 text-sm leading-relaxed text-muted-foreground">
-                    {faq.answer}
-                  </p>
+                >
+                  Q{index + 1}
+                </span>
+                {index < faqs.length - 1 ? (
+                  <span className="mt-1 w-px flex-1 bg-border" aria-hidden />
+                ) : null}
+              </div>
+
+              <div className="flex-1 pb-5">
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  aria-expanded={isOpen}
+                  className="flex w-full items-center justify-between gap-4 py-3 text-left"
+                >
+                  <span className="text-sm font-medium sm:text-base">
+                    {faq.question}
+                  </span>
+                  <Plus
+                    className={cn(
+                      'size-5 shrink-0 text-primary transition-transform duration-200',
+                      isOpen && 'rotate-45',
+                    )}
+                    aria-hidden
+                  />
+                </button>
+                <div
+                  className={cn(
+                    'grid transition-all duration-200',
+                    isOpen
+                      ? 'grid-rows-[1fr] opacity-100'
+                      : 'grid-rows-[0fr] opacity-0',
+                  )}
+                >
+                  <div className="overflow-hidden">
+                    <p className="rounded-lg bg-secondary/60 p-4 text-sm leading-relaxed text-muted-foreground">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

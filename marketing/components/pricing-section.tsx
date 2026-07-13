@@ -45,6 +45,8 @@ const plans = [
   },
 ]
 
+const maxFeatureCount = Math.max(...plans.map((plan) => plan.features.length))
+
 export function PricingSection() {
   return (
     <section id="pricing" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
@@ -55,7 +57,31 @@ export function PricingSection() {
         description="料金はターゲットや量産・配信の範囲により異なります。詳細はお見積りにて個別にご案内します。"
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+      {/* 初期構築→月額運用→成果連動オプションという成長パスであることを示すステップレール */}
+      <div className="mt-12 hidden items-center gap-2 lg:flex">
+        {plans.map((plan, index) => (
+          <div key={plan.name} className="flex flex-1 items-center gap-2">
+            <span className="flex items-center gap-2 font-mono text-[11px] tracking-[0.1em] text-muted-foreground/70 uppercase">
+              <span
+                className={cn(
+                  'flex size-5 items-center justify-center rounded-full border font-mono text-[10px]',
+                  plan.featured
+                    ? 'border-primary bg-primary text-primary-foreground'
+                    : 'border-border text-muted-foreground',
+                )}
+              >
+                {index + 1}
+              </span>
+              Stage {index + 1}
+            </span>
+            {index < plans.length - 1 ? (
+              <span className="h-px flex-1 bg-border" aria-hidden />
+            ) : null}
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-4 grid gap-6 lg:mt-4 lg:grid-cols-3">
         {plans.map((plan) => (
           <div
             key={plan.name}
@@ -82,6 +108,22 @@ export function PricingSection() {
             <div className="flex items-baseline gap-1.5 border-y border-border py-5">
               <span className="font-mono text-3xl font-black tracking-tight">
                 {plan.price}
+              </span>
+            </div>
+
+            {/* 収録項目数から算出したスコープメーター（実際の features 配列の長さに基づく実データ） */}
+            <div className="-mt-3 flex items-center gap-2">
+              <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-secondary">
+                <div
+                  className="h-full rounded-full bg-brand-gradient"
+                  style={{
+                    width: `${(plan.features.length / maxFeatureCount) * 100}%`,
+                  }}
+                  aria-hidden
+                />
+              </div>
+              <span className="font-mono text-[10px] whitespace-nowrap text-muted-foreground">
+                {plan.features.length}項目収録
               </span>
             </div>
 

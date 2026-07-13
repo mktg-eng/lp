@@ -37,7 +37,6 @@ export function FlowSection() {
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <Reveal>
           <SectionHeading
-            kicker="Flow"
             eyebrow="ご利用の流れ"
             title="契約から納品まで、5つのステップ"
             description="やり取りはすべてオンラインで完結。日々の依頼はチャットだけで進みます。"

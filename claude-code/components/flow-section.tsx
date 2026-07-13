@@ -1,4 +1,11 @@
-import { MessagesSquare, Search, MonitorSmartphone, GraduationCap, LifeBuoy } from 'lucide-react'
+import {
+  MessagesSquare,
+  Search,
+  MonitorSmartphone,
+  GraduationCap,
+  LifeBuoy,
+  ChevronRight,
+} from 'lucide-react'
 
 import { SectionHeading } from '@/components/section-heading'
 
@@ -35,25 +42,29 @@ export function FlowSection() {
     <section id="flow" className="relative bg-white">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
-          kicker="FLOW"
           eyebrow="設定の流れ"
           title="ご相談から運用まで、5つのステップ"
           description="リモート中心で進めるため、遠隔地の企業でもスムーズに導入いただけます。"
         />
 
-        <ol className="mt-16 grid gap-y-10 gap-x-4 sm:grid-cols-2 lg:grid-cols-5">
+        <ol className="mt-16 grid gap-y-12 gap-x-2 sm:grid-cols-2 lg:flex lg:items-start lg:gap-x-0">
           {steps.map((step, index) => (
-            <li key={step.title} className="relative flex flex-col items-center gap-4 text-center">
-              {index < steps.length - 1 ? (
+            <li
+              key={step.title}
+              className="relative flex flex-1 flex-col items-center gap-3 text-center lg:px-3"
+            >
+              <div className="relative flex size-20 items-center justify-center">
                 <span
-                  className="absolute top-7 left-1/2 hidden h-px w-full bg-border lg:block"
+                  className="absolute font-mono text-6xl font-black text-brand-navy/8"
                   aria-hidden
-                />
-              ) : null}
-              <span className="relative z-10 flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-orange text-brand-orange-foreground">
-                <step.icon className="size-6" aria-hidden />
-              </span>
-              <span className="font-mono text-xs font-bold tracking-[0.1em] text-brand-orange">
+                >
+                  {index + 1}
+                </span>
+                <span className="relative z-10 flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-orange text-brand-orange-foreground shadow-lg shadow-brand-orange/25">
+                  <step.icon className="size-6" aria-hidden />
+                </span>
+              </div>
+              <span className="font-mono text-xs font-bold tracking-[0.15em] text-brand-orange">
                 STEP.0{index + 1}
               </span>
               <div className="flex flex-col gap-1.5">
@@ -62,6 +73,13 @@ export function FlowSection() {
                   {step.description}
                 </p>
               </div>
+
+              {index < steps.length - 1 ? (
+                <ChevronRight
+                  className="absolute top-6 -right-1 hidden size-6 text-brand-navy/20 lg:block"
+                  aria-hidden
+                />
+              ) : null}
             </li>
           ))}
         </ol>

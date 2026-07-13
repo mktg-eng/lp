@@ -46,7 +46,7 @@ export function FaqSection() {
   return (
     <section id="faq" className="mx-auto max-w-3xl px-5 py-20 sm:py-24">
       <Reveal>
-        <SectionHeading kicker="FAQ" eyebrow="FAQ" title="よくあるご質問" />
+        <SectionHeading eyebrow="FAQ" title="よくあるご質問" />
       </Reveal>
 
       <div className="mt-14 flex flex-col gap-3">

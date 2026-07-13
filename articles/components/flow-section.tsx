@@ -114,7 +114,6 @@ export function FlowSection() {
     <section id="flow" className="relative bg-brand-surface">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <SectionHeading
-          kicker="FLOW"
           eyebrow="ご利用の流れ"
           title="初月で品質を合わせ、2ヶ月目から量産へ"
           description="初月はあえて本数を絞り、貴社の理想に合わせて品質のチューニングを優先します。"

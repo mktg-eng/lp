@@ -20,10 +20,12 @@ export function HeroSection() {
 
       <div className="relative mx-auto grid max-w-6xl gap-12 px-5 pt-20 pb-16 sm:pt-28 sm:pb-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div className="flex flex-col items-start text-left">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 font-mono text-xs font-medium text-accent">
-            <Sparkles className="size-3.5" aria-hidden />
-            AI×人のハイブリッド記事制作
-          </span>
+          <div className="inline-flex items-center gap-2.5 border-l-2 border-accent pl-3">
+            <Sparkles className="size-3.5 text-accent" aria-hidden />
+            <span className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-accent">
+              AI×人のハイブリッド記事制作
+            </span>
+          </div>
 
           <h1 className="mt-6 text-balance text-4xl font-bold leading-[1.25] tracking-tight text-primary sm:text-5xl">
             検索にも、AIにも、
@@ -37,25 +39,23 @@ export function HeroSection() {
             記事単価2万円〜（目安）で、品質と本数を両立します。
           </p>
 
-          <div className="mt-9 flex flex-col items-start gap-3 sm:flex-row">
+          <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
             <Button
               size="lg"
-              className="h-12 rounded-full bg-accent px-6 text-base text-accent-foreground hover:bg-accent/90"
+              className="h-12 rounded-full bg-accent px-7 text-base font-semibold text-accent-foreground shadow-lg shadow-accent/25 hover:bg-accent/90"
               nativeButton={false}
               render={<Link href="#contact" />}
             >
               無料相談する
               <ArrowRight className="size-4" aria-hidden />
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="h-12 rounded-full px-6 text-base"
-              nativeButton={false}
-              render={<Link href="#services" />}
+            <Link
+              href="#services"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary underline-offset-4 hover:underline"
             >
               サービス内容を見る
-            </Button>
+              <ArrowRight className="size-3.5" aria-hidden />
+            </Link>
           </div>
 
           <div className="mt-9 flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center">

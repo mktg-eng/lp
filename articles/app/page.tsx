@@ -17,11 +17,11 @@ export default function Page() {
       <SiteHeader />
       <main>
         <HeroSection />
-        <ProblemsSection />
         <BenefitsSection />
+        <ReasonsSection />
+        <ProblemsSection />
         <ServicesSection />
         <FlowSection />
-        <ReasonsSection />
         <PricingSection />
         <OptionsSection />
         <FaqSection />

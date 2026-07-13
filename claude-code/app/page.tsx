@@ -17,10 +17,10 @@ export default function Page() {
       <main>
         <HeroSection />
         <ProblemsSection />
-        <BenefitsSection />
-        <ServicesSection />
-        <FlowSection />
         <ReasonsSection />
+        <ServicesSection />
+        <BenefitsSection />
+        <FlowSection />
         <PricingSection />
         <FaqSection />
         <ContactSection />

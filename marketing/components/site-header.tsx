@@ -5,10 +5,10 @@ import { Button } from '@/components/ui/button'
 import { SERVICE_NAME } from '@/lib/site'
 
 const navItems = [
-  { label: '課題', href: '#problems' },
-  { label: '解決', href: '#solution' },
-  { label: '仕組み', href: '#flow' },
   { label: '事例', href: '#cases' },
+  { label: '課題', href: '#problems' },
+  { label: '仕組み', href: '#flow' },
+  { label: '解決', href: '#solution' },
   { label: '料金', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },
 ]

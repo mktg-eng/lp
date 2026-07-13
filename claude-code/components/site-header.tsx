@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button'
 
 const navItems = [
   { label: 'お悩み', href: '#problems' },
-  { label: '導入後', href: '#benefits' },
   { label: 'サービス', href: '#services' },
+  { label: '導入後', href: '#benefits' },
   { label: '流れ', href: '#flow' },
   { label: '料金', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },

@@ -16,10 +16,10 @@ export default function Page() {
       <SiteHeader />
       <main>
         <HeroSection />
-        <ProblemsSection />
-        <BenefitsSection />
-        <LoopSection />
         <CasesSection />
+        <ProblemsSection />
+        <LoopSection />
+        <BenefitsSection />
         <ReasonsSection />
         <PricingSection />
         <FaqSection />

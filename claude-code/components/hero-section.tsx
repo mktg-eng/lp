@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 
@@ -11,12 +11,7 @@ export function HeroSection() {
 
       <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16 sm:pt-28 sm:pb-24">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-brand-orange/20 bg-white px-3.5 py-1.5 font-mono text-xs text-brand-orange shadow-sm">
-            <Sparkles className="size-3.5" aria-hidden />
-            AIエージェントで開発を自動化
-          </span>
-
-          <h1 className="mt-6 text-balance text-4xl font-black leading-[1.2] tracking-tight text-brand-navy sm:text-5xl md:text-6xl">
+          <h1 className="text-balance text-4xl font-black leading-[1.2] tracking-tight text-brand-navy sm:text-5xl md:text-6xl">
             Claude Code、
             <br className="hidden sm:block" />
             入れて終わりになって
@@ -28,25 +23,23 @@ export function HeroSection() {
             導入の最初の一歩から、現場に定着するまでを伴走します。
           </p>
 
-          <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row">
+          <div className="mt-9 flex flex-col items-center gap-4">
             <Button
               size="lg"
-              className="h-12 rounded-full bg-brand-orange px-6 text-base text-brand-orange-foreground hover:bg-brand-orange/85"
+              className="h-12 rounded-full bg-brand-orange px-8 text-base text-brand-orange-foreground hover:bg-brand-orange/85"
               nativeButton={false}
               render={<Link href="#contact" />}
             >
               無料相談する
               <ArrowRight className="size-4" aria-hidden />
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="h-12 rounded-full border-brand-navy/20 bg-white px-6 text-base text-brand-navy hover:bg-brand-navy/5"
-              nativeButton={false}
-              render={<Link href="#services" />}
+            <Link
+              href="#services"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground underline decoration-brand-navy/25 underline-offset-4 transition-colors hover:text-brand-navy hover:decoration-brand-navy/60"
             >
               サービス内容を見る
-            </Button>
+              <ArrowRight className="size-3.5" aria-hidden />
+            </Link>
           </div>
 
           <p className="mt-4 font-mono text-xs text-muted-foreground">

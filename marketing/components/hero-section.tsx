@@ -16,12 +16,12 @@ export function HeroSection() {
 
       <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16 sm:pt-28 sm:pb-24">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 font-mono text-xs font-semibold tracking-wide text-primary">
+          <span className="inline-flex items-center gap-2 border-l-2 border-primary pl-3 font-mono text-xs font-semibold tracking-[0.15em] text-primary uppercase">
             <Zap className="size-3.5" aria-hidden />
             AI × フォーム営業で新規開拓
           </span>
 
-          <h1 className="mt-6 text-4xl leading-[1.12] font-black tracking-tight text-balance sm:text-5xl md:text-6xl">
+          <h1 className="mt-5 text-4xl leading-[1.12] font-black tracking-tight text-balance sm:text-5xl md:text-6xl">
             “当たる集客”を、
             <br className="hidden sm:block" />
             <span className="text-gradient">コピーして増やす。</span>
@@ -31,35 +31,37 @@ export function HeroSection() {
             AIでLP・オファーを高速量産 → フォーム営業で検証 → 当たった型を横展開。
             低コストで新規リードを回す仕組みを提供します。
           </p>
+        </div>
 
-          <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row">
+        {/* 数字を先に見せてから、CTAへ誘導する構成 */}
+
+        <div className="mx-auto mt-12 max-w-3xl">
+          <GrowthPreview />
+        </div>
+
+        <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center text-center">
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
             <Button
               size="lg"
-              className="h-12 px-6 text-base"
+              className="h-12 px-7 text-base"
               nativeButton={false}
               render={<Link href="#contact" />}
             >
               無料で相談する
               <ArrowRight className="size-4" aria-hidden />
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="h-12 px-6 text-base"
-              nativeButton={false}
-              render={<Link href="#flow" />}
+            <Link
+              href="#flow"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground underline decoration-primary/40 decoration-2 underline-offset-4 transition-colors hover:text-primary"
             >
               仕組みを見る
-            </Button>
+              <ArrowRight className="size-3.5" aria-hidden />
+            </Link>
           </div>
 
           <p className="mt-4 font-mono text-xs text-muted-foreground">
             提供：{COMPANY}
           </p>
-        </div>
-
-        <div className="mx-auto mt-16 max-w-3xl">
-          <GrowthPreview />
         </div>
       </div>
     </section>

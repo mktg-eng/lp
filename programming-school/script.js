@@ -38,9 +38,9 @@
 
     var fd = new FormData(form);
     var payload = {
-      company: fd.get('company'),
       name: fd.get('name'),
       email: fd.get('email'),
+      grade: fd.get('grade'),
       message: fd.get('message'),
     };
 

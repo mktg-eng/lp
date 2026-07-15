@@ -1,5 +1,5 @@
 // お問い合わせフォームの送信処理
-// 元のNext.js版では /api/contact (サーバー側でSlack Webhookへ転送) にPOSTしていた。
+// 元のNext.js版では /api/contact (サーバー側で通知先へ転送) にPOSTしていた。
 // WordPress版では、この同じ役割を持つ PHP エンドポイントに向ける想定。
 // 実際のURLは WordPress 側に反映する際に書き換える（下記 CONTACT_ENDPOINT）。
 (function () {

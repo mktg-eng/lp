@@ -24,8 +24,10 @@ add_action('wp_enqueue_scripts', function () {
     }
 }, 999);
 
-// お問い合わせフォーム送信 → Slack通知
-// CDC_SLACK_WEBHOOK_URL は wp-config.php に define() しておく（テーマファイルに直書きしない）
+// お問い合わせフォーム送信の受け口
+// TODO: 通知先が未確定(HubSpot連携を予定)。決まり次第、このコールバック内で
+// 実際の転送処理(HubSpot API呼び出し等)を実装すること。現状はバリデーションのみ行い、
+// 送信自体は正常応答を返す(フォームの動作確認・フロント側のUX確認用)。
 add_action('rest_api_init', function () {
     register_rest_route('cdc/v1', '/contact', [
         'methods'  => 'POST',
@@ -45,20 +47,7 @@ function cdc_handle_contact_submission(WP_REST_Request $req)
         return new WP_REST_Response(['ok' => false, 'error' => '必須項目が未入力です。'], 400);
     }
 
-    if (!defined('CDC_SLACK_WEBHOOK_URL') || !CDC_SLACK_WEBHOOK_URL) {
-        return new WP_REST_Response(['ok' => false, 'error' => '送信先が未設定です。時間をおいて再度お試しください。'], 500);
-    }
-
-    $text = "新規お問い合わせ（コーポレートサイト）\n会社名: {$company}\nお名前: {$name}\nメール: {$email}\nご相談内容:\n{$message}";
-
-    $res = wp_remote_post(CDC_SLACK_WEBHOOK_URL, [
-        'headers' => ['Content-Type' => 'application/json'],
-        'body'    => wp_json_encode(['text' => $text]),
-    ]);
-
-    if (is_wp_error($res) || wp_remote_retrieve_response_code($res) >= 300) {
-        return new WP_REST_Response(['ok' => false, 'error' => '送信に失敗しました。時間をおいて再度お試しください。'], 502);
-    }
+    // TODO: ここで実際の通知先(HubSpot等)へ転送する処理を実装する
 
     return new WP_REST_Response(['ok' => true], 200);
 }

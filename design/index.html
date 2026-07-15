@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>定額制デザインサービス | 株式会社CDC AI</title>
+<meta name="description" content="バナーからLP、営業資料、印刷物まで。月額定額で、必要なデザインを必要なだけ依頼できるデザイン制作サービス。都度の見積もりや発注のやり取りをなくし、頼みたいときにすぐ頼める体制をつくります。提供：株式会社CDC AI。">
+<meta name="theme-color" content="#fff64a">
+<link rel="icon" href="icon-light-32x32.png" media="(prefers-color-scheme: light)">
+<link rel="icon" href="icon-dark-32x32.png" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- Icon sprite（lucide相当の手書きSVGアイコン。全てオリジナルパス） -->
+<!-- ============================================================ -->
+<svg class="sr-only" aria-hidden="true">
+  <defs>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
+    <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M3 7h5l11 10h2M3 17h5l11-10h2"/><path d="M18 4l3 3-3 3M18 14l3 3-3 3"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><circle cx="17" cy="14.5" r="1.3" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-message-q" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 4v-4H4z"/><path d="M9.6 9.1c0-1.3 1.1-2.1 2.4-2.1s2.3.8 2.3 1.8c0 1.5-2.3 1.5-2.3 3.1"/><circle cx="12" cy="14.6" r="0.2" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-calendar-check" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 15l2.3 2.3L16 12.5"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-user-check" viewBox="0 0 24 24"><circle cx="10" cy="8" r="4"/><path d="M3 20c0-4 3-6 7-6s6.2 1.6 6.8 4.4"/><path d="M16 13.5l1.8 1.8 3-3.3"/></symbol>
+    <symbol id="i-pencil-ruler" viewBox="0 0 24 24"><path d="M14 4l6 6-9.5 9.5H4V13L14 4z"/><path d="M12 6l6 6"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="M21 16l-6-6-4 4-2-2-6 6"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></symbol>
+    <symbol id="i-presentation" viewBox="0 0 24 24"><path d="M3 4h18"/><path d="M5 4v11h6l-2 5M13 15h6l2 5"/><path d="M8 12l3-3 2 2 4-4"/></symbol>
+    <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V4h12v5"/><rect x="4" y="9" width="16" height="7" rx="1.5"/><path d="M6 14h12v6H6z"/></symbol>
+    <symbol id="i-signature" viewBox="0 0 24 24"><path d="M6 4h9l5 5v11H6z"/><path d="M9 15c1-2 2-2 3-1s1.5 1 2.5-1 1.5-2 2.5-.5"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M3 11l4-3 3 2h4l3-2 4 3"/><path d="M8 10l3 5 2-1"/><path d="M16 10l-3 5-2-1"/></symbol>
+    <symbol id="i-message-lines" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-4 4v-4H4z"/><path d="M7.5 9h9M7.5 12h6"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 8 0 100 16c1.2 0 2-.9 2-2 0-.6-.3-1.1-.7-1.5-.4-.4-.5-1 0-1.4.4-.4 1-.5 1.6-.5H17c2.2 0 3-1.6 3-3.3C20 6.6 16.4 3 12 3z"/><circle cx="7.5" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="10" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="14.5" cy="7" r="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-package-check" viewBox="0 0 24 24"><path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M3 8v9l9 4 9-4V8"/><path d="M9.3 12.6l2 2 4-4"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8L19 14z"/></symbol>
+    <symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 00-3.5 10.9c.5.4.8 1 .8 1.6v.5h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0012 3z"/></symbol>
+    <symbol id="i-heart-handshake" viewBox="0 0 24 24"><path d="M12 6.2c-1.2-2-4.7-2-5.9.3-1.2 2.4 0 4.6 1.9 6.2L12 16l4-3.3c1.9-1.6 3.1-3.8 1.9-6.2-1.2-2.3-4.7-2.3-5.9-.3z"/></symbol>
+    <symbol id="i-list-ordered" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.3" fill="currentColor" stroke="none"/><circle cx="4.5" cy="12" r="1.3" fill="currentColor" stroke="none"/><circle cx="4.5" cy="18" r="1.3" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M4 7h12l-3-3"/><path d="M20 17H8l3 3"/></symbol>
+    <symbol id="i-file-check" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M10 13l2 2 4-4"/></symbol>
+    <symbol id="i-door-open" viewBox="0 0 24 24"><path d="M13 4l6 1.5v13L13 20z"/><path d="M13 4H5v16h8"/><circle cx="10.5" cy="12" r="0.8" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.5 2.5L16 9.3"/></symbol>
+  </defs>
+</svg>
+
+<div class="min-h-dvh">
+
+  <!-- ============================================================ -->
+  <!-- Header -->
+  <!-- ============================================================ -->
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header__row">
+        <a href="#top" class="site-logo">
+          <span class="site-logo__mark">C/D/C・AI</span>
+          <span class="site-logo__caption">定額制デザインサービス</span>
+        </a>
+
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="#problems">課題</a>
+          <a href="#services">できること</a>
+          <a href="#flow">進め方</a>
+          <a href="#pricing">料金</a>
+          <a href="#rules">ルール</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div style="display:flex; align-items:center; gap:12px;">
+          <a href="#contact" class="btn btn-coral header-cta">無料相談する</a>
+          <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="メニューを開く">
+            <svg class="icon" viewBox="0 0 24 24" style="width:1.3em;height:1.3em;"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション">
+        <a href="#problems">課題</a>
+        <a href="#services">できること</a>
+        <a href="#flow">進め方</a>
+        <a href="#pricing">料金</a>
+        <a href="#rules">ルール</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn-coral" style="margin-top:12px; justify-content:center;">無料相談する</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================================ -->
+    <!-- Hero -->
+    <!-- ============================================================ -->
+    <section id="top" class="hero">
+      <div class="hero__grid">
+        <div class="hero__content">
+
+          <div class="hero__logo-lockup reveal" data-reveal>
+            <span class="hero__logo-badge">定額制<br>デザイン<br>サービス</span>
+            <div class="hero__wordmark">
+              <span class="hero__wordmark-main">C/D/C・AI</span>
+              <span class="hero__wordmark-sub">SUBSCRIPTION DESIGN SERVICE</span>
+            </div>
+          </div>
+
+          <h1 class="reveal" data-reveal data-reveal-delay="80">
+            デザインに<br>
+            こだわる。<br>
+            <u>定額で、</u>
+          </h1>
+
+          <p class="hero__tagline reveal" data-reveal data-reveal-delay="140">あなたの専属デザイナーに。</p>
+
+          <p class="hero__lead reveal" data-reveal data-reveal-delay="180">
+            バナーからLP、営業資料、印刷物まで。月額定額で、必要なデザインを必要なだけ依頼できるサービスです。
+            都度の見積もりや発注のやり取りをなくし、「頼みたいとき、すぐ頼める」体制をつくります。
+          </p>
+
+          <div class="hero__actions reveal" data-reveal data-reveal-delay="220">
+            <a href="#contact" class="btn btn-ink">
+              無料相談する
+              <svg class="icon" viewBox="0 0 24 24"><use href="#i-arrow-right"></use></svg>
+            </a>
+            <a href="#services" class="btn btn-outline">対応範囲を見る</a>
+          </div>
+
+          <p class="hero__meta reveal" data-reveal data-reveal-delay="260">提供：株式会社CDC AI ／ オンライン完結・月単位契約</p>
+
+          <div class="hero__nav-groups reveal" data-reveal data-reveal-delay="300">
+            <div class="hero__nav-row">
+              <span class="hero__nav-pill">WHAT'S C/D/C・AI</span>
+              <a href="#problems">課題</a>
+              <a href="#services">できること</a>
+              <a href="#reasons">差別化ポイント</a>
+              <a href="#pricing">料金プラン</a>
+            </div>
+            <div class="hero__nav-row">
+              <span class="hero__nav-pill">HOW TO USE</span>
+              <a href="#benefits">導入メリット</a>
+              <a href="#rules">ルール</a>
+              <a href="#flow">ご依頼の流れ</a>
+              <a href="#faq">FAQ</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <img
+            src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?auto=format&fit=crop&w=1200&q=75"
+            alt="デザインのワイヤーフレームをホワイトボードに書き出しながら打ち合わせる制作チームの手元"
+            loading="eager"
+          >
+          <div class="hero__card">
+            <div class="queue-card">
+              <div class="queue-card__head">
+                <strong>制作進行表</strong>
+                <span>No. 0248 ／ 本日分</span>
+              </div>
+              <ul>
+                <li>
+                  <span class="queue-tag">バナー</span>
+                  <span class="queue-title">夏キャンペーン用バナー（サイズ違い3種）</span>
+                  <span class="queue-status active">進行中</span>
+                </li>
+                <li>
+                  <span class="queue-tag">LP</span>
+                  <span class="queue-title">新サービス紹介LPのファーストビュー案</span>
+                  <span class="queue-status queued">順番待ち</span>
+                </li>
+                <li>
+                  <span class="queue-tag">資料</span>
+                  <span class="queue-title">営業資料の表紙・中面リデザイン</span>
+                  <span class="queue-status queued">順番待ち</span>
+                </li>
+                <li>
+                  <span class="queue-tag">印刷物</span>
+                  <span class="queue-title">展示会用チラシ（A4・両面）</span>
+                  <span class="queue-status done">
+                    <svg class="icon" viewBox="0 0 24 24" style="width:0.9em;height:0.9em;"><use href="#i-check"></use></svg>
+                    納品済み
+                  </span>
+                </li>
+              </ul>
+              <div class="queue-card__foot">
+                <svg class="icon" viewBox="0 0 24 24" style="width:1em;height:1em;color:var(--coral-dark);"><use href="#i-plus"></use></svg>
+                新しい依頼はチャットに送るだけ。件数の上限はありません。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track" id="tickerTrack">
+        <span class="ticker__item">バナー</span>
+        <span class="ticker__item">SNS投稿画像</span>
+        <span class="ticker__item">ランディングページ</span>
+        <span class="ticker__item">営業資料</span>
+        <span class="ticker__item">チラシ・パンフレット</span>
+        <span class="ticker__item">名刺</span>
+        <span class="ticker__item">ロゴ</span>
+        <span class="ticker__item">ポスター</span>
+        <span class="ticker__item">バナー</span>
+        <span class="ticker__item">SNS投稿画像</span>
+        <span class="ticker__item">ランディングページ</span>
+        <span class="ticker__item">営業資料</span>
+        <span class="ticker__item">チラシ・パンフレット</span>
+        <span class="ticker__item">名刺</span>
+        <span class="ticker__item">ロゴ</span>
+        <span class="ticker__item">ポスター</span>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Problems -->
+    <!-- ============================================================ -->
+    <section id="problems" class="section bg-white">
+      <div class="container">
+        <div class="section-heading reveal" data-reveal>
+          <span class="eyebrow">こんなお悩みは？</span>
+          <h2>デザインを"外に頼む"のは、意外と大変</h2>
+          <p>デザインの外注や内製化には、こんなつまずきがよく見られます。</p>
+        </div>
+
+        <div class="card-grid cols-4">
+          <div class="info-card reveal" data-reveal data-reveal-delay="0">
+            <span class="info-card__index">01</span>
+            <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-clock"></use></svg></span>
+            <h3>都度の見積もりが面倒</h3>
+            <p>依頼のたびに見積もり・発注・請求のやり取りが発生。頼む前の段階で時間と手間を取られてしまう。</p>
+          </div>
+          <div class="info-card reveal" data-reveal data-reveal-delay="90">
+            <span class="info-card__index">02</span>
+            <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-shuffle"></use></svg></span>
+            <h3>品質がバラバラ</h3>
+            <p>毎回違う制作会社やフリーランスに頼んでいると、テイストや品質が揃わず、ブランドの印象がぶれてしまう。</p>
+          </div>
+          <div class="info-card reveal" data-reveal data-reveal-delay="180">
+            <span class="info-card__index">03</span>
+            <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-wallet"></use></svg></span>
+            <h3>採用は固定費が重い</h3>
+            <p>デザイナーを雇うには採用・教育・給与の負担が大きい。依頼量には月ごとの波があるのに、コストは一定のまま。</p>
+          </div>
+          <div class="info-card reveal" data-reveal data-reveal-delay="270">
+            <span class="info-card__index">04</span>
+            <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-message-q"></use></svg></span>
+            <h3>ちょい修正の頼み先がない</h3>
+            <p>「文字を差し替えたい」「サイズ違いがほしい」。そんな小さな修正を、気軽に頼める相手が見つからない。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- Benefits -->
+    <!-- ============================================================ -->
+    <section id="benefits" class="section bg-yellow-soft">
+      <div class="container">
+        <div class="section-heading reveal" data-reveal>
+          <span class="eyebrow">導入後の変化</span>
+          <h2>「頼みたいとき、すぐ頼める」が当たり前になる</h2>
+          <p>定額の制作体制が整うと、デザインまわりの動き方はこう変わります。</p>
+        </div>
+
+        <div class="divided-grid">
+          <div class="divided-item reveal" data-reveal data-reveal-delay="0">
+            <div class="divided-item__top">
+              <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-calendar-check"></use></svg></span>
+              <span class="divided-item__num">01</span>
+            </div>
+            <h3>定額だから、気軽に頼める</h3>
+            <p>月額が決まっているので、依頼のたびの見積もりや社内稟議は不要。思いついたタイミングでチャットに送るだけです。</p>
+          </div>
+          <div class="divided-item reveal" data-reveal data-reveal-delay="100">
+            <div class="divided-item__top">
+              <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-layers"></use></svg></span>
+              <span class="divided-item__num">02</span>
+            </div>
+            <h3>窓口ひとつ、品質もひとつ</h3>
+            <p>同じチームが継続して担当するため、テイストや品質が揃います。ブランドの一貫性を保ちやすくなります。</p>
+          </div>
+          <div class="divided-item reveal" data-reveal data-reveal-delay="0">
+            <div class="divided-item__top">
+              <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-user-check"></use></svg></span>
+              <span class="divided-item__num">03</span>
+            </div>
+            <h3>雇うより、身軽に</h3>
+            <p>採用や教育のコストをかけずに、デザインの制作体制を持てます。依頼量の波には月単位のプラン変更で対応できます。</p>
+          </div>
+          <div class="divided-item reveal" data-reveal data-reveal-delay="100">
+            <div class="divided-item__top">
+              <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-pencil-ruler"></use></svg></span>
+              <span class="divided-item__num">04</span>
+            </div>
+            <h3>小さな修正も、遠慮なく</h3>
+            <p>バナーのサイズ展開や文言の差し替えなど、細かな依頼も定額の範囲内。「これくらいで頼んでいいのかな」という遠慮は不要です。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- Services -->
+    <!-- ============================================================ -->
+    <section id="services" class="section bg-white">
+      <div class="container">
+        <div class="section-heading reveal" data-reveal>
+          <span class="eyebrow">対応範囲</span>
+          <h2>日々のデザイン業務を、まとめて任せられる</h2>
+          <p>よくいただくご依頼の例です。この他のデザインも、まずはお気軽にご相談ください。</p>
+        </div>
+
+        <div class="service-rows">
+          <div class="service-row reveal" data-reveal data-reveal-delay="0">
+            <span class="service-row__num">01</span>
+            <div class="service-row__body">
+              <span class="service-row__label"><svg class="icon" viewBox="0 0 24 24"><use href="#i-image"></use></svg>Graphic design</span>
+              <h3>バナー・SNS画像</h3>
+              <p>日々の運用で数が必要になる画像類を、スピーディに制作します。</p>
+            </div>
+            <div class="tag-list">
+              <span class="tag-pill">広告バナー</span>
+              <span class="tag-pill">キャンペーン画像</span>
+              <span class="tag-pill">SNS投稿画像</span>
+              <span class="tag-pill">ヘッダー画像</span>
+              <span class="tag-pill">ECサイト商品画像</span>
+            </div>
+          </div>
+
+          <div class="service-row reveal" data-reveal data-reveal-delay="100">
+            <span class="service-row__num">02</span>
+            <div class="service-row__body">
+              <span class="service-row__label"><svg class="icon" viewBox="0 0 24 24"><use href="#i-layout"></use></svg>Web design</span>
+              <h3>LP・Webデザイン</h3>
+              <p>集客の要になるページのデザインを、目的から逆算して設計します。</p>
+            </div>
+            <div class="tag-list">
+              <span class="tag-pill">ランディングページ</span>
+              <span class="tag-pill">Webサイトデザイン</span>
+              <span class="tag-pill">ファーストビュー改善</span>
+              <span class="tag-pill">コーディング</span>
+            </div>
+          </div>
+
+          <div class="service-row reveal" data-reveal data-reveal-delay="200">
+            <span class="service-row__num">03</span>
+            <div class="service-row__body">
+              <span class="service-row__label"><svg class="icon" viewBox="0 0 24 24"><use href="#i-presentation"></use></svg>Document design</span>
+              <h3>営業資料・プレゼン資料</h3>
+              <p>「伝わる資料」へ。構成を活かしたまま見た目を磨き上げます。</p>
+            </div>
+            <div class="tag-list">
+              <span class="tag-pill">会社紹介資料</span>
+              <span class="tag-pill">提案書・ピッチ資料</span>
+              <span class="tag-pill">資料テンプレート</span>
+              <span class="tag-pill">既存資料のリデザイン</span>
+            </div>
+          </div>
+
+          <div class="service-row reveal" data-reveal data-reveal-delay="300">
+            <span class="service-row__num">04</span>
+            <div class="service-row__body">
+              <span class="service-row__label"><svg class="icon" viewBox="0 0 24 24"><use href="#i-printer"></use></svg>Print design</span>
+              <h3>印刷物</h3>
+              <p>紙もののデザインも、入稿データの作成まで対応します。</p>
+            </div>
+            <div class="tag-list">
+              <span class="tag-pill">チラシ</span>
+              <span class="tag-pill">パンフレット</span>
+              <span class="tag-pill">名刺</span>
+              <span class="tag-pill">ポスター</span>
+              <span class="tag-pill">入稿データ作成</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="footnote">※ 動画編集や、システム開発を伴う実装は原則対象外です。対応可否は個別にご相談ください。</p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- Flow -->
+    <!-- ============================================================ -->
+    <section id="flow" class="section bg-yellow">
+      <div class="container">
+        <div class="section-heading reveal" data-reveal>
+          <span class="eyebrow">ご利用の流れ</span>
+          <h2>契約から納品まで、5つのステップ</h2>
+          <p>やり取りはすべてオンラインで完結。日々の依頼はチャットだけで進みます。</p>
+        </div>
+
+        <div class="flow-steps">
+          <div class="flow-step reveal" data-reveal data-reveal-delay="0">
+            <div class="flow-step__top">
+              <span class="flow-step__num">01</span>
+              <svg class="icon" viewBox="0 0 24 24" style="width:1.3em;height:1.3em;color:var(--coral-dark);"><use href="#i-signature"></use></svg>
+            </div>
+            <h3>ご契約</h3>
+            <p>プランを選んでお申し込み。契約は月単位で、いつでも解約できます。</p>
+          </div>
+          <div class="flow-step reveal" data-reveal data-reveal-delay="100">
+            <div class="flow-step__top">
+              <span class="flow-step__num">02</span>
+              <svg class="icon" viewBox="0 0 24 24" style="width:1.3em;height:1.3em;color:var(--coral-dark);"><use href="#i-handshake"></use></svg>
+            </div>
+            <h3>キックオフ</h3>
+            <p>専用チャットを開設。ブランドのトーンや素材、依頼の進め方をすり合わせます。</p>
+          </div>
+          <div class="flow-step reveal" data-reveal data-reveal-delay="200">
+            <div class="flow-step__top">
+              <span class="flow-step__num">03</span>
+              <svg class="icon" viewBox="0 0 24 24" style="width:1.3em;height:1.3em;color:var(--coral-dark);"><use href="#i-message-lines"></use></svg>
+            </div>
+            <h3>チャットで依頼</h3>
+            <p>依頼内容をチャットに送るだけ。迷わず書ける依頼フォーマットもご用意します。</p>
+          </div>
+          <div class="flow-step reveal" data-reveal data-reveal-delay="300">
+            <div class="flow-step__top">
+              <span class="flow-step__num">04</span>
+              <svg class="icon" viewBox="0 0 24 24" style="width:1.3em;height:1.3em;color:var(--coral-dark);"><use href="#i-palette"></use></svg>
+            </div>
+            <h3>初稿のご提出</h3>
+            <p>着手から目安◯営業日で初稿をご提出します。内容により前後します。</p>
+          </div>
+          <div class="flow-step reveal" data-reveal data-reveal-delay="400">
+            <div class="flow-step__top">
+              <span class="flow-step__num">05</span>
+              <svg class="icon" viewBox="0 0 24 24" style="width:1.3em;height:1.3em;color:var(--coral-dark);"><use href="#i-package-check"></use></svg>
+            </div>
+            <h3>修正・納品</h3>
+            <p>フィードバックを反映して仕上げ、データを納品。完了次第、次の依頼に着手します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- Reasons / Difference -->
+    <!-- ============================================================ -->
+    <section id="reasons" class="section bg-white">
+      <div class="container">
+        <div class="reasons">
+          <div class="reasons__intro reveal" data-reveal>
+            <span class="eyebrow">Difference</span>
+            <h2>他の定額サービスと<br><em>ここが違う!!</em></h2>
+          </div>
+
+          <div class="reasons-list">
+            <div class="reason-item reveal" data-reveal data-reveal-delay="0">
+              <span class="reason-item__num">01</span>
+              <div class="reason-item__body">
+                <div class="reason-item__title">
+                  <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-sparkles"></use></svg></span>
+                  <h3>AI×プロの制作体制</h3>
+                </div>
+                <p>AIで制作プロセスを効率化し、仕上げはプロのデザイナーが担当。スピードと品質の両立を目指した体制で、定額でも量に対応できます。</p>
+              </div>
+              <span class="reason-item__label">AI × PRO</span>
+            </div>
+
+            <div class="reason-item reveal" data-reveal data-reveal-delay="120">
+              <span class="reason-item__num">02</span>
+              <div class="reason-item__body">
+                <div class="reason-item__title">
+                  <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-lightbulb"></use></svg></span>
+                  <h3>言われた通り、で終わらせない</h3>
+                </div>
+                <p>ご依頼の背景や目的をふまえて、代案やサイズ展開など「＋α」のご提案を心がけます。丸投げに近い依頼でも形にします。</p>
+              </div>
+              <span class="reason-item__label">+α PROPOSAL</span>
+            </div>
+
+            <div class="reason-item reveal" data-reveal data-reveal-delay="240">
+              <span class="reason-item__num">03</span>
+              <div class="reason-item__body">
+                <div class="reason-item__title">
+                  <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart-handshake"></use></svg></span>
+                  <h3>定額だから、気軽に相談できる</h3>
+                </div>
+                <p>追加費用を気にせず相談できるのが定額制の良さ。「これも頼めますか？」から始まる小さな相談を歓迎します。</p>
+              </div>
+              <span class="reason-item__label">NO HESITATION</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- Pricing -->
+    <!-- ============================================================ -->
+    <section id="pricing" class="section bg-yellow-soft">
+      <div class="container">
+        <div class="section-heading reveal" data-reveal>
+          <span class="eyebrow">料金</span>
+          <h2>使い方に合わせて選べる3つのプラン</h2>
+          <p>料金はご依頼の内容や量により異なります。ヒアリングのうえ、月額の目安をお見積りでご提示します。</p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="price-card reveal" data-reveal data-reveal-delay="0">
+            <span class="price-card__tag">上限なし・頼み放題</span>
+            <h3>ひとつずつプラン</h3>
+            <p class="price-card__desc">まずは定額の使い勝手を試したい方へ。</p>
+            <div class="price-card__price">
+              <strong>要お見積り</strong>
+              <span>月額・目安をお見積りでご提示</span>
+            </div>
+            <ul>
+              <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg>依頼件数は無制限（着手は1案件ずつ）</li>
+              <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg>チャットでいつでも依頼OK</li>
+              <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg>初稿への修正対応込み</li>
+              <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg>月単位契約・いつでも解約可</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline btn-block">このプランを相談する</a>
+          </div>
+
+          <div class="price-card featured reveal" data-reveal data-reveal-delay="100">
+            <span class="price-card__ribbon">おすすめ</span>
+            <span class="price-card__tag">複数案件・同時進行</span>
+            <h3>同時進行プラン</h3>
+            <p class="price-card__desc">依頼が多く、複数案件を並行して進めたい方へ。</p>
+            <div class="price-card__price">
+              <strong>要お見積り</strong>
+              <span>月額・目安をお見積りでご提示</span>
+            </div>
+            <ul>
+              <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg>ひとつずつプランの全内容</li>
+              <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg>複数案件の同時進行（本数は目安をご提示）</li>
+              <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg>優先的なスケジュール調整</li>
+              <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg>定例ミーティング（ご希望に応じて）</li>
+            </ul>
+            <a href="#contact" class="btn btn-ink btn-block">このプランを相談する</a>
+          </div>
+
+          <div class="price-card reveal" data-reveal data-reveal-delay="200">
+            <span class="price-card__tag">単発・個別見積り</span>
+            <h3>スポット</h3>
+            <p class="price-card__desc">単発の案件だけ頼みたい方へ。</p>
+            <div class="price-card__price">
+              <strong>要お見積り</strong>
+              <span>案件ごとに個別お見積り</span>
+            </div>
+            <ul>
+              <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg>1案件からご依頼可能</li>
+              <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg>内容・分量に応じた個別お見積り</li>
+              <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"></use></svg>定額プランへの切り替えも可能</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline btn-block">このプランを相談する</a>
+          </div>
+        </div>
+
+        <p class="footnote">※ 記載は目安です。実際の費用・内容はヒアリング後のお見積りでご提示します。</p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- Rules -->
+    <!-- ============================================================ -->
+    <section id="rules" class="section bg-white">
+      <div class="container">
+        <div class="section-heading reveal" data-reveal>
+          <span class="eyebrow">ご利用ルール</span>
+          <h2>安心して使い続けられる、シンプルなルール</h2>
+          <p>「定額だとどこまで頼めるの？」に迷わないよう、運用ルールをあらかじめ明確にしています。</p>
+        </div>
+
+        <div class="card-grid cols-3">
+          <div class="info-card reveal" data-reveal data-reveal-delay="0">
+            <span class="info-card__index">01</span>
+            <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-list-ordered"></use></svg></span>
+            <h3>着手は1案件ずつ</h3>
+            <p>依頼はいくつでもキューに追加できます。着手は原則1案件ずつ（同時進行プランでは複数）で、完了次第すぐ次に取りかかります。</p>
+          </div>
+          <div class="info-card reveal" data-reveal data-reveal-delay="90">
+            <span class="info-card__index">02</span>
+            <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-repeat"></use></svg></span>
+            <h3>修正回数の考え方</h3>
+            <p>初稿に対する調整・修正は定額の範囲で対応します。当初のご依頼内容から大きく変わる場合は、新しい依頼として承ります。</p>
+          </div>
+          <div class="info-card reveal" data-reveal data-reveal-delay="180">
+            <span class="info-card__index">03</span>
+            <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-file-check"></use></svg></span>
+            <h3>納品物の権利はお客様に</h3>
+            <p>納品したデザインデータの権利は、原則お客様に帰属します。納品後は広告・印刷など自由にご活用いただけます。</p>
+          </div>
+          <div class="info-card reveal" data-reveal data-reveal-delay="270">
+            <span class="info-card__index">04</span>
+            <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-clock"></use></svg></span>
+            <h3>対応時間</h3>
+            <p>制作・ご連絡への対応は平日の日中が基本です。ご依頼自体は、チャットへ24時間いつでも送信いただけます。</p>
+          </div>
+          <div class="info-card reveal" data-reveal data-reveal-delay="360">
+            <span class="info-card__index">05</span>
+            <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-door-open"></use></svg></span>
+            <h3>月単位契約・いつでも解約可</h3>
+            <p>契約は1か月単位です。合わなければ翌月から解約でき、依頼が少ない月は休会のご相談も可能です。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FAQ -->
+    <!-- ============================================================ -->
+    <section id="faq" class="section bg-yellow">
+      <div class="container">
+        <div class="section-heading reveal" data-reveal>
+          <span class="eyebrow">FAQ</span>
+          <h2>よくあるご質問</h2>
+        </div>
+
+        <div class="faq-list" id="faqList">
+          <div class="faq-item is-open">
+            <button type="button" class="faq-item__q" aria-expanded="true">
+              <span class="q-mark">Q01</span>
+              <span class="q-text">月に何件まで依頼できますか？</span>
+              <svg class="icon" viewBox="0 0 24 24"><use href="#i-plus"></use></svg>
+            </button>
+            <div class="faq-item__a"><div class="faq-item__a-inner"><p>依頼件数に上限はなく、キューにはいくつでも追加いただけます。着手は順番に進めるため、ひと月に完了できる件数はご依頼のボリュームにより変わります。想定される件数感は、ご契約前のヒアリングでご案内します。</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-item__q" aria-expanded="false">
+              <span class="q-mark">Q02</span>
+              <span class="q-text">修正は何回までできますか？</span>
+              <svg class="icon" viewBox="0 0 24 24"><use href="#i-plus"></use></svg>
+            </button>
+            <div class="faq-item__a"><div class="faq-item__a-inner"><p>初稿に対する調整・修正は、定額の範囲で対応します。当初のご依頼内容から大きく変わる場合（別案件相当の作り直しなど）は、新しい依頼としてキューに追加いただく形になります。</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-item__q" aria-expanded="false">
+              <span class="q-mark">Q03</span>
+              <span class="q-text">対応できないものはありますか？</span>
+              <svg class="icon" viewBox="0 0 24 24"><use href="#i-plus"></use></svg>
+            </button>
+            <div class="faq-item__a"><div class="faq-item__a-inner"><p>動画の撮影・編集、システム開発を伴うWeb実装、イラストの大量描き起こしなどは原則対象外です。判断に迷う場合は、依頼内容を添えてお気軽にお問い合わせください。対応可否を含めてお答えします。</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-item__q" aria-expanded="false">
+              <span class="q-mark">Q04</span>
+              <span class="q-text">解約や休会はできますか？</span>
+              <svg class="icon" viewBox="0 0 24 24"><use href="#i-plus"></use></svg>
+            </button>
+            <div class="faq-item__a"><div class="faq-item__a-inner"><p>はい。契約は月単位のため、翌月から解約いただけます。依頼が少ない時期は休会のご相談も可能です。解約金などはありません。</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-item__q" aria-expanded="false">
+              <span class="q-mark">Q05</span>
+              <span class="q-text">納品物の著作権はどうなりますか？</span>
+              <svg class="icon" viewBox="0 0 24 24"><use href="#i-plus"></use></svg>
+            </button>
+            <div class="faq-item__a"><div class="faq-item__a-inner"><p>納品したデザインデータの権利は、原則お客様に帰属します。広告・印刷・二次利用など、納品後は自由にご活用いただけます。制作事例としての公開は、事前にご了承いただいた場合のみ行います。</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button type="button" class="faq-item__q" aria-expanded="false">
+              <span class="q-mark">Q06</span>
+              <span class="q-text">初稿はどれくらいで届きますか？</span>
+              <svg class="icon" viewBox="0 0 24 24"><use href="#i-plus"></use></svg>
+            </button>
+            <div class="faq-item__a"><div class="faq-item__a-inner"><p>着手から目安◯営業日で初稿をご提出します。バナーなど軽めのご依頼は早く、LPや資料一式など大きなご依頼はお時間をいただく場合があります。具体的な目安は依頼ごとにチャットでご案内します。</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- Contact -->
+    <!-- ============================================================ -->
+    <section id="contact" class="section bg-white">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-intro reveal" data-reveal>
+            <span class="contact-intro__badge">お問い合わせ</span>
+            <h2>まずは無料でご相談ください</h2>
+            <p>頼みたいデザインの種類や、月あたりのおおよその量をお伺いし、最適なプランと月額の目安をご提案します。「定額に収まるか分からない」という段階でも、お気軽にお問い合わせください。</p>
+            <ul>
+              <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-check-circle"></use></svg>オンラインでのご相談に対応</li>
+              <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-check-circle"></use></svg>無理な営業や勧誘は行いません</li>
+              <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-check-circle"></use></svg>内容に応じてお見積りをご提示</li>
+            </ul>
+          </div>
+
+          <div class="contact-panel reveal" data-reveal data-reveal-delay="120">
+            <form id="contactForm">
+              <div class="field">
+                <label for="company">会社名</label>
+                <input id="company" name="company" type="text" placeholder="株式会社サンプル" required>
+              </div>
+              <div class="field">
+                <label for="name">お名前</label>
+                <input id="name" name="name" type="text" placeholder="山田 太郎" required>
+              </div>
+              <div class="field">
+                <label for="email">メールアドレス</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required>
+              </div>
+              <div class="field">
+                <label for="message">ご相談内容</label>
+                <textarea id="message" name="message" placeholder="頼みたいデザインの種類や、月あたりのおおよその件数をご記入ください。" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-coral btn-block" id="submitBtn">
+                <span id="submitLabel">無料相談を申し込む</span>
+                <svg class="icon" viewBox="0 0 24 24" id="submitIcon"><use href="#i-arrow-right"></use></svg>
+              </button>
+              <p class="form-error hidden" id="formError"></p>
+              <p class="form-note">送信いただいた内容は、お問い合わせ対応のみに利用します。</p>
+            </form>
+
+            <div class="form-success hidden" id="formSuccess">
+              <span class="form-success__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-check-circle"></use></svg></span>
+              <h3>送信ありがとうございます</h3>
+              <p>内容を確認のうえ、担当者よりご連絡いたします。少々お待ちください。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- Footer -->
+  <!-- ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand__head">
+            <span class="info-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-palette"></use></svg></span>
+            <strong>株式会社CDC AI</strong>
+          </div>
+          <p>定額制デザインサービス。月額定額で、バナーからLP、営業資料まで、日々のデザイン業務をまとめてお任せいただけます。</p>
+        </div>
+
+        <nav class="footer-col" aria-label="フッターナビゲーション">
+          <span class="footer-col__label">INDEX</span>
+          <a href="#problems">課題</a>
+          <a href="#services">できること</a>
+          <a href="#flow">進め方</a>
+          <a href="#pricing">料金</a>
+          <a href="#rules">ルール</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">お問い合わせ</a>
+        </nav>
+
+        <div class="footer-col">
+          <span class="footer-col__label">COLOPHON</span>
+          <dl>
+            <div><dt>発行</dt><dd>株式会社CDC AI</dd></div>
+            <div><dt>契約</dt><dd>オンライン完結・月単位</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> 株式会社CDC AI. All rights reserved.</p>
+        <p class="logo-font">C/D/C・AI SUBSCRIPTION DESIGN SERVICE</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

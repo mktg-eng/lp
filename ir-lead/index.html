@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IR LEAD | 投資家に伝わるIR資料作成支援サービス | 株式会社CDC AI</title>
+<meta name="description" content="決算説明会資料・中期経営計画書・個人投資家向け資料・統合報告書など、投資家に伝わるIR資料の企画からデザインまでをワンストップで支援。IR・金融領域に精通したディレクターと生成AI活用で、スピーディかつ高品質な資料制作を実現します。提供：株式会社CDC AI。">
+<meta name="theme-color" content="#0b1740">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1740'/%3E%3Cpath d='M14 40 L26 26 L36 34 L50 16' stroke='%23e63757' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='50' cy='16' r='4.5' fill='%23e63757'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- Icon sprite（オリジナル手描きSVGアイコン。lucide等の外部ライブラリ不使用） -->
+<!-- ============================================================ -->
+<svg class="sr-only" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 13l5 5L20 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-doc-chart" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 15v-3M12 15v-6M16 15v-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 20c0-3.6 2.6-5.8 6-5.8s6 2.2 6 5.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M15.5 6.2a3 3 0 010 5.8M18.5 20c0-2.8-1.6-4.8-3.8-5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.6 4.6L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.4L12 3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M19 14.5l.9 2.3 2.3.9-2.3.9-.9 2.3-.9-2.3-2.3-.9 2.3-.9.9-2.3z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></symbol>
+    <symbol id="i-clock-fast" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 9v4l3 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 3h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-5 4v-4H4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M10 8.3v7.4l6.2-3.7z" fill="#fff"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><rect x="5" y="3" width="10" height="18" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="15" y="9" width="5" height="12" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 7h1M11 7h1M8 11h1M11 11h1M8 15h1M11 15h1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0113.6-5.7M20 12a8 8 0 01-13.6 5.7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M17 4v4h-4M7 20v-4h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-arrow-swap" viewBox="0 0 24 24"><path d="M7 7h11l-3-3M17 17H6l3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3l2 5-2.5 2c1 2.3 2.7 4 5 5l2-2.5 5 2v3c0 1-1 1.7-2 1.5-6-1-11-6-12-12-.2-1 .5-2 1.5-2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<!-- ========== HEADER ========== -->
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a class="logo" href="#top" aria-label="IR LEAD トップへ">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 16 L11 9 L15 13 L20 5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="5" r="2.2" fill="#fff"/></svg></span>
+      <span class="logo-word">IR LEAD<span class="logo-sub">by CDC AI</span></span>
+    </a>
+
+    <div class="mobile-panel" id="mobilePanel">
+      <nav class="main-nav" id="mobileNav">
+        <ul>
+          <li><a href="#concern">お悩み</a></li>
+          <li><a href="#reason">選ばれる理由</a></li>
+          <li><a href="#sample">制作イメージ</a></li>
+          <li><a href="#price">料金プラン</a></li>
+          <li><a href="#company">運営会社</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="#contact" class="btn btn-solid btn-sm">お問い合わせ<svg class="icon" width="15" height="15"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobilePanel">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-left" data-reveal>
+      <p class="hero-eyebrow"><span class="eyebrow-dot"></span>投資家向けIR資料作成支援サービス</p>
+      <h1>IR資料に、<br><span class="ir-accent">"伝わる"</span>を実装する。</h1>
+      <p class="hero-lead">決算説明会資料・中期経営計画書・個人投資家向け資料・統合報告書まで。<br class="pc-only">投資家に刺さるIR資料の企画からデザインまでを、ワンストップでご支援します。</p>
+
+      <ul class="hero-chips" aria-label="対応資料の例">
+        <li>決算説明会資料</li>
+        <li>中期経営計画書</li>
+        <li>個人投資家向け資料</li>
+        <li>統合報告書</li>
+        <li>事業計画・成長可能性資料</li>
+      </ul>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-cta">お問合せ・無料サンプルのご相談はこちら<svg class="icon" width="17" height="17"><use href="#i-arrow-right"/></svg></a>
+        <p class="hero-note">相談は無料です。最短翌営業日にご返信いたします。</p>
+      </div>
+    </div>
+
+    <div class="hero-right" data-reveal data-reveal-delay="150">
+      <div class="mock-stack" aria-hidden="true">
+        <div class="mock-card mock-card--back">
+          <div class="mock-card-bar"></div>
+          <div class="mock-bars">
+            <span style="--h:38%"></span><span style="--h:62%"></span><span style="--h:48%"></span><span style="--h:80%"></span><span style="--h:56%"></span>
+          </div>
+        </div>
+        <div class="mock-card mock-card--mid">
+          <div class="mock-card-bar mock-card-bar--red"></div>
+          <div class="mock-donut">
+            <svg viewBox="0 0 42 42" width="86" height="86">
+              <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#e7ecf5" stroke-width="5"/>
+              <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#e63757" stroke-width="5" stroke-dasharray="42 100" stroke-dashoffset="25" stroke-linecap="round"/>
+              <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#0b1740" stroke-width="5" stroke-dasharray="30 100" stroke-dashoffset="-17" stroke-linecap="round"/>
+            </svg>
+            <div class="mock-donut-lines"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="mock-card mock-card--front">
+          <div class="mock-card-bar"></div>
+          <p class="mock-title">FY2026 中期経営計画</p>
+          <div class="mock-kpis">
+            <div><strong>+18.4%</strong><span>売上成長率</span></div>
+            <div><strong>32.6%</strong><span>ROE目標</span></div>
+          </div>
+          <svg class="mock-line" viewBox="0 0 200 60" preserveAspectRatio="none">
+            <polyline points="0,48 30,40 60,44 90,26 120,30 150,12 180,18 200,6" fill="none" stroke="#e63757" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="scroll-cue" aria-label="次のセクションへスクロール" onclick="document.getElementById('field').scrollIntoView({behavior:'smooth'})">
+    <svg width="20" height="20"><use href="#i-chevron-down"/></svg>
+  </button>
+</section>
+
+<!-- ========== FIELD / 対応イメージ ========== -->
+<section class="field" id="field">
+  <div class="section-inner" data-reveal>
+    <p class="eyebrow">Field</p>
+    <h2 class="section-title">業種・成長ステージを問わず設計されたサービス</h2>
+    <p class="section-lead">上場準備中のスタートアップから東証プライム上場企業まで。IR担当者の人数や社内体制の規模を問わず、貴社の状況に合わせてご利用いただけます。</p>
+
+    <div class="logo-grid">
+      <div class="logo-tile"><span class="logo-mono">A</span><p>製造業</p></div>
+      <div class="logo-tile"><span class="logo-mono">B</span><p>金融</p></div>
+      <div class="logo-tile"><span class="logo-mono">C</span><p>情報通信</p></div>
+      <div class="logo-tile"><span class="logo-mono">D</span><p>小売</p></div>
+      <div class="logo-tile"><span class="logo-mono">E</span><p>商社</p></div>
+      <div class="logo-tile"><span class="logo-mono">F</span><p>不動産</p></div>
+      <div class="logo-tile"><span class="logo-mono">G</span><p>ヘルスケア</p></div>
+      <div class="logo-tile"><span class="logo-mono">H</span><p>建設</p></div>
+      <div class="logo-tile"><span class="logo-mono">I</span><p>素材・化学</p></div>
+      <div class="logo-tile"><span class="logo-mono">J</span><p>運輸・物流</p></div>
+      <div class="logo-tile"><span class="logo-mono">K</span><p>通信</p></div>
+      <div class="logo-tile"><span class="logo-mono">L</span><p>エネルギー</p></div>
+      <div class="logo-tile"><span class="logo-mono">M</span><p>保険</p></div>
+      <div class="logo-tile"><span class="logo-mono">N</span><p>食品</p></div>
+      <div class="logo-tile"><span class="logo-mono">O</span><p>サービス業</p></div>
+      <div class="logo-tile"><span class="logo-mono">P</span><p>電機・精密</p></div>
+    </div>
+    <p class="logo-note">※業種はご利用イメージの一例です。個社名・ロゴの掲載ではありません。</p>
+  </div>
+</section>
+
+<!-- ========== CONCERN ========== -->
+<section class="concern" id="concern">
+  <div class="section-inner" data-reveal>
+    <p class="eyebrow eyebrow--light">Concern</p>
+    <h2 class="section-title section-title--light">こんなお悩みありませんか?</h2>
+
+    <div class="bubble-field">
+      <div class="bubble-center" aria-hidden="true">
+        <svg width="34" height="34" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="#fff" stroke-width="1.6"/><path d="M4 20c0-4.4 3.4-7 8-7s8 2.6 8 7" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </div>
+      <div class="bubble bubble--1"><span>決算のたびに資料をゼロから作り直している</span></div>
+      <div class="bubble bubble--2"><span>経営陣の意図をうまくデザインに落とし込めない</span></div>
+      <div class="bubble bubble--3"><span>社内にIR資料デザインの専門知見がない</span></div>
+      <div class="bubble bubble--4"><span>東証・機関投資家からの開示要請にスピード対応できない</span></div>
+      <div class="bubble bubble--5"><span>資料のテイストが毎回バラバラで一貫性がない</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICE OVERVIEW + VIDEO ========== -->
+<section class="overview">
+  <p class="overview-watermark" aria-hidden="true">SERVICE</p>
+  <div class="section-inner overview-grid">
+    <div class="overview-text" data-reveal>
+      <p class="eyebrow eyebrow--light">Service</p>
+      <h2 class="section-title section-title--light">投資家向けのIR資料作成を<br>企画からデザインまで一気通貫で</h2>
+      <p class="overview-lead">IR LEADは、証券・コンサル・IR実務出身のディレクターと、資料デザインの専門チームが伴走するIR資料作成支援サービスです。経営陣が伝えたいメッセージを整理し、投資家に伝わる構成・デザインへと仕上げます。</p>
+      <ul class="overview-points">
+        <li><svg width="18" height="18"><use href="#i-check"/></svg>企画構成・ストーリーライン設計から対応可能</li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg>決算期の繁忙にあわせた柔軟なスケジュール対応</li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg>生成AIを活用し、初稿までのリードタイムを短縮</li>
+      </ul>
+    </div>
+
+    <div class="overview-video" data-reveal data-reveal-delay="150">
+      <p class="video-label">1分でわかる「IR LEAD」のIR資料作成支援サービスとは</p>
+      <div class="video-mock" role="img" aria-label="サービス紹介動画のモックアップ">
+        <div class="video-mock-bg"></div>
+        <button class="video-play" type="button" aria-label="紹介動画を再生（近日公開）">
+          <svg width="26" height="26"><use href="#i-play"/></svg>
+        </button>
+        <div class="video-progress"><span></span></div>
+      </div>
+      <p class="video-caption">※紹介動画は近日公開予定です</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== REASON ========== -->
+<section class="reason" id="reason">
+  <div class="reason-photo" aria-hidden="true"></div>
+  <div class="section-inner" data-reveal>
+    <p class="eyebrow">Reason</p>
+    <h2 class="section-title">IR LEADが選ばれる理由</h2>
+
+    <div class="reason-grid">
+      <div class="reason-card">
+        <span class="reason-num">01</span>
+        <div class="reason-icon"><svg width="26" height="26"><use href="#i-arrow-swap"/></svg></div>
+        <h3>企画構成からデザインまで<br>ワンストップで対応</h3>
+        <p>資料の骨子づくりから最終デザインまで、窓口をひとつにまとめてご依頼いただけます。</p>
+      </div>
+      <div class="reason-card">
+        <span class="reason-num">02</span>
+        <div class="reason-icon"><svg width="26" height="26"><use href="#i-users"/></svg></div>
+        <h3>IR・金融領域に精通した<br>ディレクターが伴走</h3>
+        <p>証券・コンサル・IR実務の知見を持つメンバーが、経営陣の意図を汲み取り最適解を提案します。</p>
+      </div>
+      <div class="reason-card">
+        <span class="reason-num">03</span>
+        <div class="reason-icon"><svg width="26" height="26"><use href="#i-sparkles"/></svg></div>
+        <h3>生成AIを活用した<br>スピード制作</h3>
+        <p>構成案・ドラフト作成の工程にAIを活用し、着手から初稿提出までの時間を短縮します。</p>
+      </div>
+      <div class="reason-card">
+        <span class="reason-num">04</span>
+        <div class="reason-icon"><svg width="26" height="26"><use href="#i-clock-fast"/></svg></div>
+        <h3>修正回数を気にせず<br>柔軟に対応</h3>
+        <p>決算前の追い込み時期も、修正回数の上限を設けずスケジュールに合わせて対応します。</p>
+      </div>
+    </div>
+
+    <div class="reason-cta-wrap">
+      <a href="#contact" class="btn btn-cta">お問い合わせはこちら<svg class="icon" width="16" height="16"><use href="#i-arrow-right"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SAMPLE / BEFORE AFTER ========== -->
+<section class="sample" id="sample">
+  <div class="section-inner" data-reveal>
+    <p class="eyebrow">Sample</p>
+    <h2 class="section-title">IR資料の制作イメージ</h2>
+    <p class="section-lead">業種やビジネスモデルによって、最適な資料の見せ方は異なります。想定ケースをもとにした制作イメージをご紹介します。</p>
+
+    <div class="showcase" id="showcase">
+      <p class="showcase-pickup">PICK UP 制作イメージ</p>
+      <div class="showcase-main">
+        <button class="showcase-arrow showcase-arrow--prev" id="showcasePrev" aria-label="前の事例へ"><svg width="20" height="20" class="icon-flip"><use href="#i-arrow-right"/></svg></button>
+
+        <div class="showcase-pair">
+          <div class="showcase-col">
+            <span class="showcase-tag">BEFORE</span>
+            <div class="mock-slide mock-slide--before" id="beforeSlide">
+              <div class="ms-lines"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="showcase-col showcase-col--after">
+            <span class="showcase-tag showcase-tag--after">AFTER</span>
+            <div class="mock-slide mock-slide--after" id="afterSlide">
+              <div class="ms-head"><span class="ms-logo">IR LEAD</span><span class="ms-page">02</span></div>
+              <p class="ms-title" id="afterTitle">中期経営計画 2026-2028</p>
+              <div class="ms-body" id="afterBody">
+                <div class="ms-chart">
+                  <svg viewBox="0 0 160 70" preserveAspectRatio="none"><polyline points="0,55 25,48 50,50 75,32 100,36 125,15 160,20" fill="none" stroke="#e63757" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="ms-kpis"><div><strong>+18%</strong><span>売上成長</span></div><div><strong>32%</strong><span>ROE目標</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="showcase-arrow showcase-arrow--next" id="showcaseNext" aria-label="次の事例へ"><svg width="20" height="20"><use href="#i-arrow-right"/></svg></button>
+      </div>
+      <p class="showcase-caption" id="showcaseCaption">サンプル：中期経営計画資料（制作イメージ）</p>
+
+      <div class="showcase-thumbs" id="showcaseThumbs">
+        <button class="showcase-thumb is-active" data-index="0" aria-label="中期経営計画資料">中計</button>
+        <button class="showcase-thumb" data-index="1" aria-label="決算説明会資料">決算</button>
+        <button class="showcase-thumb" data-index="2" aria-label="個人投資家向け資料">個人投資家</button>
+        <button class="showcase-thumb" data-index="3" aria-label="統合報告書">統合報告書</button>
+        <button class="showcase-thumb" data-index="4" aria-label="事業計画資料">事業計画</button>
+      </div>
+      <p class="showcase-disclaimer">※実在の企業様の資料ではなく、制作イメージを再現したサンプルです。</p>
+    </div>
+
+    <div class="sample-cta-wrap">
+      <a href="#contact" class="btn btn-outline">サンプル作成を相談する<svg class="icon" width="15" height="15"><use href="#i-arrow-right"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES (2 offerings) ========== -->
+<section class="offer">
+  <div class="section-inner" data-reveal>
+    <p class="eyebrow">Service Menu</p>
+    <h2 class="section-title">IR資料作成のご提供メニュー</h2>
+    <p class="section-lead">資料に応じて最適な2つの支援サービスをご用意しています。</p>
+
+    <div class="offer-grid">
+      <div class="offer-card">
+        <div class="offer-icon offer-icon--teal"><svg width="30" height="30"><use href="#i-doc-chart"/></svg></div>
+        <span class="offer-no">01</span>
+        <h3>IR資料作成代行サービス</h3>
+        <p>IR資料をワンストップで新規作成・リニューアルします。</p>
+        <ul class="offer-check">
+          <li>資料のストーリー・内容・デザインを刷新したい</li>
+          <li>資料を内製する体制が整っていない</li>
+        </ul>
+      </div>
+      <div class="offer-card">
+        <div class="offer-icon offer-icon--navy"><svg width="30" height="30"><use href="#i-refresh"/></svg></div>
+        <span class="offer-no">02</span>
+        <h3>IR資料定額伴走サービス</h3>
+        <p>年間を通じてIR資料の作成・メンテナンスを継続支援します。</p>
+        <ul class="offer-check">
+          <li>資料のテンプレートはあるが、改善を重ねていきたい</li>
+          <li>決算のたびに社内リソースを割くのが難しい</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRICING ========== -->
+<section class="price" id="price">
+  <p class="price-watermark" aria-hidden="true">PLAN</p>
+  <div class="section-inner" data-reveal>
+    <p class="eyebrow">Plan</p>
+    <h2 class="section-title">IR資料作成代行の料金プラン</h2>
+
+    <div class="price-grid">
+      <div class="price-card">
+        <p class="price-plan-tag">デザインプラン</p>
+        <p class="price-num"><span class="price-cond">20枚まで</span>40<span class="price-unit">万円〜</span></p>
+        <p class="price-sub">※21枚以上はお問い合わせください</p>
+        <ul class="price-list">
+          <li>原稿の支給が必須</li>
+          <li>テンプレートデザイン</li>
+          <li>ページデザイン</li>
+          <li>図解／表／グラフ制作</li>
+        </ul>
+      </div>
+      <div class="price-card price-card--main">
+        <p class="price-badge">人気</p>
+        <p class="price-plan-tag">企画+デザインプラン</p>
+        <p class="price-num"><span class="price-cond">20枚まで</span>80<span class="price-unit">万円〜</span></p>
+        <p class="price-sub">※21枚以上はお問い合わせください</p>
+        <ul class="price-list">
+          <li>原稿の支給は任意</li>
+          <li>企画構成（内容／構成／文章）</li>
+          <li>テンプレートデザイン</li>
+          <li>図解／表／グラフ制作</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <p class="price-plan-tag">定額伴走プラン</p>
+        <p class="price-num">60<span class="price-unit">万円〜 / 年</span></p>
+        <p class="price-sub">※12カ月で40時間相当の実働を想定</p>
+        <ul class="price-list">
+          <li>原稿の支給は任意</li>
+          <li>企画構成・デザインの継続支援</li>
+          <li>決算期ごとの更新対応</li>
+          <li>図解／表／グラフ制作</li>
+        </ul>
+      </div>
+    </div>
+    <p class="price-note">※金額はすべて税別・目安です。資料の分量や対応範囲に応じて個別にお見積りします。</p>
+  </div>
+</section>
+
+<!-- ========== COMPANY ========== -->
+<section class="company" id="company">
+  <div class="section-inner company-inner" data-reveal>
+    <div class="company-photo" aria-hidden="true"><svg width="34" height="34"><use href="#i-building"/></svg></div>
+    <div>
+      <p class="eyebrow">Company</p>
+      <h2 class="section-title">運営会社</h2>
+      <p>IR LEADは、株式会社CDC AIが提供するIR資料作成支援サービスです。生成AIを活用したスピードと、金融・IR領域に精通したディレクターの知見を掛け合わせ、投資家に伝わる資料づくりを支援します。</p>
+    </div>
+    <dl class="company-table">
+      <div><dt>運営会社</dt><dd>株式会社CDC AI</dd></div>
+      <div><dt>サービス名</dt><dd>IR LEAD（アイアールリード）</dd></div>
+      <div><dt>提供内容</dt><dd>IR資料作成代行サービス／IR資料定額伴走サービス</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="contact" id="contact">
+  <div class="section-inner" data-reveal>
+    <p class="eyebrow">Contact</p>
+    <h2 class="section-title">お問い合わせ</h2>
+    <p class="contact-lead">サービス資料・お見積り・サンプル作成のご相談は、下記フォームよりお気軽にお問い合わせください。担当者より折り返しご連絡いたします。</p>
+
+    <div class="contact-grid">
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="form-row">
+          <label for="company">会社名 <span class="req">必須</span></label>
+          <input type="text" id="company" name="company" placeholder="例：株式会社サンプル" required>
+        </div>
+        <div class="form-row">
+          <label for="name">お名前 <span class="req">必須</span></label>
+          <input type="text" id="name" name="name" placeholder="例：山田 太郎" required>
+        </div>
+        <div class="form-row-group">
+          <div class="form-row">
+            <label for="email">メールアドレス <span class="req">必須</span></label>
+            <input type="email" id="email" name="email" placeholder="例：info@example.co.jp" required>
+          </div>
+          <div class="form-row">
+            <label for="tel">電話番号</label>
+            <input type="tel" id="tel" name="tel" placeholder="例：03-1234-5678">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="inquiry_type">ご希望の内容</label>
+          <select id="inquiry_type" name="inquiry_type">
+            <option>無料相談を申し込む</option>
+            <option>お見積りを依頼する</option>
+            <option>サンプル作成を依頼する</option>
+            <option>資料をお願いする</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="message">ご相談内容 <span class="req">必須</span></label>
+          <textarea id="message" name="message" rows="5" placeholder="現状の課題やご相談内容をご記入ください" required></textarea>
+        </div>
+        <label class="form-agree">
+          <input type="checkbox" id="agree" name="agree" required>
+          <span><a href="#" target="_blank" rel="noopener">個人情報の取扱いについて</a>に同意する</span>
+        </label>
+
+        <p class="form-error hidden" id="formError" role="alert"></p>
+
+        <button type="submit" class="btn btn-cta btn-submit" id="submitBtn">
+          <span id="submitLabel">この内容で送信する</span>
+          <svg class="icon" width="17" height="17" id="submitIcon"><use href="#i-arrow-right"/></svg>
+        </button>
+      </form>
+
+      <div class="contact-side">
+        <div class="contact-side-card">
+          <svg width="22" height="22"><use href="#i-phone"/></svg>
+          <p class="contact-side-label">お電話でもお気軽にお問い合わせください</p>
+          <p class="contact-side-phone">03-XXXX-XXXX</p>
+          <p class="contact-side-note">平日 10:00〜18:00</p>
+        </div>
+        <div class="contact-side-card contact-side-card--muted">
+          <p>資料作成代行サービスに関するお問い合わせのみ受け付けております。<br>営業・人材紹介・相互リンクのご依頼はご遠慮ください。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-success hidden" id="formSuccess">
+      <svg width="44" height="44"><circle cx="22" cy="22" r="21" fill="#e63757"/><path d="M13 23l6 6 12-13" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>お問い合わせありがとうございます</h3>
+      <p>内容を確認の上、担当者より折り返しご連絡させていただきます。</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <div class="footer-brand">
+      <a class="logo logo--white" href="#top">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 16 L11 9 L15 13 L20 5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="5" r="2.2" fill="#fff"/></svg></span>
+        <span class="logo-word">IR LEAD<span class="logo-sub">by CDC AI</span></span>
+      </a>
+      <p class="footer-copy">投資家向けIR資料作成支援サービス</p>
+      <p class="footer-copy footer-copyright">© <span id="year">2026</span> CDC AI Inc. All rights reserved.</p>
+    </div>
+
+    <nav class="footer-nav">
+      <h4>コンテンツ</h4>
+      <ul>
+        <li><a href="#field">対応イメージ</a></li>
+        <li><a href="#concern">お悩み</a></li>
+        <li><a href="#reason">選ばれる理由</a></li>
+        <li><a href="#sample">制作イメージ</a></li>
+        <li><a href="#price">料金プラン</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-nav footer-nav--plain">
+      <ul>
+        <li><a href="#company">運営会社</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-buttons">
+      <a href="#contact" class="btn btn-outline btn-outline--white">お問い合わせ</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== FLOATING CTA ========== -->
+<div class="floating-cta" id="floatingCta">
+  <span class="floating-cta-note">相談無料 ・ サンプル作成も承ります</span>
+  <a href="#contact" class="btn btn-cta btn-sm">
+    お問い合わせはこちら<svg class="icon" width="15" height="15"><use href="#i-arrow-right"/></svg>
+  </a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
